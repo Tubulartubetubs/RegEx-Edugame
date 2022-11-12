@@ -8,12 +8,15 @@ public class DialogueController : MonoBehaviour
     private TextMeshProUGUI dialogueTxt;
     private TextMeshProUGUI titleTxt;
     private SpriteRenderer bgRenderer;
+    private SpriteRenderer bgUIBackground;
     private Animator bgAnim;
+    private SpriteRenderer bgUIAnim;
 
     public string[] contentSentences;
     public string[] titles;
 
     public Sprite[] bgSprites;
+    public Sprite[] bgUISprites;
 
     public float dialogueSpeed;
 
@@ -25,6 +28,10 @@ public class DialogueController : MonoBehaviour
     private int index = 0;
 
     public GameObject sortButton;
+    public GameObject detailsButton;
+    public GameObject addressButton;
+    public GameObject detailsDetails;
+    public GameObject addressDetails;
 
     public AudioClip chatting;
     public AudioClip next;
@@ -38,6 +45,10 @@ public class DialogueController : MonoBehaviour
         titleTxt = GameObject.Find("Conversation Title").GetComponent<TextMeshProUGUI>();
         bgRenderer = GameObject.FindGameObjectWithTag("Background").GetComponent<SpriteRenderer>();
         bgAnim = GameObject.FindGameObjectWithTag("Background").GetComponent<Animator>();
+
+        bgUIBackground = GameObject.FindGameObjectWithTag("UIBackground").GetComponent<SpriteRenderer>();
+        //bgUIAnim = GameObject.FindGameObjectWithTag("UIBackground").GetComponent<Animator>();
+
         audioSource = this.gameObject.AddComponent<AudioSource>();
         audioSource.clip = chatting;
         audioSource.loop = true;
@@ -144,7 +155,33 @@ public class DialogueController : MonoBehaviour
                 break;
         }
     }
-    
+
+    public void changeUI(int index)
+    {
+        switch (index)
+        {
+            case 0:
+                bgUIBackground.sprite = bgUISprites[0];
+                break;
+
+            case 1:
+                bgUIBackground.sprite = bgUISprites[1];
+                break;
+
+            case 2:
+                bgUIBackground.sprite = bgUISprites[2];
+                break;
+
+            case 3:
+                bgUIBackground.sprite = bgUISprites[3];
+                break;
+
+            case 4:
+                bgUIBackground.sprite = bgUISprites[4];
+                break;
+        }
+    }
+
     public void ChangeBGAnim(int index)
     {
         switch (index)
@@ -165,5 +202,17 @@ public class DialogueController : MonoBehaviour
     public void Sort()
     {
         sortButton.gameObject.SetActive(true);
+    }
+
+    public void Details()
+    {
+        detailsButton.gameObject.SetActive(true);
+        detailsDetails.gameObject.SetActive(true);
+    }
+
+    public void Address()
+    {
+        addressButton.gameObject.SetActive(true);
+        addressDetails.gameObject.SetActive(true);
     }
 }
