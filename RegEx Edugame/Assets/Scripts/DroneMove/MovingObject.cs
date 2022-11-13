@@ -13,11 +13,37 @@ public class MovingObject : MonoBehaviour
     private Vector3 minBound;
     private Vector3 maxBound;
 
+    [SerializeField] private UIInventory uiInventory;
+    private Inventory inventory;
+    
+    /*private void Awake()
+    {
+        minBound = bound.bounds.min;
+        maxBound = bound.bounds.max;
+    }*/
+
     // Start is called before the first frame update
     void Start()
     {
         minBound = bound.bounds.min;
         maxBound = bound.bounds.max;
+
+        inventory = new Inventory();
+        uiInventory.SetInventory(inventory);
+        
+        ItemWorld.SpawnItemWorld(new Vector3(1.6f, 0.5f), new Item { itemType = Item.ItemType.alternation, amount = 1 });
+        ItemWorld.SpawnItemWorld(new Vector3(1.6f, 0.8f), new Item { itemType = Item.ItemType.single, amount = 1 });
+        ItemWorld.SpawnItemWorld(new Vector3(1.6f, 1.2f), new Item { itemType = Item.ItemType.digits, amount = 1 });
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        ItemWorld itemWorld = collider.GetComponent<ItemWorld>();
+        if(itemWorld != null)
+        {
+            inventory.AddItem(itemWorld.GetItem());
+            itemWorld.DestroySelf();
+        }
     }
 
     // Update is called once per frame
