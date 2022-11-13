@@ -73,7 +73,8 @@ public class ButtonEvent : MonoBehaviour
     {
         crate1.SetActive(false);
         crate2.SetActive(true);
-        details2.SetActive(false);
+        details2.SetActive(true);
+        address2.SetActive(false);
     }
 
     public void prevButtonCrate1()
@@ -85,14 +86,16 @@ public class ButtonEvent : MonoBehaviour
     {
         crate2.SetActive(false);
         crate3.SetActive(true);
-        details3.SetActive(false);
+        details3.SetActive(true);
+        address3.SetActive(false);
     }
 
     public void prevButtonCrate2()
     {
         crate2.SetActive(false);
         crate1.SetActive(true);
-        details2.SetActive(false);
+        details1.SetActive(true);
+        address1.SetActive(false);
     }
 
     public void nextButtonCrate3()
@@ -104,7 +107,8 @@ public class ButtonEvent : MonoBehaviour
     {
         crate3.SetActive(false);
         crate2.SetActive(true);
-        details2.SetActive(false);
+        details2.SetActive(true);
+        address2.SetActive(false);
     }
 
     public void chipCollection()
