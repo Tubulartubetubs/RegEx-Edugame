@@ -14,7 +14,17 @@ public class RegEx : MonoBehaviour
 
     public List<GameObject> highlightWords;
 
+    public List<Image> pics;
+
+    public List<GameObject> addresses;
+
+    public TextMeshProUGUI totalCrates;
+
+    public TextMeshProUGUI acceptedNum;
+
     private string displayString;
+    Color32 redColor = new Color32(219,53,74,141);
+    Color32 greenColor = new Color32(53,219,86,141);
 
     // Start is called before the first frame update
     void Start()
@@ -23,16 +33,17 @@ public class RegEx : MonoBehaviour
         insertedChips = GameObject.Find("ChipInserted");
         chips = new List<GameObject>();
         chipTexts = new List<TextMeshProUGUI>();
-        highlightWords.AddRange(GameObject.FindGameObjectsWithTag("Highlight"));
+        //highlightWords.AddRange(GameObject.FindGameObjectsWithTag("Highlight"));
+        addresses.AddRange(GameObject.FindGameObjectsWithTag("Address"));
+        pics.Add(highlightWords[3].transform.parent.gameObject.GetComponentInChildren<Image>());
+        totalCrates.text = GameObject.Find("Left side").transform.childCount.ToString();
+        acceptedNum.text = "0";
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (insertedChips.transform.childCount > 0)
-        //{
-        //    UpdateChips();
-        //}
+
     }
 
     void UpdateChips()
@@ -94,9 +105,15 @@ public class RegEx : MonoBehaviour
                     if (matches[i].Value.Equals(highlightWords[j].GetComponent<TextMeshProUGUI>().text))
                     {
                         highlightWords[j].GetComponent<TextMeshProUGUI>().color = Color.yellow;
+                        if (highlightWords[j].name.Equals("Highlighting Address"))
+                            highlightWords[j].transform.parent.gameObject.GetComponentInChildren<Image>().color = greenColor;
                     }
                     else
+                    {
                         highlightWords[j].GetComponent<TextMeshProUGUI>().color = Color.white;
+                        if (highlightWords[j].name.Equals("Highlighting Address"))
+                            highlightWords[j].transform.parent.gameObject.GetComponentInChildren<Image>().color = redColor;
+                    }
                 }
             }
         }
@@ -106,7 +123,15 @@ public class RegEx : MonoBehaviour
             {
                 obj.GetComponent<TextMeshProUGUI>().color = Color.white;
             }
+            for(int i=0; i<highlightWords.Count; i++)
+            {
+                if (highlightWords[i].name.Equals("Highlighting Address"))
+                    highlightWords[i].transform.parent.gameObject.GetComponentInChildren<Image>().color = redColor;
+            }
         }
+
+        int matchString = (matches.Count/2);
+        acceptedNum.text = matchString.ToString();
     }
 
     void DisplayText()
