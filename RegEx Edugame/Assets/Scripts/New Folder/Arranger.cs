@@ -7,10 +7,13 @@ public class Arranger : MonoBehaviour
 {
     List<Transform> children;
 
+    RegEx regex;
+
     // Start is called before the first frame update
     void Start()
     {
         children = new List<Transform>();
+        regex = GameObject.Find("DisplayText").GetComponent<RegEx>();
 
         UpdateChildren();
     }
@@ -33,6 +36,7 @@ public class Arranger : MonoBehaviour
         }
 
         children.RemoveRange(transform.childCount, children.Count - transform.childCount);
+        regex.UpdateDisplay();
     }
 
     public void InsertChip(Transform chip, int index)
