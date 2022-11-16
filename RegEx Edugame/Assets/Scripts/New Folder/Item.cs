@@ -17,10 +17,20 @@ public class Item
         quantifiers,
         ranges,
         startend,
+        blue,
+        green,
+        orange,
+        pink,
+        purple,
+        red,
+        turquoise,
+        white,
+        yellow,
     }
 
     public ItemType itemType;
-    public int amount;
+    public string text;
+    public int number;
 
     public Sprite GetSprite()
     {
@@ -49,6 +59,24 @@ public class Item
                 return ItemAssets.Instance.rangesSprite;
             case ItemType.startend:
                 return ItemAssets.Instance.startendSprite;
+            case ItemType.blue:
+                return ItemAssets.Instance.blueSprite;
+            case ItemType.green:
+                return ItemAssets.Instance.greenSprite;
+            case ItemType.orange:
+                return ItemAssets.Instance.orangeSprite;
+            case ItemType.pink:
+                return ItemAssets.Instance.pinkSprite;
+            case ItemType.purple:
+                return ItemAssets.Instance.purpleSprite;
+            case ItemType.red:
+                return ItemAssets.Instance.redSprite;
+            case ItemType.turquoise:
+                return ItemAssets.Instance.turquoiseSprite;
+            case ItemType.white:
+                return ItemAssets.Instance.whiteSprite;
+            case ItemType.yellow:
+                return ItemAssets.Instance.yellowSprite;
         }
     }
 }

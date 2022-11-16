@@ -17,6 +17,7 @@ public class ItemAssets : MonoBehaviour
     }
 
     public Transform pfItemWorld;
+    public Transform crateWorld;
 
     public Sprite alternationSprite;
     public Sprite singleSprite;
@@ -29,4 +30,13 @@ public class ItemAssets : MonoBehaviour
     public Sprite quantifiersSprite;
     public Sprite rangesSprite;
     public Sprite startendSprite;
+    public Sprite blueSprite;
+    public Sprite greenSprite;
+    public Sprite orangeSprite;
+    public Sprite pinkSprite;
+    public Sprite purpleSprite;
+    public Sprite redSprite;
+    public Sprite turquoiseSprite;
+    public Sprite whiteSprite;
+    public Sprite yellowSprite;
 }

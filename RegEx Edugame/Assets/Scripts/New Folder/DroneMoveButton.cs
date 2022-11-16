@@ -5,20 +5,37 @@ using UnityEngine;
 public class DroneMoveButton : MonoBehaviour
 {
     public GameObject chipsBag;
-    public GameObject bg;
+    public GameObject chipsBagBG;
+
+    public GameObject selectCrate;
+    public GameObject crateBG;
 
     public void showChipsBag()
     {
         if (chipsBag.activeSelf == true) {
             chipsBag.SetActive(false);
-            bg.SetActive(false);
+            chipsBagBG.SetActive(false);
         }
 
         else if (chipsBag.activeSelf == false)
         {
             chipsBag.SetActive(true);
-            bg.SetActive(true);
+            chipsBagBG.SetActive(true);
+        }       
+    }
+
+    public void showSelectCrate()
+    {
+        if (selectCrate.activeSelf == true)
+        {
+            selectCrate.SetActive(false);
+            crateBG.SetActive(false);
         }
-            
+
+        else if (selectCrate.activeSelf == false)
+        {
+            selectCrate.SetActive(true);
+            crateBG.SetActive(true);
+        }
     }
 }

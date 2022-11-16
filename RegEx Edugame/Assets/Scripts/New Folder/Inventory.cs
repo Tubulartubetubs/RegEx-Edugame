@@ -15,9 +15,9 @@ public class Inventory
         //this.useItemAction = useItemAction;
         itemList = new List<Item>();
 
-        AddItem(new Item { itemType = Item.ItemType.alternation, amount = 1 });
-        AddItem(new Item { itemType = Item.ItemType.single, amount = 1 });
-        AddItem(new Item { itemType = Item.ItemType.quantifiers, amount = 1 });
+        //AddItem(new Item { itemType = Item.ItemType.alternation, number = 1 });
+        //AddItem(new Item { itemType = Item.ItemType.single, number = 2 });
+        //AddItem(new Item { itemType = Item.ItemType.quantifiers, number = 3 });
     }
 
     public void AddItem(Item item) {

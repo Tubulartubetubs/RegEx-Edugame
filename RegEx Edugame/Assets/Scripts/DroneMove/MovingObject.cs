@@ -6,7 +6,7 @@ public class MovingObject : MonoBehaviour
 {
     float moveX, moveY;
 
-    public float speed = 5f;
+    public float speed = 3f;
 
     public BoxCollider2D bound;
 
@@ -15,7 +15,10 @@ public class MovingObject : MonoBehaviour
 
     [SerializeField] private UIInventory uiInventory;
     private Inventory inventory;
-    
+
+    [SerializeField] private UICrate uiCrate;
+    private Crate crate;
+
     /*private void Awake()
     {
         minBound = bound.bounds.min;
@@ -30,10 +33,13 @@ public class MovingObject : MonoBehaviour
 
         inventory = new Inventory();
         uiInventory.SetInventory(inventory);
-        
-        ItemWorld.SpawnItemWorld(new Vector3(1.6f, 0.5f), new Item { itemType = Item.ItemType.alternation, amount = 1 });
-        ItemWorld.SpawnItemWorld(new Vector3(1.6f, 0.8f), new Item { itemType = Item.ItemType.single, amount = 1 });
-        ItemWorld.SpawnItemWorld(new Vector3(1.6f, 1.2f), new Item { itemType = Item.ItemType.digits, amount = 1 });
+
+        crate = new Crate();
+        uiCrate.SetCrate(crate);
+        uiCrate.SetPlayer(this);
+
+        ItemWorld.SpawnItemWorld(new Vector3(8.308f, 0.35f), new Item { itemType = Item.ItemType.alternation, text = "KG"});
+        ItemWorld.SpawnItemWorld(new Vector3(33.203f, 1.136f), new Item { itemType = Item.ItemType.single, text = "65" });
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -58,5 +64,11 @@ public class MovingObject : MonoBehaviour
         float clampY = Mathf.Clamp(this.transform.position.y, minBound.y, maxBound.y);
 
         this.transform.position = new Vector3(clampX, clampY, this.transform.position.z);
+    }
+
+    public Vector3 GetPosition()
+    {
+        //Debug.Log(transform.position);
+        return transform.position;
     }
 }
