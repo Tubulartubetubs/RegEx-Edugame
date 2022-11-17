@@ -30,7 +30,7 @@ public class PlugChecker : MonoBehaviour
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, .25f);
 
-        Debug.Log(colliders.Length);
+        //Debug.Log(colliders.Length);
 
         if (colliders.Length == 1)
         {
