@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using TMPro;
 
@@ -12,9 +13,17 @@ public class DisplayText : MonoBehaviour
 
     TextMeshProUGUI displayTMP;
 
+    public List<GameObject> houses;
+
     // Start is called before the first frame update
     void Start()
     {
+        Regex rg = new Regex("Block");
+        Match match = rg.Match("Block 1 Lot 32 Lavander St. Forbes Village, Brgy. Forbes, Makati City");
+
+        Debug.Log(match.Success);
+
+
         wireTexts.AddRange(GameObject.Find("Wire Texts").GetComponentsInChildren<TextMeshProUGUI>());
         ports.AddRange(GameObject.FindGameObjectsWithTag("Port"));
         displayString = "";
@@ -39,6 +48,28 @@ public class DisplayText : MonoBehaviour
     public void UpdateString()
     {
         ClearString();
-        displayTMP.text = StringBuilder();
+        string regex = StringBuilder();
+        displayTMP.text = regex;
+        RegExBuilder(regex);
+    }
+
+    void RegExBuilder(string regex)
+    {
+        Regex rg = new Regex(regex);
+        CheckMatches(rg);
+    }
+
+    void CheckMatches(Regex rg)
+    {
+        foreach(GameObject house in houses)
+        {
+            Match match = rg.Match(house.GetComponent<Address>().address);
+            if (match.Success)
+            {
+                house.SetActive(true);
+            }
+            else
+                house.SetActive(false);
+        }
     }
 }

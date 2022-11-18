@@ -16,9 +16,9 @@ public class WireMovement : MonoBehaviour
 
     public bool isPlaced = false;
 
-    public int textPos;
+    //public int textPos;
 
-    DisplayText displayText;
+    public DisplayText displayText;
 
 
     // Start is called before the first frame update
@@ -35,17 +35,24 @@ public class WireMovement : MonoBehaviour
         //mouse pos to world point
         mouseposition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseposition.z = 0;
-        
+
+        Debug.Log("Dragging");
+
         UpdateWire(mouseposition);
     }
 
     private void OnMouseUp()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(mouseposition, .2f);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(mouseposition, .1f);
+
+        //Debug.Log(colliders[0].gameObject.name);
+        //Debug.Log(colliders[1].gameObject.name);
+        //Debug.Log(colliders[2].gameObject.name);
+        
         foreach (Collider2D collider in colliders)
         {
             //make sure not self and is port
-            if (collider.gameObject != gameObject && collider.gameObject.tag.Equals("Port"))
+            if (collider.gameObject.tag.Equals("Port"))
             {
                 if (!collider.gameObject.GetComponent<PlugChecker>().GetIsConnected())
                 {
@@ -60,8 +67,8 @@ public class WireMovement : MonoBehaviour
             {
                 //reset position
                 UpdateWire(startPos);
+                displayText.UpdateString();
             }
-            displayText.UpdateString();
         }
 
     }

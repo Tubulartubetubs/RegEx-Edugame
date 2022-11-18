@@ -13,7 +13,7 @@ public class PlugChecker : MonoBehaviour
     {
         // Display the explosion radius when selected
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, .25f);
+        Gizmos.DrawWireSphere(transform.position, .1f);
     }
 
     private void Start()
@@ -28,11 +28,11 @@ public class PlugChecker : MonoBehaviour
 
     void CheckCollisions()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, .25f);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, .1f);
 
         //Debug.Log(colliders.Length);
 
-        if (colliders.Length == 1)
+        if (colliders.Length == 3)
         {
             isConnected = false;
             text = "";
