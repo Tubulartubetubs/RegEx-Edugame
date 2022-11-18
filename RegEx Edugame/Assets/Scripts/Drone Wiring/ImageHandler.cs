@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class ImageHandler : MonoBehaviour
 {
+    public List<GameObject> details;
 
-
-    public string regexToCheck;
-
-    // Start is called before the first frame update
-    void Start()
+    public void ShowDetails(int houseNum)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (!details[houseNum].activeSelf)
+        {
+            for (int i = 0; i < details.Count; i++)
+            {
+                if (i == houseNum)
+                    details[i].SetActive(true);
+                else
+                    details[i].SetActive(false);
+            }
+        }
+        else
+            details[houseNum].SetActive(false);
     }
 }

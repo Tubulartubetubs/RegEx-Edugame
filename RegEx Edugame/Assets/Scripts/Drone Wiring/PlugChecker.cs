@@ -32,7 +32,7 @@ public class PlugChecker : MonoBehaviour
 
         //Debug.Log(colliders.Length);
 
-        if (colliders.Length == 3)
+        if (colliders.Length == 1)
         {
             isConnected = false;
             text = "";

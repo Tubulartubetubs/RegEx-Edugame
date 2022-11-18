@@ -18,7 +18,7 @@ public class DisplayText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Regex rg = new Regex("Block");
+        Regex rg = new Regex("-1");
         Match match = rg.Match("Block 1 Lot 32 Lavander St. Forbes Village, Brgy. Forbes, Makati City");
 
         Debug.Log(match.Success);
@@ -61,15 +61,25 @@ public class DisplayText : MonoBehaviour
 
     void CheckMatches(Regex rg)
     {
-        foreach(GameObject house in houses)
+        if(!rg.ToString().Equals(""))
         {
-            Match match = rg.Match(house.GetComponent<Address>().address);
-            if (match.Success)
+            foreach (GameObject house in houses)
             {
-                house.SetActive(true);
+                Match match = rg.Match(house.GetComponent<Address>().address);
+                if (match.Success)
+                {
+                    house.SetActive(true);
+                }
+                else
+                    house.SetActive(false);
             }
-            else
+        }
+        else
+        {
+            foreach (GameObject house in houses)
+            {
                 house.SetActive(false);
+            }
         }
     }
 }
