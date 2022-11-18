@@ -5,6 +5,9 @@ using UnityEngine;
     
 public class CrateWorld : MonoBehaviour
 {
+    public BoxCollider2D bound;
+
+
     public static CrateWorld SpawnCrateWorld(Vector3 position, Item item)
     {
         Transform transform = Instantiate(ItemAssets.Instance.crateWorld, position, Quaternion.identity);
@@ -29,6 +32,18 @@ public class CrateWorld : MonoBehaviour
         return crateWorld;
     }
 
+    //public static bool IfRight(BoxCollider2D bound, Item item)
+    //{
+    //    Vector3 position = new Vector3()
+    //    if (bound.bounds.Contains(item.))
+    //    {
+    //        return true;
+    //    }
+    //    else
+    //    {
+    //        return false;
+    //    }
+    //}
     private Item item;
     private SpriteRenderer spriteRenderer;
 

@@ -8,9 +8,11 @@ using CodeMonkey.Utils;
 public class UICrate : MonoBehaviour
 {
     private Crate crate;
+    public BoxCollider2D[] bound;
     private Transform itemSlotContainer;
     private Transform itemSlotTemplate;
     private MovingObject player;
+
 
     private void Awake()
     {
@@ -63,8 +65,27 @@ public class UICrate : MonoBehaviour
             };
             itemSlotRectTransform.GetComponent<Button_UI>().MouseRightClickFunc = () =>
             {
-                crate.RemoveItem(item);
-                CrateWorld.DropItem(player.GetPosition(), item);
+                Debug.Log(item.number);
+                Debug.Log(bound[0]);
+                if (bound[0].bounds.Contains(player.transform.position) && item.number == 0)
+                {
+                    crate.RemoveItem(item);
+                    CrateWorld.DropItem(player.GetPosition(), item);
+                }
+                else if (bound[1].bounds.Contains(player.transform.position) && item.number == 1)
+                {
+                    crate.RemoveItem(item);
+                    CrateWorld.DropItem(player.GetPosition(), item);
+                }
+                else if(bound[2].bounds.Contains(player.transform.position) && item.number == 2)
+                {
+                    crate.RemoveItem(item);
+                    CrateWorld.DropItem(player.GetPosition(), item);
+                }
+                else
+                {
+                    //do nothing
+                }
             };
 
             itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y * itemSlotCellSize);

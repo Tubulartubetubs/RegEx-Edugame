@@ -15,9 +15,9 @@ public class Crate
         //this.useItemAction = useItemAction;
         itemList = new List<Item>();
 
-        AddItem(new Item { itemType = Item.ItemType.green, number = 1 });
-        AddItem(new Item { itemType = Item.ItemType.blue, number = 2 });
-        AddItem(new Item { itemType = Item.ItemType.yellow, number = 3 });
+        AddItem(new Item { itemType = Item.ItemType.green, number = 0 });
+        AddItem(new Item { itemType = Item.ItemType.blue, number = 1 });
+        AddItem(new Item { itemType = Item.ItemType.yellow, number = 2 });
     }
 
     public void AddItem(Item item) {
