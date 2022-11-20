@@ -43,7 +43,7 @@ public class WireMovement : MonoBehaviour
 
     private void OnMouseUp()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(mouseposition, .1f);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(mouseposition, .06f);
 
         //Debug.Log(colliders[0].gameObject.name);
         //Debug.Log(colliders[1].gameObject.name);

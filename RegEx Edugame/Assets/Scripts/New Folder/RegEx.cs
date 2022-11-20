@@ -22,6 +22,12 @@ public class RegEx : MonoBehaviour
 
     public TextMeshProUGUI acceptedNum;
 
+    //Scene Handler
+    SwitchScenes sceneSwitcher;
+
+    //Number of addresses to move to next scene
+    public int allAddresses;
+
     //turns match collection into list
     List<string> matchStrings;
 
@@ -42,6 +48,7 @@ public class RegEx : MonoBehaviour
         totalCrates.text = GameObject.Find("Left side").transform.childCount.ToString();
         acceptedNum.text = "0";
         matchStrings = new List<string>();
+        sceneSwitcher = GameObject.FindGameObjectWithTag("EventSystem").GetComponent<SwitchScenes>();
     }
 
     // Update is called once per frame
@@ -133,47 +140,14 @@ public class RegEx : MonoBehaviour
             }
         }
 
-        //if (matches.Count > 0)
-        //{
-        //    for (int i = 0; i < matches.Count; i++)
-        //    {
-        //        for (int j = 0; j < highlightWords.Count; j++)
-        //        {
-        //            if (matches[i].Value.Equals(highlightWords[j].GetComponent<TextMeshProUGUI>().text))
-        //            {
-        //                highlightWords[j].GetComponent<TextMeshProUGUI>().color = Color.yellow;
-        //                if (highlightWords[j].name.Equals("Highlighting Address"))
-        //                    highlightWords[j].transform.parent.gameObject.GetComponentInChildren<Image>().color = greenColor;
-        //            }
-        //            else
-        //            {
-        //                highlightWords[j].GetComponent<TextMeshProUGUI>().color = Color.white;
-        //                if (highlightWords[j].name.Equals("Highlighting Address"))
-        //                    highlightWords[j].transform.parent.gameObject.GetComponentInChildren<Image>().color = redColor;
-        //            }
-        //        }
-        //    }
-        //}
-        //else
-        //{
-        //    foreach(GameObject obj in highlightWords)
-        //    {
-        //        obj.GetComponent<TextMeshProUGUI>().color = Color.white;
-        //    }
-        //    for(int i=0; i<highlightWords.Count; i++)
-        //    {
-        //        if (highlightWords[i].name.Equals("Highlighting Address"))
-        //            highlightWords[i].transform.parent.gameObject.GetComponentInChildren<Image>().color = redColor;
-        //    }
-        //}
-
         int matchString = (matches.Count/2);
         acceptedNum.text = matchString.ToString();
-    }
 
-    void HighlightAddress(MatchCollection matches)
-    {
-
+        if(matchString == allAddresses)
+        {
+            Debug.Log("Switch");
+            sceneSwitcher.SwitchScene(4);
+        }
     }
 
     void DisplayText()

@@ -1252,6 +1252,7 @@ GameObject:
   - component: {fileID: 206199136}
   - component: {fileID: 206199139}
   - component: {fileID: 206199140}
+  - component: {fileID: 206199141}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: EventSystem
@@ -1358,6 +1359,19 @@ MonoBehaviour:
   - {fileID: 787332245}
   - {fileID: 345289074}
   - {fileID: 1725972919}
+--- !u!114 &206199141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206199134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e795826b63b0dd42bde282e1e8a6097, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scenePaths: []
 --- !u!1 &219770321
 GameObject:
   m_ObjectHideFlags: 0
@@ -10028,6 +10042,7 @@ MonoBehaviour:
   addresses: []
   totalCrates: {fileID: 1416594359}
   acceptedNum: {fileID: 347925125}
+  allAddresses: 3
 --- !u!114 &1360493351
 MonoBehaviour:
   m_ObjectHideFlags: 0
