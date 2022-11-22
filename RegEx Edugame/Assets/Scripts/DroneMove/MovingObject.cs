@@ -91,7 +91,7 @@ public class MovingObject : MonoBehaviour
             if (uiCrate.DoneCrate())
             {
                 //Debug.Log("Cleared!");
-                //Cleared, call next scene
+                //Cleared
             }
         }
     }
