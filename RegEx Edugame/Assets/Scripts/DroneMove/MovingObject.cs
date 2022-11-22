@@ -19,6 +19,13 @@ public class MovingObject : MonoBehaviour
     [SerializeField] private UICrate uiCrate;
     private Crate crate;
 
+    public Vector3[] vectors;
+    public Item.ItemType[] chipSpriteType;
+    public string[] chipText;
+
+    public Item.ItemType[] crateSpriteType;
+    public int[] crateNumber;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,8 +39,18 @@ public class MovingObject : MonoBehaviour
         uiCrate.SetCrate(crate);
         uiCrate.SetPlayer(this);
 
-        ItemWorld.SpawnItemWorld(new Vector3(8.308f, 0.35f), new Item { itemType = Item.ItemType.alternation, text = "KG"});
-        ItemWorld.SpawnItemWorld(new Vector3(33.203f, 1.136f), new Item { itemType = Item.ItemType.single, text = "65" });
+        //ItemWorld.SpawnItemWorld(new Vector3(8.308f, 0.35f), new Item { itemType = Item.ItemType.alternation, text = "KG"});
+        //ItemWorld.SpawnItemWorld(new Vector3(33.203f, 1.136f), new Item { itemType = Item.ItemType.single, text = "65" });
+
+        for(int i = 0; i< chipSpriteType.Length; i++)
+        {
+            ItemWorld.SpawnItemWorld(vectors[i], new Item { itemType = chipSpriteType[i], text = chipText[i] });
+        }
+
+        for (int i = 0; i < crateSpriteType.Length; i++)
+        {
+            crate.AddItem(new Item { itemType = crateSpriteType[i], number = crateNumber[i] });
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collider)

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DroneMoveButton : MonoBehaviour
 {
-    public GameObject droneWire;
-    public GameObject wireBG;
+    //public GameObject droneWire;
+    //public GameObject wireBG;
 
     public GameObject crateBag;
     public GameObject crateBagBG;
@@ -28,8 +28,8 @@ public class DroneMoveButton : MonoBehaviour
         {
             chipsBag.SetActive(true);
             chipsBagBG.SetActive(true);
-            droneWire.SetActive(false);
-            wireBG.SetActive(false);
+            //droneWire.SetActive(false);
+            //wireBG.SetActive(false);
             crateBag.SetActive(false);
             crateBagBG.SetActive(false);
             house1Detail.SetActive(false);
@@ -52,40 +52,40 @@ public class DroneMoveButton : MonoBehaviour
             crateBagBG.SetActive(true);
             chipsBag.SetActive(false);
             chipsBagBG.SetActive(false);
-            droneWire.SetActive(false);
-            wireBG.SetActive(false);
+            //droneWire.SetActive(false);
+            //wireBG.SetActive(false);
             house1Detail.SetActive(false);
             house2Detail.SetActive(false);
             house3Detail.SetActive(false);
         }
     }
 
-    public void showDroneWire()
-    {
-        if (droneWire.activeSelf == true)
-        {
-            droneWire.SetActive(false);
-            wireBG.SetActive(false);
-        }
+    //public void showDroneWire()
+    //{
+    //    if (droneWire.activeSelf == true)
+    //    {
+    //        droneWire.SetActive(false);
+    //        wireBG.SetActive(false);
+    //    }
 
-        else if (droneWire.activeSelf == false)
-        {
-            droneWire.SetActive(true);
-            wireBG.SetActive(true);
-            crateBag.SetActive(false);
-            crateBagBG.SetActive(false);
-            chipsBag.SetActive(false);
-            chipsBagBG.SetActive(false);
-            house1Detail.SetActive(false);
-            house2Detail.SetActive(false);
-            house3Detail.SetActive(false);
-        }
-    }
+    //    else if (droneWire.activeSelf == false)
+    //    {
+    //        droneWire.SetActive(true);
+    //        wireBG.SetActive(true);
+    //        crateBag.SetActive(false);
+    //        crateBagBG.SetActive(false);
+    //        chipsBag.SetActive(false);
+    //        chipsBagBG.SetActive(false);
+    //        house1Detail.SetActive(false);
+    //        house2Detail.SetActive(false);
+    //        house3Detail.SetActive(false);
+    //    }
+    //}
 
     public void showDroneMove()
     {
-        droneWire.SetActive(false);
-        wireBG.SetActive(false);
+        //droneWire.SetActive(false);
+        //wireBG.SetActive(false);
         crateBag.SetActive(false);
         crateBagBG.SetActive(false);
         chipsBag.SetActive(false);
@@ -107,8 +107,8 @@ public class DroneMoveButton : MonoBehaviour
             house1Detail.SetActive(true);
             house2Detail.SetActive(false);
             house3Detail.SetActive(false);
-            droneWire.SetActive(false);
-            wireBG.SetActive(false);
+            //droneWire.SetActive(false);
+            //wireBG.SetActive(false);
             crateBag.SetActive(false);
             crateBagBG.SetActive(false);
             chipsBag.SetActive(false);
@@ -127,8 +127,8 @@ public class DroneMoveButton : MonoBehaviour
             house2Detail.SetActive(true);
             house1Detail.SetActive(false);
             house3Detail.SetActive(false);
-            droneWire.SetActive(false);
-            wireBG.SetActive(false);
+            //droneWire.SetActive(false);
+            //wireBG.SetActive(false);
             crateBag.SetActive(false);
             crateBagBG.SetActive(false);
             chipsBag.SetActive(false);
@@ -148,8 +148,8 @@ public class DroneMoveButton : MonoBehaviour
             house3Detail.SetActive(true);
             house1Detail.SetActive(false);
             house2Detail.SetActive(false);
-            droneWire.SetActive(false);
-            wireBG.SetActive(false);
+            //droneWire.SetActive(false);
+            //wireBG.SetActive(false);
             crateBag.SetActive(false);
             crateBagBG.SetActive(false);
             chipsBag.SetActive(false);

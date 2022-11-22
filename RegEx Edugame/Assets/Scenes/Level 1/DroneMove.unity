@@ -1009,8 +1009,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354126c17bd0200428e39e6f4f9b4b74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  droneWire: {fileID: 0}
-  wireBG: {fileID: 0}
   crateBag: {fileID: 87193387}
   crateBagBG: {fileID: 1416055089}
   chipsBag: {fileID: 1883474164}
@@ -3964,6 +3962,15 @@ MonoBehaviour:
   bound: {fileID: 143019346}
   uiInventory: {fileID: 1315192891}
   uiCrate: {fileID: 1930380160}
+  vectors:
+  - {x: 8.308, y: 0.35, z: 0}
+  - {x: 33.203, y: 1.136, z: 0}
+  chipSpriteType: 0000000001000000
+  chipText:
+  - KG
+  - 65
+  crateSpriteType: 0c0000000b00000013000000
+  crateNumber: 000000000100000002000000
 --- !u!212 &1069223026
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4267,7 +4274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1106802568
 RectTransform:
   m_ObjectHideFlags: 0
