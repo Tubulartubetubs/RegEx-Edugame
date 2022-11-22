@@ -19,12 +19,6 @@ public class MovingObject : MonoBehaviour
     [SerializeField] private UICrate uiCrate;
     private Crate crate;
 
-    /*private void Awake()
-    {
-        minBound = bound.bounds.min;
-        maxBound = bound.bounds.max;
-    }*/
-
     // Start is called before the first frame update
     void Start()
     {

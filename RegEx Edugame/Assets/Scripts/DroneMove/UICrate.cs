@@ -9,6 +9,10 @@ public class UICrate : MonoBehaviour
 {
     private Crate crate;
     public BoxCollider2D[] bound;
+    public GameObject crate1;
+    public GameObject crate2;
+    public GameObject crate3;
+
     private Transform itemSlotContainer;
     private Transform itemSlotTemplate;
     private MovingObject player;
@@ -18,6 +22,30 @@ public class UICrate : MonoBehaviour
     {
         itemSlotContainer = transform.Find("itemSlotContainer");
         itemSlotTemplate = itemSlotContainer.Find("itemSlotTemplate");
+    }
+
+    private void Update()
+    {
+        if (bound[0].bounds.Contains(player.transform.position))
+        {
+            crate1.SetActive(true);
+        }
+        else
+            crate1.SetActive(false);
+
+        if (bound[1].bounds.Contains(player.transform.position))
+        {
+            crate2.SetActive(true);
+        }
+        else
+            crate2.SetActive(false);
+
+        if (bound[2].bounds.Contains(player.transform.position))
+        {
+            crate3.SetActive(true);
+        }
+        else
+            crate3.SetActive(false);
     }
 
     public void SetPlayer(MovingObject player)
@@ -60,13 +88,10 @@ public class UICrate : MonoBehaviour
             RectTransform itemSlotRectTransform = Instantiate(itemSlotTemplate, itemSlotContainer).GetComponent<RectTransform>();
             itemSlotRectTransform.gameObject.SetActive(true);
 
-            itemSlotRectTransform.GetComponent<Button_UI>().ClickFunc = () =>
-            {
-            };
             itemSlotRectTransform.GetComponent<Button_UI>().MouseRightClickFunc = () =>
             {
-                Debug.Log(item.number);
-                Debug.Log(bound[0]);
+                //Debug.Log(item.number);
+                //Debug.Log(bound[0]);
                 if (bound[0].bounds.Contains(player.transform.position) && item.number == 0)
                 {
                     crate.RemoveItem(item);
@@ -90,10 +115,7 @@ public class UICrate : MonoBehaviour
 
             itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y * itemSlotCellSize);
             Image image = itemSlotRectTransform.Find("image").GetComponent<Image>();
-            //Text text = itemSlotRectTransform.Find("text").GetComponent<Text>();
             image.sprite = item.GetSprite();
-            //TextMeshProUGUI uiText = itemSlotRectTransform.Find("text").GetComponent<TextMeshProUGUI>();
-            //uiText.SetText(item.text);
             y--;
             if (y < -3)
             {
