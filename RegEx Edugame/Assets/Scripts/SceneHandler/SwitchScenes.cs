@@ -12,12 +12,18 @@ public class SwitchScenes : MonoBehaviour
     {
         scenePaths = new List<string>()
         {
-            "Scenes/MainMenu",              //0
-            "Scenes/Intro",                 //1
-            "Scenes/LevelSelect",           //2
-            "Scenes/Level 1/Level 1",       //3
-            "Scenes/Level 1/Drone Wiring 1",//4
-            "Scenes/Level 1/DroneMove"      //5
+            "Scenes/MainMenu",                  //0
+            "Scenes/Intro",                     //1
+            "Scenes/LevelSelect",               //2
+            "Scenes/Level 1.1/Chips",           //3
+            "Scenes/Level 1.1/Drone Wiring 1",  //4
+            "Scenes/Level 1.1/DroneMove",       //5
+            "Scenes/Level 1.2/Chips",           //6
+            "Scenes/Level 1.2/Drone Wiring 1",  //7
+            "Scenes/Level 1.2/DroneMove",       //8
+            "Scenes/Level 2.1/Chips",           //9
+            "Scenes/Level 2.1/Drone Wiring 1",  //10
+            "Scenes/Level 2.1/DroneMove",       //11
         };
     }
 

@@ -12,9 +12,11 @@ public class RegEx : MonoBehaviour
     private List<GameObject> chips;
     private List<TextMeshProUGUI> chipTexts;
 
+    //Words to match
     public List<GameObject> highlightWords;
+    public List<GameObject> highlightAddresses;
 
-    public List<Image> pics;
+    //public List<Image> pics;
 
     public List<GameObject> addresses;
 
@@ -35,6 +37,9 @@ public class RegEx : MonoBehaviour
     Color32 redColor = new Color32(219,53,74,141);
     Color32 greenColor = new Color32(53,219,86,141);
 
+    //Numerical value of next scene in build
+    public int nextScene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +49,7 @@ public class RegEx : MonoBehaviour
         chipTexts = new List<TextMeshProUGUI>();
         //highlightWords.AddRange(GameObject.FindGameObjectsWithTag("Highlight"));
         addresses.AddRange(GameObject.FindGameObjectsWithTag("Address"));
-        pics.Add(highlightWords[3].transform.parent.gameObject.GetComponentInChildren<Image>());
+        //pics.Add(highlightWords[3].transform.parent.gameObject.GetComponentInChildren<Image>());
         totalCrates.text = GameObject.Find("Left side").transform.childCount.ToString();
         acceptedNum.text = "0";
         matchStrings = new List<string>();
@@ -114,39 +119,40 @@ public class RegEx : MonoBehaviour
 
         if(matchStrings.Count > 0)
         {
+            int i = 0;
             foreach(GameObject obj in highlightWords)
             {
                 if (matchStrings.Contains(obj.GetComponent<TextMeshProUGUI>().text))
                 {
                     obj.GetComponent<TextMeshProUGUI>().color = Color.yellow;
-                    if (obj.name.Equals("Highlighting Address"))
-                        obj.transform.parent.gameObject.GetComponentInChildren<Image>().color = greenColor;
+                    highlightAddresses[i].transform.parent.gameObject.GetComponentInChildren<Image>().color = greenColor;
                 }
                 else
                 {
                     obj.GetComponent<TextMeshProUGUI>().color = Color.white;
-                    if (obj.name.Equals("Highlighting Address"))
-                        obj.transform.parent.gameObject.GetComponentInChildren<Image>().color = redColor;
+                    highlightAddresses[i].transform.parent.gameObject.GetComponentInChildren<Image>().color = redColor;
                 }
+                i++;
             }
         }
         else
         {
+            int i = 0;
             foreach(GameObject obj in highlightWords)
             {
                 obj.GetComponent<TextMeshProUGUI>().color = Color.white;
-                if (obj.name.Equals("Highlighting Address"))
-                    obj.transform.parent.gameObject.GetComponentInChildren<Image>().color = redColor;
+                highlightAddresses[i].transform.parent.gameObject.GetComponentInChildren<Image>().color = redColor;
+                i++;
             }
         }
 
-        int matchString = (matches.Count/2);
+        int matchString = matches.Count;
         acceptedNum.text = matchString.ToString();
 
         if(matchString == allAddresses)
         {
             Debug.Log("Switch");
-            sceneSwitcher.SwitchScene(4);
+            sceneSwitcher.SwitchScene(nextScene);
         }
     }
 

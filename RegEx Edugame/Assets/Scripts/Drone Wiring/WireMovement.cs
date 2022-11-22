@@ -36,7 +36,7 @@ public class WireMovement : MonoBehaviour
         mouseposition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseposition.z = 0;
 
-        Debug.Log("Dragging");
+        //Debug.Log("Dragging");
 
         UpdateWire(mouseposition);
     }

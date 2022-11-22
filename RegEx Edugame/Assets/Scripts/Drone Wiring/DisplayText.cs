@@ -21,6 +21,11 @@ public class DisplayText : MonoBehaviour
 
     SwitchScenes sceneSwitcher;
 
+    //list of accepted regex strings
+    public List<string> acceptedStrings;
+
+    public int nextScene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -80,8 +85,11 @@ public class DisplayText : MonoBehaviour
                 Match match = rg.Match(house.GetComponent<Address>().address);
                 if (match.Success)
                 {
-                    if (!"".Equals(match.Value))
+                    if (acceptedStrings.Contains(match.Value))
+                    {
                         house.SetActive(true);
+                        staticScreen[i].SetActive(false);
+                    }
                     else
                         staticScreen[i].SetActive(true);
                 }
@@ -113,6 +121,6 @@ public class DisplayText : MonoBehaviour
         }
 
         if (solvedHouses == completedNum)
-            sceneSwitcher.SwitchScene(5);
+            sceneSwitcher.SwitchScene(nextScene);
     }
 }
