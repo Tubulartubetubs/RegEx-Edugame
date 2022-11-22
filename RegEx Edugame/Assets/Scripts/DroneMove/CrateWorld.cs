@@ -26,11 +26,13 @@ public class CrateWorld : MonoBehaviour
 
     private Item item;
     private SpriteRenderer spriteRenderer;
+    private bool isMouseOver;
 
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
+
     public void SetItem(Item item)
     {
         this.item = item;

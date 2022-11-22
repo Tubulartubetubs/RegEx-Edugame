@@ -9,14 +9,24 @@ public class UICrate : MonoBehaviour
 {
     private Crate crate;
     public BoxCollider2D[] bound;
-    public GameObject crate1;
-    public GameObject crate2;
-    public GameObject crate3;
+    public GameObject building1detail;
+    public GameObject building2detail;
+    public GameObject building3detail;
 
     private Transform itemSlotContainer;
     private Transform itemSlotTemplate;
     private MovingObject player;
 
+    public GameObject crate1detail;
+    public GameObject crate2detail;
+    public GameObject crate3detail;
+
+    public GameObject done1;
+    public GameObject done2;
+    public GameObject done3;
+
+    private int dropped = 0;
+    public int toBeDropped;
 
     private void Awake()
     {
@@ -28,24 +38,24 @@ public class UICrate : MonoBehaviour
     {
         if (bound[0].bounds.Contains(player.transform.position))
         {
-            crate1.SetActive(true);
+            building1detail.SetActive(true);
         }
         else
-            crate1.SetActive(false);
+            building1detail.SetActive(false);
 
         if (bound[1].bounds.Contains(player.transform.position))
         {
-            crate2.SetActive(true);
+            building2detail.SetActive(true);
         }
         else
-            crate2.SetActive(false);
+            building2detail.SetActive(false);
 
         if (bound[2].bounds.Contains(player.transform.position))
         {
-            crate3.SetActive(true);
+            building3detail.SetActive(true);
         }
         else
-            crate3.SetActive(false);
+            building3detail.SetActive(false);
     }
 
     public void SetPlayer(MovingObject player)
@@ -64,6 +74,16 @@ public class UICrate : MonoBehaviour
     private void Inventory_OnItemListChanged(object sender, System.EventArgs e)
     {
         RefreshInventoryItems();
+    }
+
+    public bool DoneCrate()
+    {
+        if (dropped == toBeDropped)
+        {
+            return true;
+        }
+        else
+            return false;
     }
 
 
@@ -87,6 +107,28 @@ public class UICrate : MonoBehaviour
         {
             RectTransform itemSlotRectTransform = Instantiate(itemSlotTemplate, itemSlotContainer).GetComponent<RectTransform>();
             itemSlotRectTransform.gameObject.SetActive(true);
+            itemSlotRectTransform.GetComponent<Button_UI>().MouseOverFunc = () =>
+            {
+                if (item.number == 0)
+                {
+                    crate1detail.SetActive(true);
+                }
+                if (item.number == 1)
+                {
+                    crate2detail.SetActive(true);
+                }
+                if(item.number == 2)
+                {
+                    crate3detail.SetActive(true);
+                }
+            };
+
+            itemSlotRectTransform.GetComponent<Button_UI>().MouseOutOnceFunc = () =>
+            {
+                crate1detail.SetActive(false);
+                crate2detail.SetActive(false);
+                crate3detail.SetActive(false);
+            };
 
             itemSlotRectTransform.GetComponent<Button_UI>().MouseRightClickFunc = () =>
             {
@@ -96,16 +138,25 @@ public class UICrate : MonoBehaviour
                 {
                     crate.RemoveItem(item);
                     CrateWorld.DropItem(player.GetPosition(), item);
+                    crate1detail.SetActive(false);
+                    done1.SetActive(true);
+                    dropped++;
                 }
                 else if (bound[1].bounds.Contains(player.transform.position) && item.number == 1)
                 {
                     crate.RemoveItem(item);
                     CrateWorld.DropItem(player.GetPosition(), item);
+                    crate2detail.SetActive(false);
+                    done2.SetActive(true);
+                    dropped++;
                 }
                 else if(bound[2].bounds.Contains(player.transform.position) && item.number == 2)
                 {
                     crate.RemoveItem(item);
                     CrateWorld.DropItem(player.GetPosition(), item);
+                    crate3detail.SetActive(false);
+                    done3.SetActive(true);
+                    dropped++;
                 }
                 else
                 {

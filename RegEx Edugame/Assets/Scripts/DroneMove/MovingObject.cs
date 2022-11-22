@@ -26,6 +26,9 @@ public class MovingObject : MonoBehaviour
     public Item.ItemType[] crateSpriteType;
     public int[] crateNumber;
 
+    private int chipsCollected = 0;
+    public int chipsToBeCollected;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +54,11 @@ public class MovingObject : MonoBehaviour
         {
             crate.AddItem(new Item { itemType = crateSpriteType[i], number = crateNumber[i] });
         }
+
+        chipsToBeCollected = chipSpriteType.Length;
+        //Debug.Log(chipsToBeCollected);
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -59,6 +67,7 @@ public class MovingObject : MonoBehaviour
         if(itemWorld != null)
         {
             inventory.AddItem(itemWorld.GetItem());
+            chipsCollected++;
             itemWorld.DestroySelf();
         }
     }
@@ -75,6 +84,16 @@ public class MovingObject : MonoBehaviour
         float clampY = Mathf.Clamp(this.transform.position.y, minBound.y, maxBound.y);
 
         this.transform.position = new Vector3(clampX, clampY, this.transform.position.z);
+
+        if(chipsCollected == chipsToBeCollected)
+        {
+            //Debug.Log("Collected Every Chips!");
+            if (uiCrate.DoneCrate())
+            {
+                //Debug.Log("Cleared!");
+                //Cleared
+            }
+        }
     }
 
     public Vector3 GetPosition()

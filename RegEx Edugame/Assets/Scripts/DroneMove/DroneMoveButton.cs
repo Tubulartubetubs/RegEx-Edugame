@@ -17,17 +17,23 @@ public class DroneMoveButton : MonoBehaviour
     public GameObject house2Detail;
     public GameObject house3Detail;
 
+    public GameObject droneSelected;
+    public GameObject chipsSelected;
+
     public void showChipsBag()
     {
         if (chipsBag.activeSelf == true) {
             chipsBag.SetActive(false);
             chipsBagBG.SetActive(false);
+            chipsSelected.SetActive(false);
+            droneSelected.SetActive(true);
         }
 
         else if (chipsBag.activeSelf == false)
         {
             chipsBag.SetActive(true);
             chipsBagBG.SetActive(true);
+            chipsSelected.SetActive(true);
             //droneWire.SetActive(false);
             //wireBG.SetActive(false);
             crateBag.SetActive(false);
@@ -35,6 +41,7 @@ public class DroneMoveButton : MonoBehaviour
             house1Detail.SetActive(false);
             house2Detail.SetActive(false);
             house3Detail.SetActive(false);
+            droneSelected.SetActive(false);
         }       
     }
 
@@ -44,6 +51,7 @@ public class DroneMoveButton : MonoBehaviour
         {
             crateBag.SetActive(false);
             crateBagBG.SetActive(false);
+            droneSelected.SetActive(true);
         }
 
         else if (crateBag.activeSelf == false)
@@ -57,6 +65,7 @@ public class DroneMoveButton : MonoBehaviour
             house1Detail.SetActive(false);
             house2Detail.SetActive(false);
             house3Detail.SetActive(false);
+            chipsSelected.SetActive(false);
         }
     }
 
@@ -93,6 +102,8 @@ public class DroneMoveButton : MonoBehaviour
         house1Detail.SetActive(false);
         house2Detail.SetActive(false);
         house3Detail.SetActive(false);
+        chipsSelected.SetActive(false);
+        droneSelected.SetActive(true);
     }
 
     public void showHouse1()
@@ -100,6 +111,7 @@ public class DroneMoveButton : MonoBehaviour
         if (house1Detail.activeSelf == true)
         {
             house1Detail.SetActive(false);
+            droneSelected.SetActive(true);
         }
 
         else if (house1Detail.activeSelf == false)
@@ -113,6 +125,8 @@ public class DroneMoveButton : MonoBehaviour
             crateBagBG.SetActive(false);
             chipsBag.SetActive(false);
             chipsBagBG.SetActive(false);
+            chipsSelected.SetActive(false);
+            droneSelected.SetActive(false);
         }
     }
     public void showHouse2()
@@ -120,6 +134,7 @@ public class DroneMoveButton : MonoBehaviour
         if (house2Detail.activeSelf == true)
         {
             house2Detail.SetActive(false);
+            droneSelected.SetActive(true);
         }
 
         else if (house2Detail.activeSelf == false)
@@ -133,6 +148,8 @@ public class DroneMoveButton : MonoBehaviour
             crateBagBG.SetActive(false);
             chipsBag.SetActive(false);
             chipsBagBG.SetActive(false);
+            chipsSelected.SetActive(false);
+            droneSelected.SetActive(false);
         }
     }
 
@@ -141,6 +158,7 @@ public class DroneMoveButton : MonoBehaviour
         if (house3Detail.activeSelf == true)
         {
             house3Detail.SetActive(false);
+            droneSelected.SetActive(true);
         }
 
         else if (house3Detail.activeSelf == false)
@@ -154,6 +172,8 @@ public class DroneMoveButton : MonoBehaviour
             crateBagBG.SetActive(false);
             chipsBag.SetActive(false);
             chipsBagBG.SetActive(false);
+            chipsSelected.SetActive(false);
+            droneSelected.SetActive(false);
         }
     }
 }
