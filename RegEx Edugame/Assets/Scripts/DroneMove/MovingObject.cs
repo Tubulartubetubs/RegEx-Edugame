@@ -31,6 +31,10 @@ public class MovingObject : MonoBehaviour
     private int chipsCollected = 0;
     public int chipsToBeCollected;
 
+    public GameObject chipsDone;
+
+    private SwitchScenes scenePass;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -94,10 +98,12 @@ public class MovingObject : MonoBehaviour
         if(chipsCollected == chipsToBeCollected)
         {
             //Debug.Log("Collected Every Chips!");
+            chipsDone.SetActive(true);
             if (uiCrate.DoneCrate())
             {
                 //Debug.Log("Cleared!");
                 //Cleared
+                //scenePass.SwitchScene(6);
             }
         }
     }
