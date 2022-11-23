@@ -40,7 +40,7 @@ public class MovingObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scenePass = GameObject.FindGameObjectWithTag("EventSystem").GetComponent<SwitchScenes>();
+        //scenePass = GameObject.FindGameObjectWithTag("EventSystem").GetComponent<SwitchScenes>();
         anim = GetComponent<Animator>();
 
         minBound = bound.bounds.min;

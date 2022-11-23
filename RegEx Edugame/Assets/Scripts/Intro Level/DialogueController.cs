@@ -52,11 +52,11 @@ public class DialogueController : MonoBehaviour
         audioSource = this.gameObject.AddComponent<AudioSource>();
         audioSource.clip = chatting;
         audioSource.loop = true;
-        audioSource.volume = 0.03f;
+        audioSource.volume = 0.20f;
 
         audioSource2 = this.gameObject.AddComponent<AudioSource>();
         audioSource2.clip = next;
-        audioSource2.volume = 0.03f;
+        audioSource2.volume = 0.10f;
     }
 
     // Update is called once per frame
