@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MovingObject : MonoBehaviour
 {
+    Animator anim;
+
     float moveX, moveY;
 
     public float speed = 3f;
@@ -32,6 +34,8 @@ public class MovingObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
+
         minBound = bound.bounds.min;
         maxBound = bound.bounds.max;
 
@@ -77,6 +81,8 @@ public class MovingObject : MonoBehaviour
     {
         moveX = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         moveY = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+
+        anim.SetFloat("Speed", moveX);
 
         transform.position = new Vector2(transform.position.x + moveX, transform.position.y + moveY);
 
