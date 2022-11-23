@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovingObject : MonoBehaviour
 {
-    Animator anim;
+    public Animator anim;
 
     float moveX, moveY;
 
@@ -33,11 +33,14 @@ public class MovingObject : MonoBehaviour
 
     public GameObject chipsDone;
 
-    private SwitchScenes scenePass;
+    public SwitchScenes scenePass;
+
+    public int nextScene;
 
     // Start is called before the first frame update
     void Start()
     {
+        scenePass = GameObject.FindGameObjectWithTag("EventSystem").GetComponent<SwitchScenes>();
         anim = GetComponent<Animator>();
 
         minBound = bound.bounds.min;
@@ -103,7 +106,7 @@ public class MovingObject : MonoBehaviour
             {
                 //Debug.Log("Cleared!");
                 //Cleared
-                //scenePass.SwitchScene(6);
+                scenePass.SwitchScene(nextScene);
             }
         }
     }

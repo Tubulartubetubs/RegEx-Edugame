@@ -46,7 +46,7 @@ public class DialogueController : MonoBehaviour
         bgRenderer = GameObject.FindGameObjectWithTag("Background").GetComponent<SpriteRenderer>();
         bgAnim = GameObject.FindGameObjectWithTag("Background").GetComponent<Animator>();
 
-        bgUIBackground = GameObject.FindGameObjectWithTag("UIBackground").GetComponent<SpriteRenderer>();
+        //bgUIBackground = GameObject.FindGameObjectWithTag("UIBackground").GetComponent<SpriteRenderer>();
         //bgUIAnim = GameObject.FindGameObjectWithTag("UIBackground").GetComponent<Animator>();
 
         audioSource = this.gameObject.AddComponent<AudioSource>();
@@ -156,31 +156,31 @@ public class DialogueController : MonoBehaviour
         }
     }
 
-    public void changeUI(int index)
-    {
-        switch (index)
-        {
-            case 0:
-                bgUIBackground.sprite = bgUISprites[0];
-                break;
+    //public void changeUI(int index)
+    //{
+    //    switch (index)
+    //    {
+    //        case 0:
+    //            bgUIBackground.sprite = bgUISprites[0];
+    //            break;
 
-            case 1:
-                bgUIBackground.sprite = bgUISprites[1];
-                break;
+    //        case 1:
+    //            bgUIBackground.sprite = bgUISprites[1];
+    //            break;
 
-            case 2:
-                bgUIBackground.sprite = bgUISprites[2];
-                break;
+    //        case 2:
+    //            bgUIBackground.sprite = bgUISprites[2];
+    //            break;
 
-            case 3:
-                bgUIBackground.sprite = bgUISprites[3];
-                break;
+    //        case 3:
+    //            bgUIBackground.sprite = bgUISprites[3];
+    //            break;
 
-            case 4:
-                bgUIBackground.sprite = bgUISprites[4];
-                break;
-        }
-    }
+    //        case 4:
+    //            bgUIBackground.sprite = bgUISprites[4];
+    //            break;
+    //    }
+    //}
 
     public void ChangeBGAnim(int index)
     {

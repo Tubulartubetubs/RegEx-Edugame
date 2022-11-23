@@ -40,6 +40,8 @@ public class RegEx : MonoBehaviour
     //Numerical value of next scene in build
     public int nextScene;
 
+    public List<string> acceptedStrings;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -149,7 +151,9 @@ public class RegEx : MonoBehaviour
         int matchString = matches.Count;
         acceptedNum.text = matchString.ToString();
 
-        if(matchString == allAddresses)
+        Debug.Log(wordsToMatch);
+
+        if(matchString == allAddresses && acceptedStrings.Contains(displayString))
         {
             Debug.Log("Switch");
             sceneSwitcher.SwitchScene(nextScene);

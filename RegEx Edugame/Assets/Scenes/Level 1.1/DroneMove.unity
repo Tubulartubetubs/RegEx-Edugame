@@ -1336,9 +1336,10 @@ GameObject:
   - component: {fileID: 270423792}
   - component: {fileID: 270423791}
   - component: {fileID: 270423794}
+  - component: {fileID: 270423795}
   m_Layer: 0
   m_Name: EventSystem
-  m_TagString: Untagged
+  m_TagString: EventSystem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1414,6 +1415,19 @@ MonoBehaviour:
   house3Detail: {fileID: 1501352197}
   droneSelected: {fileID: 550983229}
   chipsSelected: {fileID: 1191335652}
+--- !u!114 &270423795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270423790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e795826b63b0dd42bde282e1e8a6097, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scenePaths: []
 --- !u!1 &310568478
 GameObject:
   m_ObjectHideFlags: 0
@@ -7340,6 +7354,8 @@ MonoBehaviour:
   crateNumber: 000000000100000002000000
   chipsToBeCollected: 0
   chipsDone: {fileID: 1450166681}
+  scenePass: {fileID: 0}
+  nextScene: 6
 --- !u!212 &1069223026
 SpriteRenderer:
   m_ObjectHideFlags: 0

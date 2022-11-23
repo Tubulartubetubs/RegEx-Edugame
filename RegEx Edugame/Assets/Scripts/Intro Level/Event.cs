@@ -8,6 +8,6 @@ public class Event : MonoBehaviour
 {
     public void NextScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
+        SceneManager.LoadScene(2);
     }
 }
