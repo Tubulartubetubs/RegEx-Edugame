@@ -28,6 +28,8 @@ public class UICrate : MonoBehaviour
     private int dropped = 0;
     public int toBeDropped;
 
+    public AudioSource droppedCrate;
+
     private void Awake()
     {
         itemSlotContainer = transform.Find("itemSlotContainer");
@@ -140,6 +142,7 @@ public class UICrate : MonoBehaviour
                     CrateWorld.DropItem(player.GetPosition(), item);
                     crate1detail.SetActive(false);
                     done1.SetActive(true);
+                    droppedCrate.Play();
                     dropped++;
                 }
                 else if (bound[1].bounds.Contains(player.transform.position) && item.number == 1)
@@ -148,6 +151,7 @@ public class UICrate : MonoBehaviour
                     CrateWorld.DropItem(player.GetPosition(), item);
                     crate2detail.SetActive(false);
                     done2.SetActive(true);
+                    droppedCrate.Play();
                     dropped++;
                 }
                 else if(bound[2].bounds.Contains(player.transform.position) && item.number == 2)
@@ -156,6 +160,7 @@ public class UICrate : MonoBehaviour
                     CrateWorld.DropItem(player.GetPosition(), item);
                     crate3detail.SetActive(false);
                     done3.SetActive(true);
+                    droppedCrate.Play();
                     dropped++;
                 }
                 else

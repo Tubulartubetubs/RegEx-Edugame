@@ -35,8 +35,8 @@ public class DialogueController : MonoBehaviour
 
     public AudioClip chatting;
     public AudioClip next;
-    AudioSource audioSource;
-    AudioSource audioSource2;
+    AudioSource ChattingSound;
+    AudioSource SwippingSound;
 
     // Start is called before the first frame update
     void Start()
@@ -49,14 +49,14 @@ public class DialogueController : MonoBehaviour
         //bgUIBackground = GameObject.FindGameObjectWithTag("UIBackground").GetComponent<SpriteRenderer>();
         //bgUIAnim = GameObject.FindGameObjectWithTag("UIBackground").GetComponent<Animator>();
 
-        audioSource = this.gameObject.AddComponent<AudioSource>();
-        audioSource.clip = chatting;
-        audioSource.loop = true;
-        audioSource.volume = 0.20f;
+        ChattingSound = this.gameObject.AddComponent<AudioSource>();
+        ChattingSound.clip = chatting;
+        ChattingSound.loop = true;
+        ChattingSound.volume = 0.20f;
 
-        audioSource2 = this.gameObject.AddComponent<AudioSource>();
-        audioSource2.clip = next;
-        audioSource2.volume = 0.10f;
+        SwippingSound = this.gameObject.AddComponent<AudioSource>();
+        SwippingSound.clip = next;
+        SwippingSound.volume = 0.10f;
     }
 
     // Update is called once per frame
@@ -73,7 +73,7 @@ public class DialogueController : MonoBehaviour
             }
             else
             {
-                audioSource2.Play();
+                SwippingSound.Play();
                 NextSentence();
             }
         }
@@ -101,14 +101,14 @@ public class DialogueController : MonoBehaviour
         {
             yield return new WaitForSeconds(0.3f);
             bgRenderer.sprite = bgSprites[1];
-            audioSource.Play();
+            ChattingSound.Play();
             foreach (char character in contentSentences[index].ToCharArray())
             {
                 dialogueTxt.text += character;
 
                 yield return new WaitForSeconds(dialogueSpeed);
             }
-            audioSource.Stop();
+            ChattingSound.Stop();
             dialogueAnim.SetTrigger("Exit");
             yield return new WaitForSeconds(2f);
             ChangeBGAnim(2);
@@ -118,13 +118,13 @@ public class DialogueController : MonoBehaviour
         else if (index == 3)
         {
             yield return new WaitForSeconds(0.3f);
-            audioSource.Play();
+            ChattingSound.Play();
             foreach (char character in contentSentences[index].ToCharArray())
             {
                 dialogueTxt.text += character;
                 yield return new WaitForSeconds(dialogueSpeed);
             }
-            audioSource.Stop();
+            ChattingSound.Stop();
             dialogueAnim.SetTrigger("Exit");
             yield return new WaitForSeconds(2f);
             ChangeBGAnim(3);
@@ -134,13 +134,13 @@ public class DialogueController : MonoBehaviour
         else
         {
             yield return new WaitForSeconds(0.3f);
-            audioSource.Play();
+            ChattingSound.Play();
             foreach (char character in contentSentences[index].ToCharArray())
             {
                 dialogueTxt.text += character;
                 yield return new WaitForSeconds(dialogueSpeed);
             }
-            audioSource.Stop();
+            ChattingSound.Stop();
         }
         index++;
         clickable = true;

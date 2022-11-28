@@ -37,6 +37,8 @@ public class MovingObject : MonoBehaviour
 
     public int nextScene;
 
+    public AudioSource collectedChip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -80,6 +82,7 @@ public class MovingObject : MonoBehaviour
             inventory.AddItem(itemWorld.GetItem());
             chipsCollected++;
             itemWorld.DestroySelf();
+            collectedChip.Play();
         }
     }
 

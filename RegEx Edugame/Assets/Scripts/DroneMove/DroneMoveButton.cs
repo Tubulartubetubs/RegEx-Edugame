@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//clicking UIs
 public class DroneMoveButton : MonoBehaviour
 {
     //public GameObject droneWire;
@@ -20,6 +21,8 @@ public class DroneMoveButton : MonoBehaviour
     public GameObject droneSelected;
     public GameObject chipsSelected;
 
+    public AudioSource clickingUI;
+
     public void showChipsBag()
     {
         if (chipsBag.activeSelf == true) {
@@ -27,6 +30,7 @@ public class DroneMoveButton : MonoBehaviour
             chipsBagBG.SetActive(false);
             chipsSelected.SetActive(false);
             droneSelected.SetActive(true);
+            clickingUI.Play();
         }
 
         else if (chipsBag.activeSelf == false)
@@ -42,6 +46,7 @@ public class DroneMoveButton : MonoBehaviour
             house2Detail.SetActive(false);
             house3Detail.SetActive(false);
             droneSelected.SetActive(false);
+            clickingUI.Play();
         }       
     }
 
@@ -52,6 +57,7 @@ public class DroneMoveButton : MonoBehaviour
             crateBag.SetActive(false);
             crateBagBG.SetActive(false);
             droneSelected.SetActive(true);
+            clickingUI.Play();
         }
 
         else if (crateBag.activeSelf == false)
@@ -66,6 +72,7 @@ public class DroneMoveButton : MonoBehaviour
             house2Detail.SetActive(false);
             house3Detail.SetActive(false);
             chipsSelected.SetActive(false);
+            clickingUI.Play();
         }
     }
 
@@ -104,6 +111,7 @@ public class DroneMoveButton : MonoBehaviour
         house3Detail.SetActive(false);
         chipsSelected.SetActive(false);
         droneSelected.SetActive(true);
+        clickingUI.Play();
     }
 
     public void showHouse1()
@@ -112,6 +120,7 @@ public class DroneMoveButton : MonoBehaviour
         {
             house1Detail.SetActive(false);
             droneSelected.SetActive(true);
+            clickingUI.Play();
         }
 
         else if (house1Detail.activeSelf == false)
@@ -127,6 +136,7 @@ public class DroneMoveButton : MonoBehaviour
             chipsBagBG.SetActive(false);
             chipsSelected.SetActive(false);
             droneSelected.SetActive(false);
+            clickingUI.Play();
         }
     }
     public void showHouse2()
@@ -135,6 +145,7 @@ public class DroneMoveButton : MonoBehaviour
         {
             house2Detail.SetActive(false);
             droneSelected.SetActive(true);
+            clickingUI.Play();
         }
 
         else if (house2Detail.activeSelf == false)
@@ -150,6 +161,7 @@ public class DroneMoveButton : MonoBehaviour
             chipsBagBG.SetActive(false);
             chipsSelected.SetActive(false);
             droneSelected.SetActive(false);
+            clickingUI.Play();
         }
     }
 
@@ -159,6 +171,7 @@ public class DroneMoveButton : MonoBehaviour
         {
             house3Detail.SetActive(false);
             droneSelected.SetActive(true);
+            clickingUI.Play();
         }
 
         else if (house3Detail.activeSelf == false)
@@ -174,6 +187,7 @@ public class DroneMoveButton : MonoBehaviour
             chipsBagBG.SetActive(false);
             chipsSelected.SetActive(false);
             droneSelected.SetActive(false);
+            clickingUI.Play();
         }
     }
 }
