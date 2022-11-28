@@ -12,9 +12,22 @@ public class Central : MonoBehaviour
     Arranger workingArranger;
     int oriIndex;
 
+    public AudioClip dragClip;
+    public AudioClip dropClip;
+    AudioSource drag;
+    AudioSource drop;
+    public GameObject invisible;
+
     // Start is called before the first frame update
     void Start()
     {
+        drag = this.gameObject.AddComponent<AudioSource>();
+        drag.clip = dragClip;
+        drag.volume = 0.20f;
+        drop = this.gameObject.AddComponent<AudioSource>();
+        drop.clip = dropClip;
+        drop.volume = 0.20f;
+
         arrangers = new List<Arranger>();
 
         var arrs = transform.GetComponentsInChildren<Arranger>();
@@ -60,20 +73,21 @@ public class Central : MonoBehaviour
 
     void BeginDrag(Transform chip)
     {
+
         //Debug.Log("BeginDrag: " + chip.name);
         workingArranger = arrangers.Find(t => ContainPos(t.transform as RectTransform, chip.position));
         oriIndex = chip.GetSiblingIndex();
 
         SwapChipsInHierarchy(invisibleChip, chip);
+        drag.Play();
     }
 
     void Drag(Transform chip)
     {
         //Debug.Log("Drag: " + chip.name);
-
         var whichArrangerChip = arrangers.Find(t => ContainPos(t.transform as RectTransform, chip.position));
-
-        if(whichArrangerChip == null)
+        invisible.SetActive(true);
+        if (whichArrangerChip == null)
         {
             bool updateChildren = transform != invisibleChip.parent;
 
@@ -112,8 +126,9 @@ public class Central : MonoBehaviour
     void EndDrag(Transform chip)
     {
         //Debug.Log("EndDrag: " + chip.name);
-
-        if(invisibleChip.parent == transform)
+        drop.Play();
+        invisible.SetActive(false);
+        if (invisibleChip.parent == transform)
         {
             workingArranger.InsertChip(chip, oriIndex);
             chip.SetParent(workingArranger.transform);

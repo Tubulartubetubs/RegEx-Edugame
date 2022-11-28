@@ -1331,6 +1331,8 @@ MonoBehaviour:
   chips: {fileID: 389322847}
   addressbook: {fileID: 1230864322}
   cheatsheet: {fileID: 859408992}
+  clickClip: {fileID: 8300000, guid: 6a418907e5961f04799824264e23f68a, type: 3}
+  closeClip: {fileID: 8300000, guid: e1fc0aa493f6d434eb14a2983c28a93a, type: 3}
 --- !u!114 &206199140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4815,6 +4817,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invisibleChip: {fileID: 1670112907}
+  dragClip: {fileID: 8300000, guid: e194274f6a02bf743938063977d5405a, type: 3}
+  dropClip: {fileID: 8300000, guid: 34dcaa5d5eb5f9648ae350f5151a5e52, type: 3}
+  invisible: {fileID: 1670112906}
 --- !u!1 &594912619
 GameObject:
   m_ObjectHideFlags: 0
@@ -7126,6 +7131,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102fa97c21979474b9dd7cb9067d38c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distance: 0
+  percent: 0
+  scale: 0
 --- !u!114 &972952383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8530,11 +8538,11 @@ MonoBehaviour:
     m_Bottom: 0
   m_ChildAlignment: 4
   m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
+  m_ChildScaleWidth: 1
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
 --- !u!114 &1109754668
@@ -8627,6 +8635,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102fa97c21979474b9dd7cb9067d38c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distance: 0
+  percent: 0
+  scale: 0
 --- !u!114 &1123918831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9466,6 +9477,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102fa97c21979474b9dd7cb9067d38c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distance: 0
+  percent: 0
+  scale: 0
 --- !u!114 &1200195784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9556,6 +9570,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102fa97c21979474b9dd7cb9067d38c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distance: 0
+  percent: 0
+  scale: 0
 --- !u!114 &1200727135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10267,6 +10284,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102fa97c21979474b9dd7cb9067d38c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distance: 0
+  percent: 0
+  scale: 0
 --- !u!114 &1310193453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13618,7 +13638,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1670112907
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13651,6 +13671,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102fa97c21979474b9dd7cb9067d38c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distance: 0
+  percent: 0
+  scale: 0
 --- !u!114 &1670112909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15703,7 +15726,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 206199139}
         m_TargetAssemblyTypeName: ButtonEvent, Assembly-CSharp
-        m_MethodName: prevButton
+        m_MethodName: prevButtonCrate1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

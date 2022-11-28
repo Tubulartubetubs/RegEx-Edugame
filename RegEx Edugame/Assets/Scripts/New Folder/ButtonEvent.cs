@@ -27,45 +27,61 @@ public class ButtonEvent : MonoBehaviour
     public GameObject addressbook;
     public GameObject cheatsheet;
 
+    public AudioClip clickClip;
+    AudioSource clickSound;
+    public AudioClip closeClip;
+    AudioSource closeSound;
+
+    public void Start()
+    {
+        clickSound = this.gameObject.AddComponent<AudioSource>();
+        clickSound.clip = clickClip;
+        clickSound.volume = 0.10f;
+
+        closeSound = this.gameObject.AddComponent<AudioSource>();
+        closeSound.clip = closeClip;
+        closeSound.volume = 0.20f;
+    }
+
     public void showDetailsCrate1()
     {
         details1.SetActive(true);
-
+        clickSound.Play();
         address1.SetActive(false);
     }
 
     public void showAddressCrate1()
     {
         address1.SetActive(true);
-
+        clickSound.Play();
         details1.SetActive(false);
     }
 
     public void showDetailsCrate2()
     {
         details2.SetActive(true);
-
+        clickSound.Play();
         address2.SetActive(false);
     }
 
     public void showAddressCrate2()
     {
         address2.SetActive(true);
-
+        clickSound.Play();
         details2.SetActive(false);
     }
 
     public void showDetailsCrate3()
     {
         details3.SetActive(true);
-
+        clickSound.Play();
         address3.SetActive(false);
     }
 
     public void showAddressCrate3()
     {
         address3.SetActive(true);
-
+        clickSound.Play();
         details3.SetActive(false);
     }
 
@@ -75,11 +91,12 @@ public class ButtonEvent : MonoBehaviour
         crate2.SetActive(true);
         details2.SetActive(true);
         address2.SetActive(false);
+        clickSound.Play();
     }
 
     public void prevButtonCrate1()
     {
-
+        closeSound.Play();
     }
 
     public void nextButtonCrate2()
@@ -88,6 +105,7 @@ public class ButtonEvent : MonoBehaviour
         crate3.SetActive(true);
         details3.SetActive(true);
         address3.SetActive(false);
+        clickSound.Play();
     }
 
     public void prevButtonCrate2()
@@ -96,11 +114,12 @@ public class ButtonEvent : MonoBehaviour
         crate1.SetActive(true);
         details1.SetActive(true);
         address1.SetActive(false);
+        clickSound.Play();
     }
 
     public void nextButtonCrate3()
     {
-        
+        closeSound.Play();
     }
 
     public void prevButtonCrate3()
@@ -109,21 +128,25 @@ public class ButtonEvent : MonoBehaviour
         crate2.SetActive(true);
         details2.SetActive(true);
         address2.SetActive(false);
+        clickSound.Play();
     }
 
     public void chipCollection()
     {
         chips.SetActive(true);
+        clickSound.Play();
     }
 
     public void addressBook()
     {
         addressbook.SetActive(true);
+        clickSound.Play();
     }
 
     public void cheatSheat()
     {
         cheatsheet.SetActive(true);
+        clickSound.Play();
     }
 
     public void close()
@@ -131,5 +154,6 @@ public class ButtonEvent : MonoBehaviour
         chips.SetActive(false);
         addressbook.SetActive(false);
         cheatsheet.SetActive(false);
+        closeSound.Play();
     }
 }
