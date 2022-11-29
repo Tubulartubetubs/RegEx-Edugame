@@ -17,6 +17,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     float foregroundPointY;
     private Vector3 minScale;
     private Vector3 maxScale;
+    private RegEx regex;
     
 
     // Start is called before the first frame update
@@ -30,6 +31,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         foregroundPointY = inserted.transform.position.y; ;
         distance = Mathf.Abs(foregroundPointY - horizonPointY);
         Debug.Log("H point: " + horizonPointY + " F point: " + foregroundPointY);
+        regex = GameObject.Find("DisplayText").GetComponent<RegEx>();
     }
 
     // Update is called once per frame
@@ -61,5 +63,6 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public void OnEndDrag(PointerEventData eventData)
     {
         root.BroadcastMessage("EndDrag", transform, SendMessageOptions.DontRequireReceiver);
+        regex.UpdateDisplay();
     }
 }

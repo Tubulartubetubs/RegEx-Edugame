@@ -61,19 +61,27 @@ public class RegEx : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        UpdateChips();
     }
 
     void UpdateChips()
     {
-        foreach (Transform child in insertedChips.transform)
+        if (insertedChips.transform.childCount > 0)
         {
-            if (child.gameObject.name != "Invisible Chip" && !chips.Contains(child.gameObject))
+            foreach (Transform child in insertedChips.transform)
             {
-                chips.Add(child.gameObject);
-                chipTexts.Add(child.gameObject.transform.Find("Text").GetComponent<TextMeshProUGUI>());
-                StringBuilder(chipTexts[chipTexts.Count - 1]);
+                if (child.gameObject.name != "Invisible Chip" && !chips.Contains(child.gameObject))
+                {
+                    chips.Add(child.gameObject);
+                    chipTexts.Add(child.gameObject.transform.Find("Text").GetComponent<TextMeshProUGUI>());
+                    StringBuilder(chipTexts[chipTexts.Count - 1]);
+                }
             }
+        }
+        else
+        {
+            ResetString();
+            DisplayText();
         }
 
         BuildRegex();
@@ -82,6 +90,7 @@ public class RegEx : MonoBehaviour
     void StringBuilder(TextMeshProUGUI textMesh)
     {
         displayString += textMesh.text;
+        Debug.Log(displayString);
 
         DisplayText();
     }
