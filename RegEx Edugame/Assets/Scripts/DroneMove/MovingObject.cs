@@ -21,6 +21,10 @@ public class MovingObject : MonoBehaviour
     [SerializeField] private UICrate uiCrate;
     private Crate crate;
 
+    [SerializeField] private UIInventory uiChip;
+    public Item.ItemType[] chipInventorySpriteType;
+    public string[] chipInventoryText;
+
     public Vector3[] vectors;
     public Item.ItemType[] chipSpriteType;
     public string[] chipText;
@@ -66,6 +70,11 @@ public class MovingObject : MonoBehaviour
         for (int i = 0; i < crateSpriteType.Length; i++)
         {
             crate.AddItem(new Item { itemType = crateSpriteType[i], number = crateNumber[i] });
+        }
+
+        for (int i = 0; i < chipInventorySpriteType.Length; i++)
+        {
+            inventory.AddItem(new Item { itemType = chipInventorySpriteType[i], text = chipInventoryText[i] });
         }
 
         chipsToBeCollected = chipSpriteType.Length;
