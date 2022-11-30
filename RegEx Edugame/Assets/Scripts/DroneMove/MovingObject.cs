@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MovingObject : MonoBehaviour
 {
@@ -21,11 +22,10 @@ public class MovingObject : MonoBehaviour
     [SerializeField] private UICrate uiCrate;
     private Crate crate;
 
-    [SerializeField] private UIInventory uiChip;
     public Item.ItemType[] chipInventorySpriteType;
     public string[] chipInventoryText;
 
-    public Vector3[] vectors;
+    public Vector3[] chipVectors;
     public Item.ItemType[] chipSpriteType;
     public string[] chipText;
 
@@ -42,6 +42,8 @@ public class MovingObject : MonoBehaviour
     public int nextScene;
 
     public AudioSource collectedChip;
+    //[SerializeField] ContentSizeFitter csf;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -64,9 +66,10 @@ public class MovingObject : MonoBehaviour
 
         for(int i = 0; i< chipSpriteType.Length; i++)
         {
-            ItemWorld.SpawnItemWorld(vectors[i], new Item { itemType = chipSpriteType[i], text = chipText[i] });
+            ItemWorld.SpawnItemWorld(chipVectors[i], new Item { itemType = chipSpriteType[i], text = chipText[i] });
+            //LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)csf.transform);
         }
-
+        
         for (int i = 0; i < crateSpriteType.Length; i++)
         {
             crate.AddItem(new Item { itemType = crateSpriteType[i], number = crateNumber[i] });
@@ -98,6 +101,7 @@ public class MovingObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         moveX = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         moveY = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
@@ -116,9 +120,9 @@ public class MovingObject : MonoBehaviour
             chipsDone.SetActive(true);
             if (uiCrate.DoneCrate())
             {
-                //Debug.Log("Cleared!");
+                Debug.Log("Cleared!");
                 //Cleared
-                scenePass.SwitchScene(nextScene);
+                //scenePass.SwitchScene(nextScene);
             }
         }
     }

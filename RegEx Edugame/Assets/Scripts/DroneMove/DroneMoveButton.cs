@@ -17,6 +17,7 @@ public class DroneMoveButton : MonoBehaviour
     public GameObject house1Detail;
     public GameObject house2Detail;
     public GameObject house3Detail;
+    public GameObject house4Detail;
 
     public GameObject droneSelected;
     public GameObject chipsSelected;
@@ -45,6 +46,7 @@ public class DroneMoveButton : MonoBehaviour
             house1Detail.SetActive(false);
             house2Detail.SetActive(false);
             house3Detail.SetActive(false);
+            house4Detail.SetActive(false);
             droneSelected.SetActive(false);
             clickingUI.Play();
         }       
@@ -71,6 +73,7 @@ public class DroneMoveButton : MonoBehaviour
             house1Detail.SetActive(false);
             house2Detail.SetActive(false);
             house3Detail.SetActive(false);
+            house4Detail.SetActive(false);
             chipsSelected.SetActive(false);
             clickingUI.Play();
         }
@@ -109,6 +112,7 @@ public class DroneMoveButton : MonoBehaviour
         house1Detail.SetActive(false);
         house2Detail.SetActive(false);
         house3Detail.SetActive(false);
+        house4Detail.SetActive(false);
         chipsSelected.SetActive(false);
         droneSelected.SetActive(true);
         clickingUI.Play();
@@ -128,6 +132,7 @@ public class DroneMoveButton : MonoBehaviour
             house1Detail.SetActive(true);
             house2Detail.SetActive(false);
             house3Detail.SetActive(false);
+            house4Detail.SetActive(false);
             //droneWire.SetActive(false);
             //wireBG.SetActive(false);
             crateBag.SetActive(false);
@@ -153,6 +158,7 @@ public class DroneMoveButton : MonoBehaviour
             house2Detail.SetActive(true);
             house1Detail.SetActive(false);
             house3Detail.SetActive(false);
+            house4Detail.SetActive(false);
             //droneWire.SetActive(false);
             //wireBG.SetActive(false);
             crateBag.SetActive(false);
@@ -179,6 +185,34 @@ public class DroneMoveButton : MonoBehaviour
             house3Detail.SetActive(true);
             house1Detail.SetActive(false);
             house2Detail.SetActive(false);
+            house4Detail.SetActive(false);
+            //droneWire.SetActive(false);
+            //wireBG.SetActive(false);
+            crateBag.SetActive(false);
+            crateBagBG.SetActive(false);
+            chipsBag.SetActive(false);
+            chipsBagBG.SetActive(false);
+            chipsSelected.SetActive(false);
+            droneSelected.SetActive(false);
+            clickingUI.Play();
+        }
+    }
+
+    public void showHouse4()
+    {
+        if (house4Detail.activeSelf == true)
+        {
+            house4Detail.SetActive(false);
+            droneSelected.SetActive(true);
+            clickingUI.Play();
+        }
+
+        else if (house4Detail.activeSelf == false)
+        {
+            house4Detail.SetActive(true);
+            house1Detail.SetActive(false);
+            house2Detail.SetActive(false);
+            house3Detail.SetActive(false);
             //droneWire.SetActive(false);
             //wireBG.SetActive(false);
             crateBag.SetActive(false);

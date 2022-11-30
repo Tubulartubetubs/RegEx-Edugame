@@ -7,12 +7,17 @@ using TMPro;
 public class UIInventory : MonoBehaviour
 {
     private Inventory inventory;
+    private Transform viewPort;
+    private Transform content;
     private Transform itemSlotContainer;
     private Transform itemSlotTemplate;
+    
 
     private void Awake()
     {
-        itemSlotContainer = transform.Find("itemSlotContainer");
+        viewPort = transform.Find("Viewport");
+        content = viewPort.Find("Content");
+        itemSlotContainer = viewPort.Find("itemSlotContainer");
         itemSlotTemplate = itemSlotContainer.Find("itemSlotTemplate");
     }
     public void SetInventory(Inventory inventory)
@@ -44,7 +49,7 @@ public class UIInventory : MonoBehaviour
 
         int x = 0;
         int y = 0;
-        float itemSlotCellSize = 230f;
+        float itemSlotCellSize = 220f;
 
         foreach (Item item in inventory.GetItemList())
         {
@@ -63,5 +68,6 @@ public class UIInventory : MonoBehaviour
                 y--;
             }
         }
+        
     }
 }

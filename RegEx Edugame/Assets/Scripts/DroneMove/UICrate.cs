@@ -25,6 +25,11 @@ public class UICrate : MonoBehaviour
     public GameObject crate3detail;
     public GameObject crate4detail;
 
+    private bool doneBool1 = false;
+    private bool doneBool2 = false;
+    private bool doneBool3 = false;
+    private bool doneBool4 = false;
+
     public GameObject done1;
     public GameObject done2;
     public GameObject done3;
@@ -37,6 +42,7 @@ public class UICrate : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log(toBeDropped);
         viewPort = transform.Find("Viewport");
         content = viewPort.Find("Content");
         itemSlotContainer = content.Find("itemSlotContainer");
@@ -45,33 +51,54 @@ public class UICrate : MonoBehaviour
 
     private void Update()
     {
-            if (bound[0] != null && bound[0].bounds.Contains(player.transform.position))
-            {
-                building1detail.SetActive(true);
-            }
-            else
-                building1detail.SetActive(false);
+        if (doneBool1 == false && bound[0] != null && bound[0].bounds.Contains(player.transform.position))
+        {
+            building1detail.SetActive(true);
+        }
+        else
+            building1detail.SetActive(false);
 
-            if (bound[1] != null && bound[1].bounds.Contains(player.transform.position))
-            {
-                building2detail.SetActive(true);
-            }
-            else
-                building2detail.SetActive(false);
+        if (doneBool2 == false && bound[1] != null && bound[1].bounds.Contains(player.transform.position))
+        {
+            building2detail.SetActive(true);
+        }
+        else
+            building2detail.SetActive(false);
 
-            if (bound[2] != null && bound[2].bounds.Contains(player.transform.position))
-            {
-                building3detail.SetActive(true);
-            }
-            else
-                building3detail.SetActive(false);
+        if (doneBool3 == false && bound[2] != null && bound[2].bounds.Contains(player.transform.position))
+        {
+            building3detail.SetActive(true);
+        }
+        else
+            building3detail.SetActive(false);
 
-            if (bound[3] != null && bound[3].bounds.Contains(player.transform.position))
-            {
-                building4detail.SetActive(true);
-            }
-            else
-                building4detail.SetActive(false);
+        if (doneBool4 == false && bound[3] != null && bound[3].bounds.Contains(player.transform.position))
+        {
+            building4detail.SetActive(true);
+        }
+        else
+            building4detail.SetActive(false);
+
+/*        if(dropped == 1)
+        {
+            //hide complete0
+            //show complete1
+        }
+        else if(dropped == 2)
+        {
+            //hide complete1
+            //show complete2
+        }
+        else if(dropped == 3)
+        {
+            //hide complete2
+            //show complete3
+        }
+        else if(dropped == 4)
+        {
+            //hide complete3
+            //show complete4
+        }*/
     }
 
     public void SetPlayer(MovingObject player)
@@ -163,6 +190,7 @@ public class UICrate : MonoBehaviour
                     done1.SetActive(true);
                     droppedCrate.Play();
                     dropped++;
+                    doneBool1 = true;
                 }
                 else if (bound[1].bounds.Contains(player.transform.position) && item.number == 1)
                 {
@@ -172,6 +200,7 @@ public class UICrate : MonoBehaviour
                     done2.SetActive(true);
                     droppedCrate.Play();
                     dropped++;
+                    doneBool2 = true;
                 }
                 else if(bound[2].bounds.Contains(player.transform.position) && item.number == 2)
                 {
@@ -181,6 +210,7 @@ public class UICrate : MonoBehaviour
                     done3.SetActive(true);
                     droppedCrate.Play();
                     dropped++;
+                    doneBool3 = true;
                 }
                 else if (bound[3].bounds.Contains(player.transform.position) && item.number == 3)
                 {
@@ -190,6 +220,7 @@ public class UICrate : MonoBehaviour
                     done4.SetActive(true);
                     droppedCrate.Play();
                     dropped++;
+                    doneBool4 = true;
                 }
                 else
                 {
