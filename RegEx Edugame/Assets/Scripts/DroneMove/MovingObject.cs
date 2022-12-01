@@ -37,13 +37,11 @@ public class MovingObject : MonoBehaviour
 
     public GameObject chipsDone;
 
-    public SwitchScenes scenePass;
-
-    public int nextScene;
-
     public AudioSource collectedChip;
+
+    public GameObject clearScreen;
     //[SerializeField] ContentSizeFitter csf;
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -120,9 +118,7 @@ public class MovingObject : MonoBehaviour
             chipsDone.SetActive(true);
             if (uiCrate.DoneCrate())
             {
-                Debug.Log("Cleared!");
-                //Cleared
-                //scenePass.SwitchScene(nextScene);
+                clearScreen.SetActive(true);
             }
         }
     }
