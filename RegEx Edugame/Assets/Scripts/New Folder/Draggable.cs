@@ -37,7 +37,10 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     // Update is called once per frame
     void Update()
     {
-        
+        if(RectTransformUtility.RectangleContainsScreenPoint(gameObject.GetComponent<RectTransform>(), Input.mousePosition) && Input.GetMouseButtonDown(1))
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)
