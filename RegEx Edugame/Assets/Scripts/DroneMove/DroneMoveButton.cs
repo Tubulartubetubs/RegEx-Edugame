@@ -26,8 +26,6 @@ public class DroneMoveButton : MonoBehaviour
 
     public SwitchScenes scenePass;
 
-    public int nextScene;
-
     public void showChipsBag()
     {
         if (chipsBag.activeSelf == true) {
@@ -193,9 +191,9 @@ public class DroneMoveButton : MonoBehaviour
         }
     }
 
-    public void targetScene()
+    public void targetScene(int nextScene)
     {
-        scenePass.SwitchScene(nextScene);
+        scenePass.SwitchScene(nextScene); //move to nextscene
     }
 
     public void mapScene()
