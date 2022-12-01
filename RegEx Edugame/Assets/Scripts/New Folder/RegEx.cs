@@ -90,7 +90,7 @@ public class RegEx : MonoBehaviour
     void StringBuilder(TextMeshProUGUI textMesh)
     {
         displayString += textMesh.text;
-        Debug.Log(displayString);
+        //Debug.Log(displayString);
 
         DisplayText();
     }
@@ -98,7 +98,7 @@ public class RegEx : MonoBehaviour
     void BuildRegex()
     {
         Regex rg = new Regex(displayString);
-        Debug.Log("Display String: " + displayString);
+        //Debug.Log("Display String: " + displayString);
         CheckMatches(rg);
     }
 
@@ -160,7 +160,7 @@ public class RegEx : MonoBehaviour
         int matchString = matches.Count;
         acceptedNum.text = matchString.ToString();
 
-        Debug.Log(wordsToMatch);
+        //Debug.Log(wordsToMatch);
 
         if(matchString == allAddresses && acceptedStrings.Contains(displayString))
         {
