@@ -16,6 +16,9 @@ public class RegEx : MonoBehaviour
     public List<GameObject> highlightWords;
     public List<GameObject> highlightAddresses;
 
+    //Words to skip
+    public List<GameObject> skipAddresses;
+    
     //public List<Image> pics;
 
     public List<GameObject> addresses;
@@ -32,6 +35,8 @@ public class RegEx : MonoBehaviour
 
     //turns match collection into list
     List<string> matchStrings;
+
+    bool goNext;
 
     private string displayString;
     Color32 redColor = new Color32(219,53,74,141);
@@ -160,11 +165,24 @@ public class RegEx : MonoBehaviour
         int matchString = matches.Count;
         acceptedNum.text = matchString.ToString();
 
-        //Debug.Log(wordsToMatch);
-
         if(matchString == allAddresses && acceptedStrings.Contains(displayString))
         {
-            Debug.Log("Switch");
+            goNext = true;
+        }
+
+        foreach(GameObject obj in skipAddresses)
+        {
+            if (obj.GetComponent<TextMeshProUGUI>().color == Color.yellow)
+            {
+                goNext = false;
+            }
+        }
+
+        //Debug.Log(wordsToMatch);
+
+        if(goNext)
+        {
+            //Debug.Log("Switch");
             sceneSwitcher.SwitchScene(nextScene);
         }
     }

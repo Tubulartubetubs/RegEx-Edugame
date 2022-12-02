@@ -34,6 +34,12 @@ public class ButtonEvent : MonoBehaviour
     public AudioClip closeClip;
     AudioSource closeSound;
 
+    public List<GameObject> details;
+    public List<GameObject> addresses;
+    public List<GameObject> crates;
+
+    int iterator = 0;
+
     public void Start()
     {
         clickSound = this.gameObject.AddComponent<AudioSource>();
@@ -85,6 +91,38 @@ public class ButtonEvent : MonoBehaviour
         address3.SetActive(true);
         clickSound.Play();
         details3.SetActive(false);
+    }
+
+    public void InformationNextButton()
+    {
+        if (iterator < details.Count)
+        {
+            details[iterator].SetActive(false);
+            addresses[iterator].SetActive(false);
+            crates[iterator].SetActive(false);
+
+            details[iterator + 1].SetActive(true);
+            crates[iterator + 1].SetActive(true);
+            
+            iterator++;
+        }
+        clickSound.Play();
+    }
+
+    public void InformationPrevButton()
+    {
+        if (iterator >0)
+        {
+            details[iterator].SetActive(false);
+            addresses[iterator].SetActive(false);
+            crates[iterator].SetActive(false);
+
+            details[iterator - 1].SetActive(true);
+            crates[iterator - 1].SetActive(true);
+            
+            iterator--;
+        }
+        clickSound.Play();
     }
 
     public void nextButtonCrate1()
