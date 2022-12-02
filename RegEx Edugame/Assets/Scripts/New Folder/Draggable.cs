@@ -53,8 +53,8 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         transform.position = eventData.position;
         root.BroadcastMessage("Drag", transform, SendMessageOptions.DontRequireReceiver);
         oldY = currentY;
-        Debug.Log(oldY);
         currentY = this.transform.position.y;
+        Debug.Log(currentY);
         percent = this.transform.position.y / distance;
         if (currentY != oldY)
         {

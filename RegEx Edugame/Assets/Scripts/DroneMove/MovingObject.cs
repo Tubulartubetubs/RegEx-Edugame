@@ -37,7 +37,10 @@ public class MovingObject : MonoBehaviour
 
     public GameObject chipsDone;
 
-    public AudioSource collectedChip;
+    public AudioClip collectedsound;
+    public AudioClip dronesound;
+    AudioSource collectedSound;
+    public AudioSource droneSound;
 
     public GameObject clearScreen;
     //[SerializeField] ContentSizeFitter csf;
@@ -46,6 +49,16 @@ public class MovingObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        collectedSound = this.gameObject.AddComponent<AudioSource>();
+        collectedSound.clip = collectedsound;
+        collectedSound.volume = 0.20f;
+
+        droneSound = this.gameObject.AddComponent<AudioSource>();
+        droneSound.clip = dronesound;
+        droneSound.volume = 0.2f;
+        droneSound.loop = true;
+        droneSound.Play();
+
         //scenePass = GameObject.FindGameObjectWithTag("EventSystem").GetComponent<SwitchScenes>();
         anim = GetComponent<Animator>();
 
@@ -92,7 +105,7 @@ public class MovingObject : MonoBehaviour
             inventory.AddItem(itemWorld.GetItem());
             chipsCollected++;
             itemWorld.DestroySelf();
-            collectedChip.Play();
+            collectedSound.Play();
         }
     }
 
@@ -127,5 +140,15 @@ public class MovingObject : MonoBehaviour
     {
         //Debug.Log(transform.position);
         return transform.position;
+    }
+
+    public void DroneSoundDown()
+    {
+        droneSound.volume = 0.075f;
+    }
+
+    public void DroneSoundUp()
+    {
+        droneSound.volume = 0.1f;
     }
 }

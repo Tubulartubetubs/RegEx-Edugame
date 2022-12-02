@@ -21,19 +21,31 @@ public class DroneMoveButton : MonoBehaviour
 
     public AudioSource clickingUI;
 
-    public GameObject mapButton;
-    public GameObject nextButton;
-
     public SwitchScenes scenePass;
+
+    public MovingObject player;
+
+
+    public void showDroneMove()
+    {
+        crateBag.SetActive(false);
+        crateBagBG.SetActive(false);
+        chipsBag.SetActive(false);
+        chipsBagBG.SetActive(false);
+        house1Detail.SetActive(false);
+        house2Detail.SetActive(false);
+        house3Detail.SetActive(false);
+        house4Detail.SetActive(false);
+        chipsSelected.SetActive(false);
+        droneSelected.SetActive(true);
+        clickingUI.Play();
+        player.DroneSoundUp();
+    }
 
     public void showChipsBag()
     {
         if (chipsBag.activeSelf == true) {
-            chipsBag.SetActive(false);
-            chipsBagBG.SetActive(false);
-            chipsSelected.SetActive(false);
-            droneSelected.SetActive(true);
-            clickingUI.Play();
+            showDroneMove();
         }
 
         else if (chipsBag.activeSelf == false)
@@ -49,6 +61,7 @@ public class DroneMoveButton : MonoBehaviour
             house4Detail.SetActive(false);
             droneSelected.SetActive(false);
             clickingUI.Play();
+            player.DroneSoundDown();
         }       
     }
 
@@ -56,10 +69,7 @@ public class DroneMoveButton : MonoBehaviour
     {
         if (crateBag.activeSelf == true)
         {
-            crateBag.SetActive(false);
-            crateBagBG.SetActive(false);
-            droneSelected.SetActive(true);
-            clickingUI.Play();
+            showDroneMove();
         }
 
         else if (crateBag.activeSelf == false)
@@ -74,31 +84,15 @@ public class DroneMoveButton : MonoBehaviour
             house4Detail.SetActive(false);
             chipsSelected.SetActive(false);
             clickingUI.Play();
+            player.DroneSoundUp();
         }
-    }
-
-    public void showDroneMove()
-    {
-        crateBag.SetActive(false);
-        crateBagBG.SetActive(false);
-        chipsBag.SetActive(false);
-        chipsBagBG.SetActive(false);
-        house1Detail.SetActive(false);
-        house2Detail.SetActive(false);
-        house3Detail.SetActive(false);
-        house4Detail.SetActive(false);
-        chipsSelected.SetActive(false);
-        droneSelected.SetActive(true);
-        clickingUI.Play();
     }
 
     public void showHouse1()
     {
         if (house1Detail.activeSelf == true)
         {
-            house1Detail.SetActive(false);
-            droneSelected.SetActive(true);
-            clickingUI.Play();
+            showDroneMove();
         }
 
         else if (house1Detail.activeSelf == false)
@@ -114,15 +108,14 @@ public class DroneMoveButton : MonoBehaviour
             chipsSelected.SetActive(false);
             droneSelected.SetActive(false);
             clickingUI.Play();
+            player.DroneSoundDown();
         }
     }
     public void showHouse2()
     {
         if (house2Detail.activeSelf == true)
         {
-            house2Detail.SetActive(false);
-            droneSelected.SetActive(true);
-            clickingUI.Play();
+            showDroneMove();
         }
 
         else if (house2Detail.activeSelf == false)
@@ -138,6 +131,7 @@ public class DroneMoveButton : MonoBehaviour
             chipsSelected.SetActive(false);
             droneSelected.SetActive(false);
             clickingUI.Play();
+            player.DroneSoundDown();
         }
     }
 
@@ -145,9 +139,7 @@ public class DroneMoveButton : MonoBehaviour
     {
         if (house3Detail.activeSelf == true)
         {
-            house3Detail.SetActive(false);
-            droneSelected.SetActive(true);
-            clickingUI.Play();
+            showDroneMove();
         }
 
         else if (house3Detail.activeSelf == false)
@@ -163,6 +155,7 @@ public class DroneMoveButton : MonoBehaviour
             chipsSelected.SetActive(false);
             droneSelected.SetActive(false);
             clickingUI.Play();
+            player.DroneSoundDown();
         }
     }
 
@@ -170,9 +163,7 @@ public class DroneMoveButton : MonoBehaviour
     {
         if (house4Detail.activeSelf == true)
         {
-            house4Detail.SetActive(false);
-            droneSelected.SetActive(true);
-            clickingUI.Play();
+            showDroneMove();
         }
 
         else if (house4Detail.activeSelf == false)
@@ -188,6 +179,7 @@ public class DroneMoveButton : MonoBehaviour
             chipsSelected.SetActive(false);
             droneSelected.SetActive(false);
             clickingUI.Play();
+            player.DroneSoundDown();
         }
     }
 

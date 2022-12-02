@@ -27,6 +27,8 @@ public class ButtonEvent : MonoBehaviour
     public GameObject addressbook;
     public GameObject cheatsheet;
 
+    public GameObject levelGuideScreen;
+
     public AudioClip clickClip;
     AudioSource clickSound;
     public AudioClip closeClip;
@@ -155,5 +157,11 @@ public class ButtonEvent : MonoBehaviour
         addressbook.SetActive(false);
         cheatsheet.SetActive(false);
         closeSound.Play();
+    }
+
+    public void nextButton()
+    {
+        levelGuideScreen.SetActive(false);
+        clickSound.Play();
     }
 }
