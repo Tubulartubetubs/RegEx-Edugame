@@ -93,6 +93,18 @@ public class ButtonEvent : MonoBehaviour
         details3.SetActive(false);
     }
 
+    public void ShowDetails()
+    {
+        addresses[iterator].SetActive(false);
+        details[iterator].SetActive(true);
+    }
+
+    public void ShowAddress()
+    {
+        details[iterator].SetActive(false);
+        addresses[iterator].SetActive(true);
+    }
+
     public void InformationNextButton()
     {
         if (iterator < details.Count)
