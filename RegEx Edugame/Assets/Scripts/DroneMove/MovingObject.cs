@@ -43,6 +43,8 @@ public class MovingObject : MonoBehaviour
     public AudioSource droneSound;
 
     public GameObject clearScreen;
+
+    //public bool playerMove;
     //[SerializeField] ContentSizeFitter csf;
 
 
@@ -112,9 +114,9 @@ public class MovingObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         moveX = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         moveY = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+        
 
         anim.SetFloat("Speed", moveX);
 
