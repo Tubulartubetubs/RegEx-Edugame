@@ -40,6 +40,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         if(RectTransformUtility.RectangleContainsScreenPoint(gameObject.GetComponent<RectTransform>(), Input.mousePosition) && Input.GetMouseButtonDown(1))
         {
             Destroy(gameObject);
+            regex.UpdateDisplay();
         }
     }
 
