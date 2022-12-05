@@ -7,7 +7,6 @@ public class Item
     public enum ItemType
     {
         alternation,
-        single,
         character,
         combined,
         digits,
@@ -17,6 +16,7 @@ public class Item
         quantifiers,
         ranges,
         startend,
+        wildcard,
         blue,
         green,
         orange,
@@ -39,8 +39,6 @@ public class Item
             default:
             case ItemType.alternation:
                 return ItemAssets.Instance.alternationSprite;
-            case ItemType.single:
-                return ItemAssets.Instance.singleSprite;
             case ItemType.character:
                 return ItemAssets.Instance.characterSprite;
             case ItemType.combined:
@@ -59,6 +57,8 @@ public class Item
                 return ItemAssets.Instance.rangesSprite;
             case ItemType.startend:
                 return ItemAssets.Instance.startendSprite;
+            case ItemType.wildcard:
+                return ItemAssets.Instance.wildSprite;
             case ItemType.blue:
                 return ItemAssets.Instance.blueSprite;
             case ItemType.green:

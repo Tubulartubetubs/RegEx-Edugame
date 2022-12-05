@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class ButtonEvent : MonoBehaviour
 {
-    public GameObject details1;
-    public GameObject address1;
-    public GameObject next1;
-    public GameObject prev1;
+    //public GameObject details1;
+    //public GameObject address1;
+    //public GameObject next1;
+    //public GameObject prev1;
 
-    public GameObject details2;
-    public GameObject address2;
-    public GameObject next2;
-    public GameObject prev2;
+    //public GameObject details2;
+    //public GameObject address2;
+    //public GameObject next2;
+    //public GameObject prev2;
 
-    public GameObject details3;
-    public GameObject address3;
-    public GameObject next3;
-    public GameObject prev3;
+    //public GameObject details3;
+    //public GameObject address3;
+    //public GameObject next3;
+    //public GameObject prev3;
 
-    public GameObject crate1;
-    public GameObject crate2;
-    public GameObject crate3;
+    //public GameObject crate1;
+    //public GameObject crate2;
+    //public GameObject crate3;
 
     public GameObject chips;
     public GameObject addressbook;
@@ -51,47 +51,7 @@ public class ButtonEvent : MonoBehaviour
         closeSound.volume = 0.20f;
     }
 
-    public void showDetailsCrate1()
-    {
-        details1.SetActive(true);
-        clickSound.Play();
-        address1.SetActive(false);
-    }
 
-    public void showAddressCrate1()
-    {
-        address1.SetActive(true);
-        clickSound.Play();
-        details1.SetActive(false);
-    }
-
-    public void showDetailsCrate2()
-    {
-        details2.SetActive(true);
-        clickSound.Play();
-        address2.SetActive(false);
-    }
-
-    public void showAddressCrate2()
-    {
-        address2.SetActive(true);
-        clickSound.Play();
-        details2.SetActive(false);
-    }
-
-    public void showDetailsCrate3()
-    {
-        details3.SetActive(true);
-        clickSound.Play();
-        address3.SetActive(false);
-    }
-
-    public void showAddressCrate3()
-    {
-        address3.SetActive(true);
-        clickSound.Play();
-        details3.SetActive(false);
-    }
 
     public void ShowDetails()
     {
@@ -113,9 +73,9 @@ public class ButtonEvent : MonoBehaviour
             addresses[iterator].SetActive(false);
             crates[iterator].SetActive(false);
 
-            details[iterator + 1].SetActive(true);
-            crates[iterator + 1].SetActive(true);
-            
+            details[iterator+1].SetActive(true);
+            crates[iterator+1].SetActive(true);
+
             iterator++;
         }
         clickSound.Play();
@@ -129,59 +89,101 @@ public class ButtonEvent : MonoBehaviour
             addresses[iterator].SetActive(false);
             crates[iterator].SetActive(false);
 
-            details[iterator - 1].SetActive(true);
-            crates[iterator - 1].SetActive(true);
-            
+            details[iterator-1].SetActive(true);
+            crates[iterator-1].SetActive(true);
+
             iterator--;
         }
         clickSound.Play();
     }
 
-    public void nextButtonCrate1()
-    {
-        crate1.SetActive(false);
-        crate2.SetActive(true);
-        details2.SetActive(true);
-        address2.SetActive(false);
-        clickSound.Play();
-    }
+    //public void showDetailsCrate1()
+    //{
+    //    details1.SetActive(true);
+    //    clickSound.Play();
+    //    address1.SetActive(false);
+    //}
 
-    public void prevButtonCrate1()
-    {
-        closeSound.Play();
-    }
+    //public void showAddressCrate1()
+    //{
+    //    address1.SetActive(true);
+    //    clickSound.Play();
+    //    details1.SetActive(false);
+    //}
 
-    public void nextButtonCrate2()
-    {
-        crate2.SetActive(false);
-        crate3.SetActive(true);
-        details3.SetActive(true);
-        address3.SetActive(false);
-        clickSound.Play();
-    }
+    //public void showDetailsCrate2()
+    //{
+    //    details2.SetActive(true);
+    //    clickSound.Play();
+    //    address2.SetActive(false);
+    //}
 
-    public void prevButtonCrate2()
-    {
-        crate2.SetActive(false);
-        crate1.SetActive(true);
-        details1.SetActive(true);
-        address1.SetActive(false);
-        clickSound.Play();
-    }
+    //public void showAddressCrate2()
+    //{
+    //    address2.SetActive(true);
+    //    clickSound.Play();
+    //    details2.SetActive(false);
+    //}
 
-    public void nextButtonCrate3()
-    {
-        closeSound.Play();
-    }
+    //public void showDetailsCrate3()
+    //{
+    //    details3.SetActive(true);
+    //    clickSound.Play();
+    //    address3.SetActive(false);
+    //}
 
-    public void prevButtonCrate3()
-    {
-        crate3.SetActive(false);
-        crate2.SetActive(true);
-        details2.SetActive(true);
-        address2.SetActive(false);
-        clickSound.Play();
-    }
+    //public void showAddressCrate3()
+    //{
+    //    address3.SetActive(true);
+    //    clickSound.Play();
+    //    details3.SetActive(false);
+    //}
+
+    //public void nextButtonCrate1()
+    //{
+    //    crate1.SetActive(false);
+    //    crate2.SetActive(true);
+    //    details2.SetActive(true);
+    //    address2.SetActive(false);
+    //    clickSound.Play();
+    //}
+
+    //public void prevButtonCrate1()
+    //{
+    //    closeSound.Play();
+    //}
+
+    //public void nextButtonCrate2()
+    //{
+    //    crate2.SetActive(false);
+    //    crate3.SetActive(true);
+    //    details3.SetActive(true);
+    //    address3.SetActive(false);
+    //    clickSound.Play();
+    //}
+
+    //public void prevButtonCrate2()
+    //{
+    //    crate2.SetActive(false);
+    //    crate1.SetActive(true);
+    //    details1.SetActive(true);
+    //    address1.SetActive(false);
+    //    clickSound.Play();
+    //}
+
+    //public void nextButtonCrate3()
+    //{
+    //    closeSound.Play();
+    //}
+
+    //public void prevButtonCrate3()
+    //{
+    //    crate3.SetActive(false);
+    //    crate2.SetActive(true);
+    //    details2.SetActive(true);
+    //    address2.SetActive(false);
+    //    clickSound.Play();
+    //}
 
     public void chipCollection()
     {

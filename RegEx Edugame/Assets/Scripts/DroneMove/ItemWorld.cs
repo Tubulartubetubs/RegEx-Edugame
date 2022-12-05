@@ -9,10 +9,22 @@ public class ItemWorld : MonoBehaviour
     {
         Transform transform = Instantiate(ItemAssets.Instance.pfItemWorld, position, Quaternion.identity);
         ItemWorld itemWorld = transform.GetComponent<ItemWorld>();
+        //Debug.Log(transform);
         itemWorld.SetItem(item);
 
         return itemWorld;
     }
+
+    //public static ItemWorld SpawnChip(Item item) //for chip scene
+    //{
+    //    RectTransform transform1 = Instantiate(ItemAssets.Instance.chip, new Vector3(0,0,0), Quaternion.identity);
+    //    ItemWorld itemWorld = transform1.GetComponent<ItemWorld>();
+    //    Debug.Log(itemWorld);
+    //    itemWorld.SetItem(item);
+        
+
+    //    return itemWorld;
+    //}
 
     private Item item;
     private SpriteRenderer spriteRenderer;
