@@ -28,11 +28,14 @@ public class ButtonEvent : MonoBehaviour
     public GameObject cheatsheet;
 
     public GameObject levelGuideScreen;
+    public GameObject extraChipScreen;
 
     public AudioClip clickClip;
     AudioSource clickSound;
     public AudioClip closeClip;
     AudioSource closeSound;
+    public AudioClip tictocClip;
+    AudioSource tictocSound;
 
     public List<GameObject> details;
     public List<GameObject> addresses;
@@ -46,6 +49,10 @@ public class ButtonEvent : MonoBehaviour
         clickSound.clip = clickClip;
         clickSound.volume = 0.10f;
 
+        tictocSound = this.gameObject.AddComponent<AudioSource>();
+        tictocSound.clip = tictocClip;
+        tictocSound.volume = 0.10f;
+
         closeSound = this.gameObject.AddComponent<AudioSource>();
         closeSound.clip = closeClip;
         closeSound.volume = 0.20f;
@@ -57,12 +64,14 @@ public class ButtonEvent : MonoBehaviour
     {
         addresses[iterator].SetActive(false);
         details[iterator].SetActive(true);
+        tictocSound.Play();
     }
 
     public void ShowAddress()
     {
         details[iterator].SetActive(false);
         addresses[iterator].SetActive(true);
+        tictocSound.Play();
     }
 
     public void InformationNextButton()
@@ -78,7 +87,7 @@ public class ButtonEvent : MonoBehaviour
 
             iterator++;
         }
-        clickSound.Play();
+        tictocSound.Play();
     }
 
     public void InformationPrevButton()
@@ -94,7 +103,7 @@ public class ButtonEvent : MonoBehaviour
 
             iterator--;
         }
-        clickSound.Play();
+        tictocSound.Play();
     }
 
     //public void showDetailsCrate1()
@@ -214,6 +223,19 @@ public class ButtonEvent : MonoBehaviour
     public void nextButton()
     {
         levelGuideScreen.SetActive(false);
+        clickSound.Play();
+    }
+
+    public void Extrachip()
+    {
+        levelGuideScreen.SetActive(false);
+        extraChipScreen.SetActive(true);
+        clickSound.Play();
+    }
+
+    public void ExtrachipClose()
+    {
+        extraChipScreen.SetActive(false);
         clickSound.Play();
     }
 }

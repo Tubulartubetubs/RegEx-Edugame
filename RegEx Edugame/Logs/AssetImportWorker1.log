@@ -1,23 +1,23 @@
 Using pre-set license
 Built from '2021.3/staging' branch; Version is '2021.3.11f1 (0a5ca18544bf) revision 679073'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 10  (10.0.19044) 64bit Core' Language: 'en' Physical Memory: 16294 MB
+OS: 'Windows 10  (10.0.19044) 64bit Professional' Language: 'ko' Physical Memory: 16347 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-F:\Unity Editors\2021.3.11f1\Editor\Unity.exe
+D:\Unity\Hub\Editor\2021.3.11f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker1
 -projectPath
-D:/Desktop/CollegeStuff/Thesis/RegEx-Edugame/RegEx-Edugame/RegEx Edugame
+D:/Hwan/Thesis/RegEx Edugame
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-63362
-Successfully changed project path to: D:/Desktop/CollegeStuff/Thesis/RegEx-Edugame/RegEx-Edugame/RegEx Edugame
-D:/Desktop/CollegeStuff/Thesis/RegEx-Edugame/RegEx-Edugame/RegEx Edugame
+65243
+Successfully changed project path to: D:/Hwan/Thesis/RegEx Edugame
+D:/Hwan/Thesis/RegEx Edugame
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -47,114 +47,112 @@ D:/Desktop/CollegeStuff/Thesis/RegEx-Edugame/RegEx-Edugame/RegEx Edugame
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 85.64 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 137.36 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.11f1 (0a5ca18544bf)
-[Subsystems] Discovering subsystems at path F:/Unity Editors/2021.3.11f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/Desktop/CollegeStuff/Thesis/RegEx-Edugame/RegEx-Edugame/RegEx Edugame/Assets
+[Subsystems] Discovering subsystems at path D:/Unity/Hub/Editor/2021.3.11f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Hwan/Thesis/RegEx Edugame/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: AMD Radeon RX 6600 XT (ID=0x73ff)
-    Vendor:   ATI
-    VRAM:     8146 MB
-    Driver:   31.0.12029.1042
+    Renderer: NVIDIA GeForce GTX 1050 Ti (ID=0x1c82)
+    Vendor:   NVIDIA
+    VRAM:     4017 MB
+    Driver:   31.0.15.2698
 Initialize mono
-Mono path[0] = 'F:/Unity Editors/2021.3.11f1/Editor/Data/Managed'
-Mono path[1] = 'F:/Unity Editors/2021.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'F:/Unity Editors/2021.3.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56216
+Mono path[0] = 'D:/Unity/Hub/Editor/2021.3.11f1/Editor/Data/Managed'
+Mono path[1] = 'D:/Unity/Hub/Editor/2021.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/Unity/Hub/Editor/2021.3.11f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56592
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: F:/Unity Editors/2021.3.11f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
-Register platform support module: F:/Unity Editors/2021.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002564 seconds.
+Register platform support module: D:/Unity/Hub/Editor/2021.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004252 seconds.
 Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 83.15 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 138.20 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.534 seconds
+- Completed reload, in  0.882 seconds
 Domain Reload Profiling:
-	ReloadAssembly (535ms)
-		BeginReloadAssembly (61ms)
+	ReloadAssembly (883ms)
+		BeginReloadAssembly (79ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (387ms)
-			LoadAssemblies (60ms)
+		EndReloadAssembly (681ms)
+			LoadAssemblies (78ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (84ms)
+			SetupTypeCache (145ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (23ms)
-			SetupLoadedEditorAssemblies (238ms)
+			RebuildScriptCaches (64ms)
+			SetupLoadedEditorAssemblies (375ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
+				InitializePlatformSupportModulesInManaged (10ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (83ms)
+				RefreshPlugins (138ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (108ms)
-				ProcessInitializeOnLoadMethodAttributes (38ms)
+				ProcessInitializeOnLoadAttributes (175ms)
+				ProcessInitializeOnLoadMethodAttributes (50ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.007067 seconds.
+Registered in 0.005926 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Desktop\CollegeStuff\Thesis\RegEx-Edugame\RegEx-Edugame\RegEx Edugame\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Desktop\CollegeStuff\Thesis\RegEx-Edugame\RegEx-Edugame\RegEx Edugame\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image D:\Hwan\Thesis\RegEx Edugame\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\Hwan\Thesis\RegEx Edugame\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 78.66 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 111.65 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.975 seconds
+- Completed reload, in  1.592 seconds
 Domain Reload Profiling:
-	ReloadAssembly (975ms)
-		BeginReloadAssembly (95ms)
+	ReloadAssembly (1593ms)
+		BeginReloadAssembly (224ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (18ms)
-		EndReloadAssembly (779ms)
-			LoadAssemblies (82ms)
+			CreateAndSetChildDomain (33ms)
+		EndReloadAssembly (1196ms)
+			LoadAssemblies (186ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (201ms)
+			SetupTypeCache (331ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (46ms)
-			SetupLoadedEditorAssemblies (412ms)
+			RebuildScriptCaches (68ms)
+			SetupLoadedEditorAssemblies (626ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
+				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (79ms)
-				BeforeProcessingInitializeOnLoad (80ms)
-				ProcessInitializeOnLoadAttributes (207ms)
-				ProcessInitializeOnLoadMethodAttributes (39ms)
-				AfterProcessingInitializeOnLoad (3ms)
-				EditorAssembliesLoaded (0ms)
+				RefreshPlugins (112ms)
+				BeforeProcessingInitializeOnLoad (108ms)
+				ProcessInitializeOnLoadAttributes (274ms)
+				ProcessInitializeOnLoadMethodAttributes (111ms)
+				AfterProcessingInitializeOnLoad (16ms)
+				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (5ms)
+			AwakeInstancesAfterBackupRestoration (19ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.20 seconds
-Refreshing native plugins compatible for Editor in 2.15 ms, found 4 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 1.04 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4139 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 38 unused Assets / (56.5 KB). Loaded Objects now: 4597.
-Memory consumption went from 155.1 MB to 155.1 MB.
-Total: 4.459500 ms (FindLiveObjects: 0.375400 ms CreateObjectMapping: 0.229600 ms MarkObjects: 3.758000 ms  DeleteObjects: 0.095300 ms)
+Unloading 38 unused Assets / (56.3 KB). Loaded Objects now: 4597.
+Memory consumption went from 155.3 MB to 155.2 MB.
+Total: 3.514500 ms (FindLiveObjects: 0.411400 ms CreateObjectMapping: 0.408300 ms MarkObjects: 2.603200 ms  DeleteObjects: 0.090500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -162,10 +160,52 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 41608.911521 seconds.
-  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat
-  artifactKey: Guid(e73a58f6e2794ae7b1b7e50b7fb811b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat using Guid(e73a58f6e2794ae7b1b7e50b7fb811b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0886862acce53de712cfadbd97e2e6db') in 0.235942 seconds 
+  Time since last request: 58730.768755 seconds.
+  path: Assets/Sprites/success-screens/sorting-success.png
+  artifactKey: Guid(4ca5f4a7e5f572a4c9f7f292fe57b431) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/success-screens/sorting-success.png using Guid(4ca5f4a7e5f572a4c9f7f292fe57b431) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '930f189bef4900dc808b108188712470') in 0.266929 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15.563597 seconds.
+  path: Assets/Sprites/hologram-system/right-screen/chips-bag-button.png
+  artifactKey: Guid(aafcf03ce05f817448c9b64691b17c2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/hologram-system/right-screen/chips-bag-button.png using Guid(aafcf03ce05f817448c9b64691b17c2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c1afa2334938cb2a275a9abf7a18b8d') in 0.059892 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Sprites/hologram-system/right-screen/match-book-button.png
+  artifactKey: Guid(9be0473a1ba5ccb448ce5df0587fddd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/hologram-system/right-screen/match-book-button.png using Guid(9be0473a1ba5ccb448ce5df0587fddd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd39534d16468687f7b086e18b70ef384') in 0.037098 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1102.501523 seconds.
+  path: Assets/Sprites/hologram-system/cheat-sheet/content/Character_Sets.png
+  artifactKey: Guid(8d1f8b6d32826ff438ef023380489f0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/hologram-system/cheat-sheet/content/Character_Sets.png using Guid(8d1f8b6d32826ff438ef023380489f0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '819d44411bce1192abaf89d84ee551f5') in 0.228483 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Sprites/hologram-system/cheat-sheet/content/Metasequences.png
+  artifactKey: Guid(867bc420c884e3b4a91f66e50a3784a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/hologram-system/cheat-sheet/content/Metasequences.png using Guid(867bc420c884e3b4a91f66e50a3784a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24bc7dbed046f770a2ff9a27ee6cd567') in 0.239723 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/Sprites/hologram-system/cheat-sheet/content/Ranges.png
+  artifactKey: Guid(c365745d6dca94b4dbc5febd1d321fe2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/hologram-system/cheat-sheet/content/Ranges.png using Guid(c365745d6dca94b4dbc5febd1d321fe2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '530c44c17e03e7babd08869d2a258c31') in 0.233303 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000682 seconds.
+  path: Assets/Sprites/hologram-system/cheat-sheet/content/Literals.png
+  artifactKey: Guid(282c8bc621d72964b95725ef414bb85a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/hologram-system/cheat-sheet/content/Literals.png using Guid(282c8bc621d72964b95725ef414bb85a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98e2cb9de75a0960abf3729af02878e9') in 0.264356 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Sprites/hologram-system/cheat-sheet/content/Wildcard.png
+  artifactKey: Guid(2113aac2df475654986a6e761a2caa43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/hologram-system/cheat-sheet/content/Wildcard.png using Guid(2113aac2df475654986a6e761a2caa43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '968d3e3885a324decb931c7be4a968a1') in 0.228784 seconds 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
 Process exiting

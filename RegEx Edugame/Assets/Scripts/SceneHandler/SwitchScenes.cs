@@ -16,7 +16,7 @@ public class SwitchScenes : MonoBehaviour
             "Scenes/Intro",                     //1
             "Scenes/LevelSelect",               //2
             "Scenes/Level 1.1/Chips",           //3
-            "Scenes/Level 1.1/Drone Wiring 1",  //4
+            "Scenes/Level 1.1/Drone Wiring",    //4
             "Scenes/Level 1.1/DroneMove",       //5
             "Scenes/Level 1.2/Chips",           //6
             "Scenes/Level 1.2/Drone Wiring 1",  //7

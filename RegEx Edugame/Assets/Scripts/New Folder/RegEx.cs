@@ -9,6 +9,7 @@ public class RegEx : MonoBehaviour
 {
     private TextMeshProUGUI displayText;
     private GameObject insertedChips;
+    public GameObject ClearScreen;
     private List<GameObject> chips;
     private List<TextMeshProUGUI> chipTexts;
 
@@ -183,7 +184,8 @@ public class RegEx : MonoBehaviour
         if(goNext)
         {
             //Debug.Log("Switch");
-            sceneSwitcher.SwitchScene(nextScene);
+            //sceneSwitcher.SwitchScene(nextScene);
+            ClearScreen.SetActive(true);
         }
     }
 
@@ -204,5 +206,11 @@ public class RegEx : MonoBehaviour
         matchStrings.Clear();
         ResetString();
         UpdateChips();
+    }
+
+
+    public void nextStage()
+    {
+        sceneSwitcher.SwitchScene(nextScene);
     }
 }

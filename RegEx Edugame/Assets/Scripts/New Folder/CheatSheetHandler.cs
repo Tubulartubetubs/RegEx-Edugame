@@ -6,8 +6,17 @@ public class CheatSheetHandler : MonoBehaviour
 {
     /*
      * Main Content
-     * 0 = literals
-     * 1 = meta
+     * 0 = Literals
+     * 1 = Digits
+     * 2 = Character Sets
+     * 3 = Ranges
+     * 4 = Quantifiers
+     * 5 = Groupings
+     * 6 = Alternation
+     * 7 = Start/End
+     * 8 = Escape
+     * 9 = Meta
+     * 10 = Wildcard
      * 
      * Meta Content
      * 0 = Meta Parent
@@ -17,41 +26,24 @@ public class CheatSheetHandler : MonoBehaviour
 
     public List<GameObject> mainContent;
     public List<GameObject> metaContent;
+    public AudioClip clickClip;
+    AudioSource clickSound;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        clickSound = this.gameObject.AddComponent<AudioSource>();
+        clickSound.clip = clickClip;
+        clickSound.volume = 0.10f;
     }
 
     public void ChangeMainContent(int content)
     {
-        switch (content)
+        for(int i = 0; i<mainContent.Count; i++)
         {
-            case 0: 
-                mainContent[0].SetActive(true);
-                break;
-            case 1:
-                mainContent[1].SetActive(true);
-                metaContent[0].SetActive(true);
-                metaContent[1].SetActive(false);
-                metaContent[2].SetActive(false);
-                break;
+            mainContent[i].SetActive(false);
         }
-
-        for(int i=0; i<mainContent.Count; i++)
-        {
-            if (i != content)
-            {
-                mainContent[i].SetActive(false);
-            }
-        }
+        mainContent[content].SetActive(true);
+        clickSound.Play();
     }
 
     public void ChangeMetaContent(int content)

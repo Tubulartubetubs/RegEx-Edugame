@@ -123,4 +123,5 @@ public class DisplayText : MonoBehaviour
         if (solvedHouses == completedNum)
             sceneSwitcher.SwitchScene(nextScene);
     }
+
 }
