@@ -132,33 +132,61 @@ public class RegEx : MonoBehaviour
         foreach(Match match in matches)
         {
             matchStrings.Add(match.Value);
+            Debug.Log(match.Value);
         }
 
         if(matchStrings.Count > 0)
         {
-            int i = 0;
-            foreach(GameObject obj in highlightWords)
+            //int i = 0;
+            //foreach(GameObject obj in highlightWords)
+            //{
+            //    if (matchStrings.Contains(obj.GetComponent<TextMeshProUGUI>().text))
+            //    {
+            //        //obj.GetComponent<TextMeshProUGUI>().color = Color.yellow;
+            //        highlightAddresses[i].transform.parent.gameObject.GetComponentInChildren<Image>().color = greenColor;
+            //    }
+            //    else
+            //    {
+            //        //obj.GetComponent<TextMeshProUGUI>().color = Color.white;
+            //        highlightAddresses[i].transform.parent.gameObject.GetComponentInChildren<Image>().color = redColor;
+            //    }
+            //    i++;
+            //}
+
+            int j = 0;
+            foreach (GameObject obj in highlightAddresses)
             {
-                if (matchStrings.Contains(obj.GetComponent<TextMeshProUGUI>().text))
+                foreach(Match match in matches)
                 {
-                    obj.GetComponent<TextMeshProUGUI>().color = Color.yellow;
-                    highlightAddresses[i].transform.parent.gameObject.GetComponentInChildren<Image>().color = greenColor;
+                    if (obj.GetComponent<TextMeshProUGUI>().text.Contains(match.Value))
+                    {
+                        obj.transform.parent.gameObject.GetComponentInChildren<Image>().color = greenColor;
+                        break;
+                    }
+                    else
+                    {
+                        obj.transform.parent.gameObject.GetComponentInChildren<Image>().color = redColor;
+                    }
                 }
-                else
-                {
-                    obj.GetComponent<TextMeshProUGUI>().color = Color.white;
-                    highlightAddresses[i].transform.parent.gameObject.GetComponentInChildren<Image>().color = redColor;
-                }
-                i++;
+
+                //if (obj.GetComponent<TextMeshProUGUI>().text.Contains(matchStrings[j]))
+                //{
+                //    obj.transform.parent.gameObject.GetComponentInChildren<Image>().color = greenColor;
+                //}
+                //else
+                //{
+                //    obj.transform.parent.gameObject.GetComponentInChildren<Image>().color = redColor;
+                //}
+                //j++;
             }
         }
         else
         {
             int i = 0;
-            foreach(GameObject obj in highlightWords)
+            foreach(GameObject obj in highlightAddresses)
             {
-                obj.GetComponent<TextMeshProUGUI>().color = Color.white;
-                highlightAddresses[i].transform.parent.gameObject.GetComponentInChildren<Image>().color = redColor;
+                //obj.GetComponent<TextMeshProUGUI>().color = Color.white;
+                obj.transform.parent.gameObject.GetComponentInChildren<Image>().color = redColor;
                 i++;
             }
         }
