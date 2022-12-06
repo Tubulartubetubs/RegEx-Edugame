@@ -57,7 +57,7 @@ public class MovingObject : MonoBehaviour
 
         droneSound = this.gameObject.AddComponent<AudioSource>();
         droneSound.clip = dronesound;
-        droneSound.volume = 0.2f;
+        droneSound.volume = 0.1f;
         droneSound.loop = true;
         droneSound.Play();
 
@@ -146,7 +146,7 @@ public class MovingObject : MonoBehaviour
 
     public void DroneSoundDown()
     {
-        droneSound.volume = 0.075f;
+        droneSound.volume = 0.05f;
     }
 
     public void DroneSoundUp()
