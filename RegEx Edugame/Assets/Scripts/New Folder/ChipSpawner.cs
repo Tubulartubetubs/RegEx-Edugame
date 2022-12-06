@@ -30,7 +30,7 @@ public class ChipSpawner : MonoBehaviour
 
     public void SpawnChip(int chipNum)
     {
-        GameObject lastChild = chipWaiting.transform.GetChild(chipWaiting.transform.childCount - 1).gameObject;
+        //GameObject lastChild = chipWaiting.transform.GetChild(chipWaiting.transform.childCount - 1).gameObject;
 
         //Debug.Log(lastChild.name);
         if (chipWaiting.transform.childCount < 7)

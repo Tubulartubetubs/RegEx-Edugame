@@ -37,7 +37,7 @@ public class RegEx : MonoBehaviour
     //turns match collection into list
     List<string> matchStrings;
 
-    bool goNext;
+    public bool goNext;
 
     private string displayString;
     Color32 redColor = new Color32(219,53,74,141);
@@ -163,12 +163,29 @@ public class RegEx : MonoBehaviour
             }
         }
 
-        int matchString = matches.Count;
+        int matchString = 0;
+
+        if(matches != null)
+        {
+            if (!matches[0].Value.Equals(""))
+            {
+                matchString = matches.Count;
+                Debug.Log("matches: "+ matchString);
+                Debug.Log(matches[0].Value);
+            }
+        }
         acceptedNum.text = matchString.ToString();
 
-        if(matchString == allAddresses && acceptedStrings.Contains(displayString))
+        if(matchString == allAddresses)
         {
-            goNext = true;
+            foreach(Match match in matches)
+            {
+                if (acceptedStrings.Contains(match.Value))
+                    goNext = true;
+                else
+                    goNext = false;
+
+            }
         }
 
         foreach(GameObject obj in skipAddresses)

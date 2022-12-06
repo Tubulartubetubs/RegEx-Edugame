@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class DisplayText : MonoBehaviour
@@ -26,18 +27,29 @@ public class DisplayText : MonoBehaviour
 
     public int nextScene;
 
+    public GameObject indicator;
+    Image indicatorImg;
+
+    public Sprite finishedWiring;
+
+    public GameObject droneMoveButton;
+
     // Start is called before the first frame update
     void Start()
     {
+        //Regex test = new Regex("Merano, ");
+        //Match testMatch = test.Match("Merano, Athena Classique Phase 1, Imus");
+        //Debug.Log(testMatch.Value);
 
+        indicatorImg = indicator.GetComponent<Image>();
         sceneSwitcher = GameObject.FindGameObjectWithTag("EventSystem").GetComponent<SwitchScenes>();
         //string test = "";
-        Regex rg = new Regex("block|");
-        Match match = rg.Match("Block 1 Lot 32 Lavander St. Forbes Village, Brgy. Forbes, Makati City");
+        //Regex rg = new Regex("block|");
+        //Match match = rg.Match("Block 1 Lot 32 Lavander St. Forbes Village, Brgy. Forbes, Makati City");
 
-        Debug.Log(match.Success);
-        Debug.Log(match.Value);
-        Debug.Log("".Equals(match.Value));
+        //Debug.Log(match.Success);
+        //Debug.Log(match.Value);
+        //Debug.Log("".Equals(match.Value));
 
 
         wireTexts.AddRange(GameObject.Find("Wire Texts").GetComponentsInChildren<TextMeshProUGUI>());
@@ -65,6 +77,7 @@ public class DisplayText : MonoBehaviour
     {
         ClearString();
         string regex = StringBuilder();
+        Debug.Log(regex);
         displayTMP.text = regex;
         RegExBuilder(regex);
     }
@@ -83,6 +96,7 @@ public class DisplayText : MonoBehaviour
             foreach (GameObject house in houses)
             {
                 Match match = rg.Match(house.GetComponent<Address>().address);
+                Debug.Log(match.Value);
                 if (match.Success)
                 {
                     if (acceptedStrings.Contains(match.Value))
@@ -121,7 +135,12 @@ public class DisplayText : MonoBehaviour
         }
 
         if (solvedHouses == completedNum)
-            sceneSwitcher.SwitchScene(nextScene);
+        {
+            Debug.Log("Move to Next Scene");
+            indicatorImg.sprite = finishedWiring;
+            droneMoveButton.SetActive(true);
+        }
+            //sceneSwitcher.SwitchScene(nextScene);
     }
 
 }

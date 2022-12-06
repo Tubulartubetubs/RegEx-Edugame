@@ -76,7 +76,7 @@ public class ButtonEvent : MonoBehaviour
 
     public void InformationNextButton()
     {
-        if (iterator < details.Count)
+        if (iterator < details.Count-1)
         {
             details[iterator].SetActive(false);
             addresses[iterator].SetActive(false);
