@@ -68,7 +68,14 @@ public class RegEx : MonoBehaviour
     void Update()
     {
         UpdateChips();
+        //StartCoroutine(Updateupdate());
     }
+
+    //IEnumerator Updateupdate()
+    //{
+    //    UpdateChips();
+    //    yield return new WaitForSeconds(5.0f);
+    //}
 
     void UpdateChips()
     {

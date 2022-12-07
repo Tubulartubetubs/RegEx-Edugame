@@ -53,15 +53,15 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         transform.position = eventData.position;
         root.BroadcastMessage("Drag", transform, SendMessageOptions.DontRequireReceiver);
-        oldY = currentY;
-        currentY = this.transform.position.y;
-        Debug.Log(currentY);
-        percent = this.transform.position.y / distance;
-        if (currentY != oldY)
-        {
-            this.transform.localScale = Vector3.Lerp(maxScale, minScale, percent);
-            scale = this.transform.localScale.y;
-        }
+        //oldY = currentY;
+        //currentY = this.transform.position.y;
+        //Debug.Log(currentY);
+        //percent = this.transform.position.y / distance;
+        //if (currentY != oldY)
+        //{
+        //    this.transform.localScale = Vector3.Lerp(maxScale, minScale, percent);
+        //    scale = this.transform.localScale.y;
+        //}
     }
 
     public void OnEndDrag(PointerEventData eventData)
