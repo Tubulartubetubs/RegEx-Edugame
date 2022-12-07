@@ -119,7 +119,7 @@ public class RegEx : MonoBehaviour
     {
         List<string> texts = new List<string>();
 
-        foreach(GameObject obj in highlightWords)
+        foreach(GameObject obj in highlightAddresses)
         {
             texts.Add(obj.GetComponent<TextMeshProUGUI>().text);
         }
@@ -160,7 +160,7 @@ public class RegEx : MonoBehaviour
             //    i++;
             //}
 
-            int j = 0;
+            //int j = 0;
             foreach (GameObject obj in highlightAddresses)
             {
                 foreach(Match match in matches)
