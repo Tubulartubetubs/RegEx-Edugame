@@ -119,103 +119,123 @@ public class RegEx : MonoBehaviour
     {
         List<string> texts = new List<string>();
 
-        foreach(GameObject obj in highlightAddresses)
+        if (!rg.ToString().Equals(""))
         {
-            texts.Add(obj.GetComponent<TextMeshProUGUI>().text);
-        }
-
-        string wordsToMatch = texts[0];
-
-        if(texts.Count > 0)
-        {
-            for(int i=1; i<texts.Count; i++)
-            {
-                wordsToMatch = wordsToMatch + " " + texts[i];
-            }
-        }
-
-        MatchCollection matches = rg.Matches(wordsToMatch);
-
-        foreach(Match match in matches)
-        {
-            matchStrings.Add(match.Value);
-            Debug.Log(match.Value);
-        }
-
-        if(matchStrings.Count > 0)
-        {
-            //int i = 0;
-            //foreach(GameObject obj in highlightWords)
-            //{
-            //    if (matchStrings.Contains(obj.GetComponent<TextMeshProUGUI>().text))
-            //    {
-            //        //obj.GetComponent<TextMeshProUGUI>().color = Color.yellow;
-            //        highlightAddresses[i].transform.parent.gameObject.GetComponentInChildren<Image>().color = greenColor;
-            //    }
-            //    else
-            //    {
-            //        //obj.GetComponent<TextMeshProUGUI>().color = Color.white;
-            //        highlightAddresses[i].transform.parent.gameObject.GetComponentInChildren<Image>().color = redColor;
-            //    }
-            //    i++;
-            //}
-
-            //int j = 0;
             foreach (GameObject obj in highlightAddresses)
             {
-                foreach(Match match in matches)
-                {
-                    if (obj.GetComponent<TextMeshProUGUI>().text.Contains(match.Value))
-                    {
-                        obj.transform.parent.gameObject.GetComponentInChildren<Image>().color = greenColor;
-                        break;
-                    }
-                    else
-                    {
-                        obj.transform.parent.gameObject.GetComponentInChildren<Image>().color = redColor;
-                    }
-                }
+                Match match = rg.Match(obj.GetComponent<TextMeshProUGUI>().text);
 
-                //if (obj.GetComponent<TextMeshProUGUI>().text.Contains(matchStrings[j]))
-                //{
-                //    obj.transform.parent.gameObject.GetComponentInChildren<Image>().color = greenColor;
-                //}
-                //else
-                //{
-                //    obj.transform.parent.gameObject.GetComponentInChildren<Image>().color = redColor;
-                //}
-                //j++;
+                if (match.Success)
+                {
+                    obj.transform.parent.gameObject.GetComponentInChildren<Image>().color = greenColor;
+                    texts.Add(obj.GetComponent<TextMeshProUGUI>().text);
+                }
+                else
+                {
+                    obj.transform.parent.gameObject.GetComponentInChildren<Image>().color = redColor;
+                }
             }
         }
-        else
-        {
-            int i = 0;
-            foreach(GameObject obj in highlightAddresses)
-            {
-                //obj.GetComponent<TextMeshProUGUI>().color = Color.white;
-                obj.transform.parent.gameObject.GetComponentInChildren<Image>().color = redColor;
-                i++;
-            }
-        }
+
+        //List<string> texts = new List<string>();
+
+        //foreach(GameObject obj in highlightAddresses)
+        //{
+        //    texts.Add(obj.GetComponent<TextMeshProUGUI>().text);
+        //}
+
+        //string wordsToMatch = texts[0];
+
+        //if(texts.Count > 0)
+        //{
+        //    for(int i=1; i<texts.Count; i++)
+        //    {
+        //        wordsToMatch = wordsToMatch + " " + texts[i];
+        //    }
+        //}
+
+        //MatchCollection matches = rg.Matches(wordsToMatch);
+
+        //foreach(Match match in matches)
+        //{
+        //    matchStrings.Add(match.Value);
+        //    //Debug.Log(match.Value);
+        //}
+
+        //if(matchStrings.Count > 0)
+        //{
+        //    //int i = 0;
+        //    //foreach(GameObject obj in highlightWords)
+        //    //{
+        //    //    if (matchStrings.Contains(obj.GetComponent<TextMeshProUGUI>().text))
+        //    //    {
+        //    //        //obj.GetComponent<TextMeshProUGUI>().color = Color.yellow;
+        //    //        highlightAddresses[i].transform.parent.gameObject.GetComponentInChildren<Image>().color = greenColor;
+        //    //    }
+        //    //    else
+        //    //    {
+        //    //        //obj.GetComponent<TextMeshProUGUI>().color = Color.white;
+        //    //        highlightAddresses[i].transform.parent.gameObject.GetComponentInChildren<Image>().color = redColor;
+        //    //    }
+        //    //    i++;
+        //    //}
+
+        //    //int j = 0;
+        //    foreach (GameObject obj in highlightAddresses)
+        //    {
+        //        foreach(Match match in matches)
+        //        {
+        //            if (obj.GetComponent<TextMeshProUGUI>().text.Contains(match.Value))
+        //            {
+        //                obj.transform.parent.gameObject.GetComponentInChildren<Image>().color = greenColor;
+        //                break;
+        //            }
+        //            else
+        //            {
+        //                obj.transform.parent.gameObject.GetComponentInChildren<Image>().color = redColor;
+        //            }
+        //        }
+
+        //        //if (obj.GetComponent<TextMeshProUGUI>().text.Contains(matchStrings[j]))
+        //        //{
+        //        //    obj.transform.parent.gameObject.GetComponentInChildren<Image>().color = greenColor;
+        //        //}
+        //        //else
+        //        //{
+        //        //    obj.transform.parent.gameObject.GetComponentInChildren<Image>().color = redColor;
+        //        //}
+        //        //j++;
+        //    }
+        //}
+        //else
+        //{
+        //    int i = 0;
+        //    foreach(GameObject obj in highlightAddresses)
+        //    {
+        //        //obj.GetComponent<TextMeshProUGUI>().color = Color.white;
+        //        obj.transform.parent.gameObject.GetComponentInChildren<Image>().color = redColor;
+        //        i++;
+        //    }
+        //}
 
         int matchString = 0;
 
-        if(matches != null)
+        if(texts.Count > 0)
         {
-            if (!matches[0].Value.Equals(""))
+            if (!texts[0].Equals(""))
             {
-                matchString = matches.Count;
+                matchString = texts.Count;
                 Debug.Log("matches: "+ matchString);
-                Debug.Log(matches[0].Value);
+                Debug.Log(texts[0]);
             }
         }
         acceptedNum.text = matchString.ToString();
 
         if(matchString == allAddresses)
         {
-            foreach(Match match in matches)
+            foreach(string match in texts)
             {
-                if (acceptedStrings.Contains(match.Value))
+                if (acceptedStrings.Contains(match))
                     goNext = true;
                 else
                     goNext = false;
