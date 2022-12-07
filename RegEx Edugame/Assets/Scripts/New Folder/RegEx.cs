@@ -225,8 +225,8 @@ public class RegEx : MonoBehaviour
             if (!texts[0].Equals(""))
             {
                 matchString = texts.Count;
-                Debug.Log("matches: "+ matchString);
-                Debug.Log(texts[0]);
+                //Debug.Log("matches: "+ matchString);
+                //Debug.Log(texts[0]);
             }
         }
         acceptedNum.text = matchString.ToString();
