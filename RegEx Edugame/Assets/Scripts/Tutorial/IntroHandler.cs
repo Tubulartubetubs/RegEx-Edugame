@@ -9,6 +9,8 @@ public class IntroHandler : MonoBehaviour
 
     public TextMeshProUGUI introText;
 
+    public SwitchScenes sceneHandler;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +43,6 @@ public class IntroHandler : MonoBehaviour
     public void EndDialogue()
     {
         CancelInvoke();
-        Debug.Log("dialogue end");
+        sceneHandler.SwitchScene(1);
     }
 }
