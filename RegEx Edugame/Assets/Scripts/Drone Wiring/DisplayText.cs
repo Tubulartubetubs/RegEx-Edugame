@@ -55,7 +55,7 @@ public class DisplayText : MonoBehaviour
 
 
         wireTexts.AddRange(GameObject.Find("Wire Texts").GetComponentsInChildren<TextMeshProUGUI>());
-        ports.AddRange(GameObject.FindGameObjectsWithTag("Port"));
+        //ports.AddRange(GameObject.FindGameObjectsWithTag("Port"));
         displayString = "";
         displayTMP = GetComponent<TextMeshProUGUI>();
     }

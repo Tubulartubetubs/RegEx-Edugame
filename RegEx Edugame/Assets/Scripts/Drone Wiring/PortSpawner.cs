@@ -15,9 +15,9 @@ public class PortSpawner : MonoBehaviour
         portArea = GameObject.FindGameObjectWithTag("Port Area");
         displayText = GameObject.Find("DisplayText").GetComponent<DisplayText>();
 
-        foreach(GameObject port in ports)
+        for(int i= 0; i < 5; i++)
         {
-            spawnedPort = Instantiate(port, portArea.transform);
+            spawnedPort = Instantiate(ports[i], portArea.transform);
             displayText.ports.Add(spawnedPort);
         }
     }
