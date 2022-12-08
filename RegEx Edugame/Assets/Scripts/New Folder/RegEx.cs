@@ -226,7 +226,7 @@ public class RegEx : MonoBehaviour
             {
                 matchString = texts.Count;
                 //Debug.Log("matches: "+ matchString);
-                //Debug.Log(texts[0]);
+                Debug.Log(texts[0]);
             }
         }
         acceptedNum.text = matchString.ToString();
