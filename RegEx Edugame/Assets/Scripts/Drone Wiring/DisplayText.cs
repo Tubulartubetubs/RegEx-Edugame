@@ -41,6 +41,8 @@ public class DisplayText : MonoBehaviour
         //Match testMatch = test.Match("Merano, Athena Classique Phase 1, Imus");
         //Debug.Log(testMatch.Value);
 
+        //ports.AddRange(GameObject.FindGameObjectsWithTag("Port"));
+
         indicatorImg = indicator.GetComponent<Image>();
         sceneSwitcher = GameObject.FindGameObjectWithTag("EventSystem").GetComponent<SwitchScenes>();
         //string test = "";

@@ -84,6 +84,6 @@ public class WireMovement : MonoBehaviour
 
         //update scale
         float dist = Vector2.Distance(startPoint, newPosition);
-        wireEnd.size = new Vector2(dist, wireEnd.size.y);
+        wireEnd.size = new Vector2(dist*2.2f, wireEnd.size.y);
     }
 }
