@@ -30,6 +30,7 @@ public class ButtonEvent : MonoBehaviour
     public GameObject levelGuideScreen;
     public GameObject extraChipScreen;
     public GameObject systemGuideScreen;
+    public GameObject summaryScreen;
 
     public AudioClip clickClip;
     AudioSource clickSound;
@@ -218,6 +219,9 @@ public class ButtonEvent : MonoBehaviour
         chips.SetActive(false);
         addressbook.SetActive(false);
         cheatsheet.SetActive(false);
+        systemGuideScreen.SetActive(false);
+        levelGuideScreen.SetActive(false);
+        extraChipScreen.SetActive(false);
         closeSound.Play();
     }
 
@@ -255,6 +259,11 @@ public class ButtonEvent : MonoBehaviour
     public void SystemGuideClose()
     {
         systemGuideScreen.SetActive(false);
+        clickSound.Play();
+    }
+    public void SummaryOpen()
+    {
+        summaryScreen.SetActive(true);
         clickSound.Play();
     }
 }

@@ -8,6 +8,7 @@ using TMPro;
 public class RegEx : MonoBehaviour
 {
     private TextMeshProUGUI displayText;
+    public TextMeshProUGUI summaryText;
     private GameObject insertedChips;
     public GameObject ClearScreen;
     private List<GameObject> chips;
@@ -67,15 +68,15 @@ public class RegEx : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateChips();
-        //StartCoroutine(Updateupdate());
+        //UpdateChips();
+        StartCoroutine(Updateupdate());
     }
 
-    //IEnumerator Updateupdate()
-    //{
-    //    UpdateChips();
-    //    yield return new WaitForSeconds(5.0f);
-    //}
+    IEnumerator Updateupdate()
+    {
+        UpdateChips();
+        yield return new WaitForSeconds(2.0f);
+    }
 
     void UpdateChips()
     {
@@ -235,10 +236,10 @@ public class RegEx : MonoBehaviour
         {
             foreach(string match in texts)
             {
-                if (acceptedStrings.Contains(match))
+                //if (acceptedStrings.Contains(match))
                     goNext = true;
-                else
-                    goNext = false;
+                //else
+                //    goNext = false;
 
             }
         }
@@ -264,6 +265,7 @@ public class RegEx : MonoBehaviour
     void DisplayText()
     {
         displayText.text = displayString;
+        summaryText.text = displayString;
     }
 
     void ResetString()
@@ -284,5 +286,10 @@ public class RegEx : MonoBehaviour
     public void nextStage()
     {
         sceneSwitcher.SwitchScene(nextScene);
+    }
+
+    public string GetText()
+    {
+        return displayText.text;
     }
 }
