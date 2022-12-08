@@ -93,7 +93,18 @@ public class SwitchScenes : MonoBehaviour
             "Scenes/Level 7.5/Chips",           //72
             "Scenes/Level 7.5/Drone Wiring",    //73
             "Scenes/Level 7.5/DroneMove",       //74
+
+            "Scenes/Tutorialcont/Intro",         //75
+            "Scenes/Tutorialcont/SceneTutorials" //76
         };
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     public void SwitchScene(int sceneNum)

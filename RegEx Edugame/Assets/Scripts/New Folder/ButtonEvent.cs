@@ -23,6 +23,8 @@ public class ButtonEvent : MonoBehaviour
     //public GameObject crate2;
     //public GameObject crate3;
 
+    public GameObject tutorialScreen;
+
     public GameObject chips;
     public GameObject addressbook;
     public GameObject cheatsheet;
@@ -106,6 +108,16 @@ public class ButtonEvent : MonoBehaviour
             iterator--;
         }
         tictocSound.Play();
+    }
+
+    public void ToggleTutorial()
+    {
+        if (tutorialScreen.activeSelf)
+        {
+            tutorialScreen.SetActive(false);
+        }
+        else
+            tutorialScreen.SetActive(true);
     }
 
     //public void showDetailsCrate1()

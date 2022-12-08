@@ -6,6 +6,8 @@ using TMPro;
 
 public class DialogueHandler : MonoBehaviour
 {
+    public SwitchScenes sceneSwitcher;
+
     public Queue<string> sentences;
     public float dialogueSpeed;
 
@@ -115,5 +117,6 @@ public class DialogueHandler : MonoBehaviour
     void EndDialogue()
     {
         Debug.Log("Sentence End");
+        sceneSwitcher.SwitchScene(2);
     }
 }
