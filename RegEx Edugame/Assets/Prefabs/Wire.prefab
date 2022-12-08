@@ -178,6 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 304183889043234622}
   - component: {fileID: 7767913594570788420}
+  - component: {fileID: 1489356380482534482}
   - component: {fileID: 1101360758828725699}
   m_Layer: 0
   m_Name: Moving
@@ -210,7 +211,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3840097180313074160}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -227,8 +228,24 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.52}
+  m_Size: {x: 0.24, y: 0.46}
   m_EdgeRadius: 0
+--- !u!58 &1489356380482534482
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3840097180313074160}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.1}
+  serializedVersion: 2
+  m_Radius: 0.12
 --- !u!114 &1101360758828725699
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,6 +9,10 @@ public class MainMenu : MonoBehaviour
     public GameObject playButton;
     AudioSource audioSource;
 
+    private void Start()
+    {
+        Screen.SetResolution(1920, 1080, true);
+    }
     public void PlayGame(){
         audioSource = playButton.GetComponent<AudioSource>();
         audioSource.Play();
