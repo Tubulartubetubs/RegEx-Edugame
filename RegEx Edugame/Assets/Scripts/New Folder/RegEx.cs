@@ -9,6 +9,7 @@ public class RegEx : MonoBehaviour
 {
     private TextMeshProUGUI displayText;
     public TextMeshProUGUI summaryText;
+    public TextMeshProUGUI chipsUsed;
     private GameObject insertedChips;
     public GameObject ClearScreen;
     private List<GameObject> chips;
@@ -227,7 +228,7 @@ public class RegEx : MonoBehaviour
             {
                 matchString = texts.Count;
                 //Debug.Log("matches: "+ matchString);
-                Debug.Log(texts[0]);
+                //Debug.Log(texts[0]);
             }
         }
         acceptedNum.text = matchString.ToString();
@@ -236,10 +237,10 @@ public class RegEx : MonoBehaviour
         {
             foreach(string match in texts)
             {
-                //if (acceptedStrings.Contains(match))
+                if (acceptedStrings.Contains(match))
                     goNext = true;
-                //else
-                //    goNext = false;
+                else
+                    goNext = false;
 
             }
         }
@@ -258,6 +259,7 @@ public class RegEx : MonoBehaviour
         {
             //Debug.Log("Switch");
             //sceneSwitcher.SwitchScene(nextScene);
+            numChips();
             ClearScreen.SetActive(true);
         }
     }
@@ -288,8 +290,8 @@ public class RegEx : MonoBehaviour
         sceneSwitcher.SwitchScene(nextScene);
     }
 
-    public string GetText()
+    public void numChips()
     {
-        return displayText.text;
+        chipsUsed.text = GameObject.Find("ChipInserted").transform.childCount.ToString();
     }
 }
