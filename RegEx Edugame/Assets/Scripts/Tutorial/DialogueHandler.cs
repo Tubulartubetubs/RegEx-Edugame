@@ -10,6 +10,10 @@ public class DialogueHandler : MonoBehaviour
 
     public TextMeshProUGUI dialogueText;
 
+    public List<GameObject> scenes;
+
+    int i = 0;
+
     //public List<GameObject> Tutorial;
 
     // Start is called before the first frame update
@@ -22,6 +26,7 @@ public class DialogueHandler : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         sentences.Clear();
+        i = 0;
         foreach(string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
@@ -40,6 +45,7 @@ public class DialogueHandler : MonoBehaviour
 
         //Debug.Log(sentences.Dequeue());
         dialogueText.text = sentences.Dequeue();
+        i++;
     }
 
     void EndDialogue()
