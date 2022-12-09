@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class RegEx : MonoBehaviour
 {
@@ -49,6 +50,8 @@ public class RegEx : MonoBehaviour
     public int nextScene;
 
     public List<string> acceptedStrings;
+
+    Regex rg;
 
     // Start is called before the first frame update
     void Start()
@@ -112,7 +115,11 @@ public class RegEx : MonoBehaviour
 
     void BuildRegex()
     {
-        Regex rg = new Regex(displayString);
+        try
+        {
+            rg = new Regex(displayString);
+        }
+        catch(Exception e) { }
         //Debug.Log("Display String: " + displayString);
         CheckMatches(rg);
     }

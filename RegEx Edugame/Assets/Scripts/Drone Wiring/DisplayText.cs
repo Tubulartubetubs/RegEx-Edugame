@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class DisplayText : MonoBehaviour
 {
@@ -33,6 +34,8 @@ public class DisplayText : MonoBehaviour
     public Sprite finishedWiring;
 
     public GameObject droneMoveButton;
+
+    Regex rg;
 
     // Start is called before the first frame update
     void Start()
@@ -86,7 +89,15 @@ public class DisplayText : MonoBehaviour
 
     void RegExBuilder(string regex)
     {
-        Regex rg = new Regex(regex);
+        //Regex rg;
+        try
+        {
+            rg = new Regex(regex);
+        }
+        catch(Exception e)
+        {
+
+        }
         CheckMatches(rg);
     }
 

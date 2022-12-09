@@ -1,23 +1,23 @@
 Using pre-set license
 Built from '2021.3/staging' branch; Version is '2021.3.11f1 (0a5ca18544bf) revision 679073'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 10  (10.0.19044) 64bit Professional' Language: 'ko' Physical Memory: 16347 MB
+OS: 'Windows 10  (10.0.19044) 64bit Core' Language: 'en' Physical Memory: 16294 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-D:\Unity\Hub\Editor\2021.3.11f1\Editor\Unity.exe
+F:\Unity Editors\2021.3.11f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-D:/Hwan/Thesis/RegEx Edugame
+D:/Desktop/CollegeStuff/Thesis/RegEx-Edugame/RegEx-Edugame/RegEx Edugame
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-64470
-Successfully changed project path to: D:/Hwan/Thesis/RegEx Edugame
-D:/Hwan/Thesis/RegEx Edugame
+57307
+Successfully changed project path to: D:/Desktop/CollegeStuff/Thesis/RegEx-Edugame/RegEx-Edugame/RegEx Edugame
+D:/Desktop/CollegeStuff/Thesis/RegEx-Edugame/RegEx-Edugame/RegEx Edugame
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -47,112 +47,114 @@ D:/Hwan/Thesis/RegEx Edugame
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 133.72 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 84.37 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.11f1 (0a5ca18544bf)
-[Subsystems] Discovering subsystems at path D:/Unity/Hub/Editor/2021.3.11f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/Hwan/Thesis/RegEx Edugame/Assets
+[Subsystems] Discovering subsystems at path F:/Unity Editors/2021.3.11f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Desktop/CollegeStuff/Thesis/RegEx-Edugame/RegEx-Edugame/RegEx Edugame/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 1050 Ti (ID=0x1c82)
-    Vendor:   NVIDIA
-    VRAM:     4017 MB
-    Driver:   31.0.15.2698
+    Renderer: AMD Radeon RX 6600 XT (ID=0x73ff)
+    Vendor:   ATI
+    VRAM:     8146 MB
+    Driver:   31.0.12029.1042
 Initialize mono
-Mono path[0] = 'D:/Unity/Hub/Editor/2021.3.11f1/Editor/Data/Managed'
-Mono path[1] = 'D:/Unity/Hub/Editor/2021.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'D:/Unity/Hub/Editor/2021.3.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56148
+Mono path[0] = 'F:/Unity Editors/2021.3.11f1/Editor/Data/Managed'
+Mono path[1] = 'F:/Unity Editors/2021.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'F:/Unity Editors/2021.3.11f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56876
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/Hub/Editor/2021.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004250 seconds.
+Register platform support module: F:/Unity Editors/2021.3.11f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: F:/Unity Editors/2021.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002124 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 113.87 ms, found 4 plugins.
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 87.96 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.773 seconds
+- Completed reload, in  0.529 seconds
 Domain Reload Profiling:
-	ReloadAssembly (774ms)
-		BeginReloadAssembly (79ms)
+	ReloadAssembly (530ms)
+		BeginReloadAssembly (56ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (575ms)
-			LoadAssemblies (78ms)
+		EndReloadAssembly (389ms)
+			LoadAssemblies (55ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (129ms)
+			SetupTypeCache (81ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (47ms)
-			SetupLoadedEditorAssemblies (334ms)
+			RebuildScriptCaches (22ms)
+			SetupLoadedEditorAssemblies (243ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
+				InitializePlatformSupportModulesInManaged (7ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (114ms)
+				RefreshPlugins (88ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (153ms)
-				ProcessInitializeOnLoadMethodAttributes (58ms)
+				ProcessInitializeOnLoadAttributes (108ms)
+				ProcessInitializeOnLoadMethodAttributes (40ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.006813 seconds.
+Registered in 0.005670 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Hwan\Thesis\RegEx Edugame\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Hwan\Thesis\RegEx Edugame\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image D:\Desktop\CollegeStuff\Thesis\RegEx-Edugame\RegEx-Edugame\RegEx Edugame\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\Desktop\CollegeStuff\Thesis\RegEx-Edugame\RegEx-Edugame\RegEx Edugame\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 120.36 ms, found 4 plugins.
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 85.47 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.574 seconds
+- Completed reload, in  0.992 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1575ms)
-		BeginReloadAssembly (132ms)
+	ReloadAssembly (992ms)
+		BeginReloadAssembly (86ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (24ms)
-		EndReloadAssembly (1256ms)
-			LoadAssemblies (113ms)
+			CreateAndSetChildDomain (16ms)
+		EndReloadAssembly (811ms)
+			LoadAssemblies (78ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (358ms)
+			SetupTypeCache (218ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (82ms)
-			SetupLoadedEditorAssemblies (640ms)
+			RebuildScriptCaches (47ms)
+			SetupLoadedEditorAssemblies (421ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (120ms)
-				BeforeProcessingInitializeOnLoad (142ms)
-				ProcessInitializeOnLoadAttributes (314ms)
-				ProcessInitializeOnLoadMethodAttributes (56ms)
-				AfterProcessingInitializeOnLoad (4ms)
+				RefreshPlugins (86ms)
+				BeforeProcessingInitializeOnLoad (81ms)
+				ProcessInitializeOnLoadAttributes (211ms)
+				ProcessInitializeOnLoadMethodAttributes (37ms)
+				AfterProcessingInitializeOnLoad (2ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (9ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
-Refreshing native plugins compatible for Editor in 1.55 ms, found 4 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.80 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4147 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 38 unused Assets / (56.4 KB). Loaded Objects now: 4605.
-Memory consumption went from 155.9 MB to 155.9 MB.
-Total: 6.089700 ms (FindLiveObjects: 0.639300 ms CreateObjectMapping: 0.603400 ms MarkObjects: 3.823000 ms  DeleteObjects: 1.022400 ms)
+Unloading 38 unused Assets / (56.7 KB). Loaded Objects now: 4605.
+Memory consumption went from 155.9 MB to 155.8 MB.
+Total: 2.769300 ms (FindLiveObjects: 0.221400 ms CreateObjectMapping: 0.128100 ms MarkObjects: 2.348800 ms  DeleteObjects: 0.070200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -160,61 +162,7 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 6541.585068 seconds.
-  path: Assets/Scenes/Level 5.1/DroneMove.unity
-  artifactKey: Guid(6e84f70715717c5499e0d37c5db51736) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Level 5.1/DroneMove.unity using Guid(6e84f70715717c5499e0d37c5db51736) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0317af6492ecb9878c08ca9aa170e51f') in 0.017969 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 33.842293 seconds.
-  path: Assets/Scenes/Level 5.2/Drone Wiring.unity
-  artifactKey: Guid(8044a31bb923def4ab50bb3a72253f02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Level 5.2/Drone Wiring.unity using Guid(8044a31bb923def4ab50bb3a72253f02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56b659ee5a55903e5494ae9e900f44dd') in 0.002645 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.203529 seconds.
-  path: Assets/Scenes/Level 6.1/Drone Wiring.unity
-  artifactKey: Guid(556b05ef6ac509e48918b1a0f378c6e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Level 6.1/Drone Wiring.unity using Guid(556b05ef6ac509e48918b1a0f378c6e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebe3384d6d4b729a20a765f5bb520324') in 0.002004 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.574234 seconds.
-  path: Assets/Scenes/Level 6.2/Drone Wiring.unity
-  artifactKey: Guid(7d54ae4bfaa955b4ba6de53f3e146be5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Level 6.2/Drone Wiring.unity using Guid(7d54ae4bfaa955b4ba6de53f3e146be5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff86accd1ff8a4d4ac818173d981631c') in 0.011955 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.811634 seconds.
-  path: Assets/Scenes/Level 6.3/Drone Wiring.unity
-  artifactKey: Guid(f1687b59ca161644bbf45ae6413763bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Level 6.3/Drone Wiring.unity using Guid(f1687b59ca161644bbf45ae6413763bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4edad5e27ddefa2ba0a29bd53e6f025') in 0.002694 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.110074 seconds.
-  path: Assets/Scenes/Level 7.1/Drone Wiring.unity
-  artifactKey: Guid(3f7945672c1b94a49a6d1d06d96e959d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Level 7.1/Drone Wiring.unity using Guid(3f7945672c1b94a49a6d1d06d96e959d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09a0f354da14a81c7fbcfe3cf2c1b119') in 0.002705 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.333426 seconds.
-  path: Assets/Scenes/Level 7.2/Drone Wiring.unity
-  artifactKey: Guid(49cdc160c3f4b734f815ef7023dcb7d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Level 7.2/Drone Wiring.unity using Guid(49cdc160c3f4b734f815ef7023dcb7d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '132f67b8edc2648eced7d818e8a31661') in 0.002390 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.324891 seconds.
-  path: Assets/Scenes/Level 7.3/Drone Wiring.unity
-  artifactKey: Guid(f6fd4570cc5b8664cb216a8eaba3ddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Level 7.3/Drone Wiring.unity using Guid(f6fd4570cc5b8664cb216a8eaba3ddf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c36a41c36e1b9d0e167e61b4fb4650f0') in 0.003704 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.776215 seconds.
-  path: Assets/Scenes/Level 7.4/Drone Wiring.unity
-  artifactKey: Guid(a8d5f6e8f511cbc42a8c2af72d8ba455) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Level 7.4/Drone Wiring.unity using Guid(a8d5f6e8f511cbc42a8c2af72d8ba455) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9a743e694d193cae30463b11faeba57') in 0.001537 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.885649 seconds.
-  path: Assets/Scenes/Level 7.5/Drone Wiring.unity
-  artifactKey: Guid(226771d35a3781343a271eb4f24954e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Level 7.5/Drone Wiring.unity using Guid(226771d35a3781343a271eb4f24954e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38810efa83b7697e2dfd93a908296d6f') in 0.014042 seconds 
+  Time since last request: 22421.252839 seconds.
+  path: Assets/Scenes/LevelSelect.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/LevelSelect.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88ea4359651f0c7e590068975025f859') in 0.010784 seconds 
