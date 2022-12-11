@@ -118,95 +118,9 @@ public class ButtonEvent : MonoBehaviour
         }
         else
             tutorialScreen.SetActive(true);
+
+        clickSound.Play();
     }
-
-    //public void showDetailsCrate1()
-    //{
-    //    details1.SetActive(true);
-    //    clickSound.Play();
-    //    address1.SetActive(false);
-    //}
-
-    //public void showAddressCrate1()
-    //{
-    //    address1.SetActive(true);
-    //    clickSound.Play();
-    //    details1.SetActive(false);
-    //}
-
-    //public void showDetailsCrate2()
-    //{
-    //    details2.SetActive(true);
-    //    clickSound.Play();
-    //    address2.SetActive(false);
-    //}
-
-    //public void showAddressCrate2()
-    //{
-    //    address2.SetActive(true);
-    //    clickSound.Play();
-    //    details2.SetActive(false);
-    //}
-
-    //public void showDetailsCrate3()
-    //{
-    //    details3.SetActive(true);
-    //    clickSound.Play();
-    //    address3.SetActive(false);
-    //}
-
-    //public void showAddressCrate3()
-    //{
-    //    address3.SetActive(true);
-    //    clickSound.Play();
-    //    details3.SetActive(false);
-    //}
-
-    //public void nextButtonCrate1()
-    //{
-    //    crate1.SetActive(false);
-    //    crate2.SetActive(true);
-    //    details2.SetActive(true);
-    //    address2.SetActive(false);
-    //    clickSound.Play();
-    //}
-
-    //public void prevButtonCrate1()
-    //{
-    //    closeSound.Play();
-    //}
-
-    //public void nextButtonCrate2()
-    //{
-    //    crate2.SetActive(false);
-    //    crate3.SetActive(true);
-    //    details3.SetActive(true);
-    //    address3.SetActive(false);
-    //    clickSound.Play();
-    //}
-
-    //public void prevButtonCrate2()
-    //{
-    //    crate2.SetActive(false);
-    //    crate1.SetActive(true);
-    //    details1.SetActive(true);
-    //    address1.SetActive(false);
-    //    clickSound.Play();
-    //}
-
-    //public void nextButtonCrate3()
-    //{
-    //    closeSound.Play();
-    //}
-
-    //public void prevButtonCrate3()
-    //{
-    //    crate3.SetActive(false);
-    //    crate2.SetActive(true);
-    //    details2.SetActive(true);
-    //    address2.SetActive(false);
-    //    clickSound.Play();
-    //}
 
     public void chipCollection()
     {

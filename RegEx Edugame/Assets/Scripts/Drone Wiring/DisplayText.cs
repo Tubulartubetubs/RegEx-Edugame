@@ -37,6 +37,8 @@ public class DisplayText : MonoBehaviour
 
     Regex rg;
 
+    public float connectedNum;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,6 +70,15 @@ public class DisplayText : MonoBehaviour
         foreach(GameObject obj in ports)
         {
             displayString += obj.GetComponent<PlugChecker>().text;
+        }
+
+        connectedNum = 5;
+        foreach(GameObject obj in ports)
+        {
+            if (!obj.GetComponent<PlugChecker>().isConnected)
+            {
+                connectedNum--;
+            }
         }
 
         return displayString;
@@ -112,13 +123,17 @@ public class DisplayText : MonoBehaviour
                 Debug.Log(match.Value);
                 if (match.Success)
                 {
+                    house.SetActive(true);
                     if (acceptedStrings.Contains(match.Value))
                     {
-                        house.SetActive(true);
+                        house.GetComponent<Image>().color = Color.white;
                         staticScreen[i].SetActive(false);
                     }
                     else
+                    {
                         staticScreen[i].SetActive(true);
+                        house.GetComponent<Image>().color = new Color(1,1,1,connectedNum/5);
+                    }
                 }
                 else
                 {
@@ -143,7 +158,7 @@ public class DisplayText : MonoBehaviour
 
         foreach(GameObject house in houses)
         {
-            if (house.activeSelf)
+            if (house.activeSelf && house.GetComponent<Image>().color == Color.white)
                 solvedHouses++;
         }
 
