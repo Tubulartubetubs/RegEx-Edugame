@@ -11,7 +11,7 @@ public class CrateFollow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        offset = new Vector3(-1.2f, 0, 0);
+        offset = new Vector3(0, 0.45f, 0);
     }
 
     // Update is called once per frame

@@ -101,13 +101,29 @@ public class MovingObject : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
+        
         ItemWorld itemWorld = collider.GetComponent<ItemWorld>();
         if(itemWorld != null)
         {
+            Debug.Log("chip");
             inventory.AddItem(itemWorld.GetItem());
             chipsCollected++;
             itemWorld.DestroySelf();
             collectedSound.Play();
+        }
+
+        CrateWorld crateWorld = collider.GetComponent<CrateWorld>();
+        if (crateWorld != null)
+        {
+            Debug.Log("crate");
+            if (Input.GetKey(KeyCode.E))
+            {
+                Debug.Log("KEY");
+                crate.AddItem(crateWorld.GetItem());
+                //chipsCollected++;
+                crateWorld.DestroySelf();
+                collectedSound.Play();
+            }
         }
     }
 

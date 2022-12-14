@@ -14,6 +14,8 @@ public class UICrate : MonoBehaviour
     public GameObject building3detail;
     public GameObject building4detail;
 
+    public GameObject extra1detail;
+
     private Transform viewPort;
     private Transform content;
     private Transform itemSlotContainer;
@@ -35,7 +37,7 @@ public class UICrate : MonoBehaviour
     public GameObject done3;
     public GameObject done4;
 
-    private int dropped = 0;
+    public int dropped = 0;
     public int toBeDropped;
 
     public AudioSource droppedCrate;
@@ -47,6 +49,13 @@ public class UICrate : MonoBehaviour
         content = viewPort.Find("Content");
         itemSlotContainer = content.Find("itemSlotContainer");
         itemSlotTemplate = itemSlotContainer.Find("itemSlotTemplate");
+
+        building1detail = GameObject.Find("/Crate Bound/Crate1 Bound/Building1");
+        building2detail = GameObject.Find("/Crate Bound/Crate1 Bound/Building2");
+        building3detail = GameObject.Find("/Crate Bound/Crate1 Bound/Building3");
+        building4detail = GameObject.Find("/Crate Bound/Crate1 Bound/Building4");
+
+        
     }
 
     private void Update()
@@ -78,27 +87,6 @@ public class UICrate : MonoBehaviour
         }
         else
             building4detail.SetActive(false);
-
-/*        if(dropped == 1)
-        {
-            //hide complete0
-            //show complete1
-        }
-        else if(dropped == 2)
-        {
-            //hide complete1
-            //show complete2
-        }
-        else if(dropped == 3)
-        {
-            //hide complete2
-            //show complete3
-        }
-        else if(dropped == 4)
-        {
-            //hide complete3
-            //show complete4
-        }*/
     }
 
     public void SetPlayer(MovingObject player)
@@ -180,52 +168,60 @@ public class UICrate : MonoBehaviour
 
             itemSlotRectTransform.GetComponent<Button_UI>().MouseRightClickFunc = () =>
             {
+                crate.RemoveItem(item);
+                CrateWorld.DropItem(player.GetPosition(), item);
+                crate1detail.SetActive(false);
+                crate2detail.SetActive(false);
+                crate3detail.SetActive(false);
+                crate4detail.SetActive(false);
+                droppedCrate.Play();
+
                 //Debug.Log(item.number);
                 //Debug.Log(bound[0]);
-                if (bound[0].bounds.Contains(player.transform.position) && item.number == 0)
-                {
-                    crate.RemoveItem(item);
-                    CrateWorld.DropItem(player.GetPosition(), item);
-                    crate1detail.SetActive(false);
-                    done1.SetActive(true);
-                    droppedCrate.Play();
-                    dropped++;
-                    doneBool1 = true;
-                }
-                else if (bound[1].bounds.Contains(player.transform.position) && item.number == 1)
-                {
-                    crate.RemoveItem(item);
-                    CrateWorld.DropItem(player.GetPosition(), item);
-                    crate2detail.SetActive(false);
-                    done2.SetActive(true);
-                    droppedCrate.Play();
-                    dropped++;
-                    doneBool2 = true;
-                }
-                else if(bound[2].bounds.Contains(player.transform.position) && item.number == 2)
-                {
-                    crate.RemoveItem(item);
-                    CrateWorld.DropItem(player.GetPosition(), item);
-                    crate3detail.SetActive(false);
-                    done3.SetActive(true);
-                    droppedCrate.Play();
-                    dropped++;
-                    doneBool3 = true;
-                }
-                else if (bound[3].bounds.Contains(player.transform.position) && item.number == 3)
-                {
-                    crate.RemoveItem(item);
-                    CrateWorld.DropItem(player.GetPosition(), item);
-                    crate4detail.SetActive(false);
-                    done4.SetActive(true);
-                    droppedCrate.Play();
-                    dropped++;
-                    doneBool4 = true;
-                }
-                else
-                {
-                    //do nothing
-                }
+                //if (bound[0].bounds.Contains(player.transform.position) && item.number == 0)
+                //{
+                //    crate.RemoveItem(item);
+                //    CrateWorld.DropItem(player.GetPosition(), item);
+                //    crate1detail.SetActive(false);
+                //    done1.SetActive(true);
+                //    droppedCrate.Play();
+                //    dropped++;
+                //    doneBool1 = true;
+                //}
+                //else if (bound[1].bounds.Contains(player.transform.position) && item.number == 1)
+                //{
+                //    crate.RemoveItem(item);
+                //    CrateWorld.DropItem(player.GetPosition(), item);
+                //    crate2detail.SetActive(false);
+                //    done2.SetActive(true);
+                //    droppedCrate.Play();
+                //    dropped++;
+                //    doneBool2 = true;
+                //}
+                //else if(bound[2].bounds.Contains(player.transform.position) && item.number == 2)
+                //{
+                //    crate.RemoveItem(item);
+                //    CrateWorld.DropItem(player.GetPosition(), item);
+                //    crate3detail.SetActive(false);
+                //    done3.SetActive(true);
+                //    droppedCrate.Play();
+                //    dropped++;
+                //    doneBool3 = true;
+                //}
+                //else if (bound[3].bounds.Contains(player.transform.position) && item.number == 3)
+                //{
+                //    crate.RemoveItem(item);
+                //    CrateWorld.DropItem(player.GetPosition(), item);
+                //    crate4detail.SetActive(false);
+                //    done4.SetActive(true);
+                //    droppedCrate.Play();
+                //    dropped++;
+                //    doneBool4 = true;
+                //}
+                //else
+                //{
+                //    //do nothing
+                //}
             };
 
             itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y * itemSlotCellSize);

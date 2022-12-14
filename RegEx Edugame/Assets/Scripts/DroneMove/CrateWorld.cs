@@ -17,7 +17,7 @@ public class CrateWorld : MonoBehaviour
         return crateWorld;
     }
 
-    public static CrateWorld DropItem(Vector3 dropPosition, Item item)
+    public static CrateWorld DropItem(Vector3 dropPosition, Item item) // check if bound# == crate#, show indicator
     {
         Vector3 randomDir = UtilsClass.GetRandomDir();
         CrateWorld crateWorld = SpawnCrateWorld(dropPosition, item);
@@ -26,7 +26,6 @@ public class CrateWorld : MonoBehaviour
 
     private Item item;
     private SpriteRenderer spriteRenderer;
-    private bool isMouseOver;
 
     private void Awake()
     {
@@ -44,7 +43,7 @@ public class CrateWorld : MonoBehaviour
         return item;
     }
 
-    public void DestroySelf()
+    public void DestroySelf() // if bound# was == crate#, hide indicator
     {
         Destroy(gameObject);
     }
