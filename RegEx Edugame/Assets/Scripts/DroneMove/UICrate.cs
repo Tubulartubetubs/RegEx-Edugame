@@ -9,28 +9,39 @@ public class UICrate : MonoBehaviour
 {
     private Crate crate;
     public BoxCollider2D[] bound;
+    public BoxCollider2D[] extrabound;
     public GameObject building1detail;
     public GameObject building2detail;
     public GameObject building3detail;
     public GameObject building4detail;
 
-    public GameObject extra1detail;
+    public GameObject extra01detail;
+    public GameObject extra02detail;
+    public GameObject extra03detail;
+    public GameObject extra04detail;
+    public GameObject extra05detail;
+    public GameObject extra06detail;
+    public GameObject extra07detail;
+    public GameObject extra08detail;
+    public GameObject extra09detail;
+    public GameObject extra10detail;
+    public GameObject extra11detail;
+    public GameObject extra12detail;
+    public GameObject extra13detail;
+    public GameObject extra14detail;
+    public GameObject extra15detail;
+    public GameObject extra16detail;
 
     private Transform viewPort;
     private Transform content;
     private Transform itemSlotContainer;
     private Transform itemSlotTemplate;
-    private MovingObject player;
+    public MovingObject player;
 
     public GameObject crate1detail;
     public GameObject crate2detail;
     public GameObject crate3detail;
     public GameObject crate4detail;
-
-    private bool doneBool1 = false;
-    private bool doneBool2 = false;
-    private bool doneBool3 = false;
-    private bool doneBool4 = false;
 
     public GameObject done1;
     public GameObject done2;
@@ -45,48 +56,189 @@ public class UICrate : MonoBehaviour
     private void Awake()
     {
         Debug.Log(toBeDropped);
+        player = GameObject.Find("/Player").GetComponent<MovingObject>();
         viewPort = transform.Find("Viewport");
         content = viewPort.Find("Content");
         itemSlotContainer = content.Find("itemSlotContainer");
         itemSlotTemplate = itemSlotContainer.Find("itemSlotTemplate");
 
-        building1detail = GameObject.Find("/Crate Bound/Crate1 Bound/Building1");
-        building2detail = GameObject.Find("/Crate Bound/Crate1 Bound/Building2");
-        building3detail = GameObject.Find("/Crate Bound/Crate1 Bound/Building3");
-        building4detail = GameObject.Find("/Crate Bound/Crate1 Bound/Building4");
+        extra01detail = GameObject.Find("/Extra Bound/Extra01 Bound/Building1");
+        extra02detail = GameObject.Find("/Extra Bound/Extra02 Bound/Building1");
+        extra03detail = GameObject.Find("/Extra Bound/Extra03 Bound/Building1");
+        extra04detail = GameObject.Find("/Extra Bound/Extra04 Bound/Building1");
+        extra05detail = GameObject.Find("/Extra Bound/Extra05 Bound/Building1");
+        extra06detail = GameObject.Find("/Extra Bound/Extra06 Bound/Building1");
+        extra07detail = GameObject.Find("/Extra Bound/Extra07 Bound/Building1");
+        extra08detail = GameObject.Find("/Extra Bound/Extra08 Bound/Building1");
+        extra09detail = GameObject.Find("/Extra Bound/Extra09 Bound/Building1");
+        extra10detail = GameObject.Find("/Extra Bound/Extra10 Bound/Building1");
+        extra11detail = GameObject.Find("/Extra Bound/Extra11 Bound/Building1");
+        extra12detail = GameObject.Find("/Extra Bound/Extra12 Bound/Building1");
+        extra13detail = GameObject.Find("/Extra Bound/Extra13 Bound/Building1");
+        extra14detail = GameObject.Find("/Extra Bound/Extra14 Bound/Building1");
+        extra15detail = GameObject.Find("/Extra Bound/Extra15 Bound/Building1");
+        extra16detail = GameObject.Find("/Extra Bound/Extra16 Bound/Building1");
 
-        
+        extrabound = new BoxCollider2D[16];
+        extrabound[0] = GameObject.Find("/Extra Bound/Extra01 Bound").GetComponent<BoxCollider2D>();
+        extrabound[1] = GameObject.Find("/Extra Bound/Extra02 Bound").GetComponent<BoxCollider2D>();
+        extrabound[2] = GameObject.Find("/Extra Bound/Extra03 Bound").GetComponent<BoxCollider2D>();
+        extrabound[3] = GameObject.Find("/Extra Bound/Extra04 Bound").GetComponent<BoxCollider2D>();
+        extrabound[4] = GameObject.Find("/Extra Bound/Extra05 Bound").GetComponent<BoxCollider2D>();
+        extrabound[5] = GameObject.Find("/Extra Bound/Extra06 Bound").GetComponent<BoxCollider2D>();
+        extrabound[6] = GameObject.Find("/Extra Bound/Extra07 Bound").GetComponent<BoxCollider2D>();
+        extrabound[7] = GameObject.Find("/Extra Bound/Extra08 Bound").GetComponent<BoxCollider2D>();
+        extrabound[8] = GameObject.Find("/Extra Bound/Extra09 Bound").GetComponent<BoxCollider2D>();
+        extrabound[9] = GameObject.Find("/Extra Bound/Extra10 Bound").GetComponent<BoxCollider2D>();
+        extrabound[10] = GameObject.Find("/Extra Bound/Extra11 Bound").GetComponent<BoxCollider2D>();
+        extrabound[11] = GameObject.Find("/Extra Bound/Extra12 Bound").GetComponent<BoxCollider2D>();
+        extrabound[12] = GameObject.Find("/Extra Bound/Extra13 Bound").GetComponent<BoxCollider2D>();
+        extrabound[13] = GameObject.Find("/Extra Bound/Extra14 Bound").GetComponent<BoxCollider2D>();
+        extrabound[14] = GameObject.Find("/Extra Bound/Extra15 Bound").GetComponent<BoxCollider2D>();
+        extrabound[15] = GameObject.Find("/Extra Bound/Extra16 Bound").GetComponent<BoxCollider2D>();
     }
 
     private void Update()
     {
-        if (doneBool1 == false && bound[0] != null && bound[0].bounds.Contains(player.transform.position))
+        if (bound[0] != null && bound[0].bounds.Contains(player.transform.position))
         {
             building1detail.SetActive(true);
         }
         else
             building1detail.SetActive(false);
 
-        if (doneBool2 == false && bound[1] != null && bound[1].bounds.Contains(player.transform.position))
+        if (bound[1] != null && bound[1].bounds.Contains(player.transform.position))
         {
             building2detail.SetActive(true);
         }
         else
             building2detail.SetActive(false);
 
-        if (doneBool3 == false && bound[2] != null && bound[2].bounds.Contains(player.transform.position))
+        if (bound[2] != null && bound[2].bounds.Contains(player.transform.position))
         {
             building3detail.SetActive(true);
         }
         else
             building3detail.SetActive(false);
 
-        if (doneBool4 == false && bound[3] != null && bound[3].bounds.Contains(player.transform.position))
+        if (bound[3] != null && bound[3].bounds.Contains(player.transform.position))
         {
             building4detail.SetActive(true);
         }
         else
             building4detail.SetActive(false);
+
+        if (extrabound[0].bounds.Contains(player.transform.position))
+        {
+            extra01detail.SetActive(true);
+        }
+        else
+            extra01detail.SetActive(false);
+
+        if (extrabound[1].bounds.Contains(player.transform.position))
+        {
+            extra02detail.SetActive(true);
+        }
+        else
+            extra02detail.SetActive(false);
+
+        if (extrabound[2].bounds.Contains(player.transform.position))
+        {
+            extra03detail.SetActive(true);
+        }
+        else
+            extra03detail.SetActive(false);
+
+        if (extrabound[3].bounds.Contains(player.transform.position))
+        {
+            extra04detail.SetActive(true);
+        }
+        else
+            extra04detail.SetActive(false);
+
+        if (extrabound[4].bounds.Contains(player.transform.position))
+        {
+            extra05detail.SetActive(true);
+        }
+        else
+            extra05detail.SetActive(false);
+
+        if (extrabound[5].bounds.Contains(player.transform.position))
+        {
+            extra06detail.SetActive(true);
+        }
+        else
+            extra06detail.SetActive(false);
+
+        if (extrabound[6].bounds.Contains(player.transform.position))
+        {
+            extra07detail.SetActive(true);
+        }
+        else
+            extra07detail.SetActive(false);
+
+        if (extrabound[7].bounds.Contains(player.transform.position))
+        {
+            extra08detail.SetActive(true);
+        }
+        else
+            extra08detail.SetActive(false);
+
+        if (extrabound[8].bounds.Contains(player.transform.position))
+        {
+            extra09detail.SetActive(true);
+        }
+        else
+            extra09detail.SetActive(false);
+
+        if (extrabound[9].bounds.Contains(player.transform.position))
+        {
+            extra10detail.SetActive(true);
+        }
+        else
+            extra10detail.SetActive(false);
+
+        if (extrabound[10].bounds.Contains(player.transform.position))
+        {
+            extra11detail.SetActive(true);
+        }
+        else
+            extra11detail.SetActive(false);
+
+        if (extrabound[11].bounds.Contains(player.transform.position))
+        {
+            extra12detail.SetActive(true);
+        }
+        else
+            extra12detail.SetActive(false);
+
+        if (extrabound[12].bounds.Contains(player.transform.position))
+        {
+            extra13detail.SetActive(true);
+        }
+        else
+            extra13detail.SetActive(false);
+
+        if (extrabound[13].bounds.Contains(player.transform.position))
+        {
+            extra14detail.SetActive(true);
+        }
+        else
+            extra14detail.SetActive(false);
+
+        if (extrabound[14].bounds.Contains(player.transform.position))
+        {
+            extra15detail.SetActive(true);
+        }
+        else
+            extra15detail.SetActive(false);
+
+        if (extrabound[15].bounds.Contains(player.transform.position))
+        {
+            extra16detail.SetActive(true);
+        }
+        else
+            extra16detail.SetActive(false);
     }
 
     public void SetPlayer(MovingObject player)
@@ -116,7 +268,6 @@ public class UICrate : MonoBehaviour
         else
             return false;
     }
-
 
     private void RefreshInventoryItems()
     {
@@ -175,7 +326,30 @@ public class UICrate : MonoBehaviour
                 crate3detail.SetActive(false);
                 crate4detail.SetActive(false);
                 droppedCrate.Play();
-
+                if (bound[0].bounds.Contains(player.transform.position) && item.number == 0)
+                {
+                    done1.SetActive(true);
+                    dropped++;
+                    Debug.Log("dropped: "+dropped);
+                }
+                else if (bound[1].bounds.Contains(player.transform.position) && item.number == 1)
+                {
+                    done2.SetActive(true);
+                    dropped++;
+                    Debug.Log("dropped: " + dropped);
+                }
+                else if (bound[2].bounds.Contains(player.transform.position) && item.number == 2)
+                {
+                    done3.SetActive(true);
+                    dropped++;
+                    Debug.Log("dropped: " + dropped);
+                }
+                else if (bound[3].bounds.Contains(player.transform.position) && item.number == 3)
+                {
+                    done4.SetActive(true);
+                    dropped++;
+                    Debug.Log("dropped: " + dropped);
+                }
                 //Debug.Log(item.number);
                 //Debug.Log(bound[0]);
                 //if (bound[0].bounds.Contains(player.transform.position) && item.number == 0)

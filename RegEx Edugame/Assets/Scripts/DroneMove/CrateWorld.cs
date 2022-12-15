@@ -5,15 +5,12 @@ using UnityEngine;
     
 public class CrateWorld : MonoBehaviour
 {
-    public BoxCollider2D bound;
-
 
     public static CrateWorld SpawnCrateWorld(Vector3 position, Item item)
     {
         Transform transform = Instantiate(ItemAssets.Instance.crateWorld, position, Quaternion.identity);
         CrateWorld crateWorld = transform.GetComponent<CrateWorld>();
         crateWorld.SetItem(item);
-
         return crateWorld;
     }
 
@@ -46,5 +43,5 @@ public class CrateWorld : MonoBehaviour
     public void DestroySelf() // if bound# was == crate#, hide indicator
     {
         Destroy(gameObject);
-    }
+    }   
 }
