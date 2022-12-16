@@ -12,6 +12,7 @@ public class CrateFollow : MonoBehaviour
     void Start()
     {
         offset = new Vector3(0, 0.45f, 0);
+        target = GameObject.Find("/Player").GetComponent<Transform>();
     }
 
     // Update is called once per frame
