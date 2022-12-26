@@ -12,6 +12,7 @@ public class RegEx : MonoBehaviour
     public TextMeshProUGUI summaryText;
     public TextMeshProUGUI chipsUsed;
     private GameObject insertedChips;
+    private GameObject waitingChips;
     public GameObject ClearScreen;
     private List<GameObject> chips;
     private List<TextMeshProUGUI> chipTexts;
@@ -58,6 +59,7 @@ public class RegEx : MonoBehaviour
     {
         displayText = GetComponent<TextMeshProUGUI>();
         insertedChips = GameObject.Find("ChipInserted");
+        waitingChips = GameObject.Find("ChipWaiting");
         chips = new List<GameObject>();
         chipTexts = new List<TextMeshProUGUI>();
         //highlightWords.AddRange(GameObject.FindGameObjectsWithTag("Highlight"));
@@ -90,9 +92,28 @@ public class RegEx : MonoBehaviour
             {
                 if (child.gameObject.name != "Invisible Chip" && !chips.Contains(child.gameObject))
                 {
+                    RectTransform rectTran = child.gameObject.GetComponent<RectTransform>();
+                    rectTran.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 125);
+                    rectTran.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 125);
+                    RectTransform rectTranText = child.gameObject.transform.Find("Text").GetComponent<RectTransform>();
+                    rectTranText.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 100);
                     chips.Add(child.gameObject);
                     chipTexts.Add(child.gameObject.transform.Find("Text").GetComponent<TextMeshProUGUI>());
                     StringBuilder(chipTexts[chipTexts.Count - 1]);
+                }
+            }
+        }
+        else if (waitingChips.transform.childCount > 0)
+        {
+            foreach (Transform child in waitingChips.transform)
+            {
+                if (child.gameObject.name != "Invisible Chip" && !chips.Contains(child.gameObject))
+                {
+                    RectTransform rectTran = child.gameObject.GetComponent<RectTransform>();
+                    rectTran.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 231);
+                    rectTran.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 231);
+                    RectTransform rectTranText = child.gameObject.transform.Find("Text").GetComponent<RectTransform>();
+                    rectTranText.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 200);
                 }
             }
         }

@@ -6,17 +6,6 @@ using UnityEngine.EventSystems;
 public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     Transform root;
-
-    float currentY;
-    float oldY;
-    public float distance;
-    public float percent;
-    public float scale;
-    private GameObject inserted;
-    float horizonPointY;
-    float foregroundPointY;
-    private Vector3 minScale;
-    private Vector3 maxScale;
     private RegEx regex;
     
 
@@ -24,13 +13,6 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     void Start()
     {
         root = transform.root;
-        inserted = GameObject.Find("ChipInserted");
-        minScale = new Vector3(0.4f, 0.4f, 1);
-        maxScale = new Vector3(1.25f, 1.25f, 1f);
-        horizonPointY = this.transform.position.y;
-        foregroundPointY = inserted.transform.position.y; ;
-        distance = Mathf.Abs(foregroundPointY - horizonPointY);
-        Debug.Log("H point: " + horizonPointY + " F point: " + foregroundPointY);
         regex = GameObject.Find("DisplayText").GetComponent<RegEx>();
     }
 
@@ -53,15 +35,6 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         transform.position = eventData.position;
         root.BroadcastMessage("Drag", transform, SendMessageOptions.DontRequireReceiver);
-        //oldY = currentY;
-        //currentY = this.transform.position.y;
-        //Debug.Log(currentY);
-        //percent = this.transform.position.y / distance;
-        //if (currentY != oldY)
-        //{
-        //    this.transform.localScale = Vector3.Lerp(maxScale, minScale, percent);
-        //    scale = this.transform.localScale.y;
-        //}
     }
 
     public void OnEndDrag(PointerEventData eventData)
