@@ -10,6 +10,8 @@ public class ChipSpawner : MonoBehaviour
     public Item.ItemType[] chipSpriteType;
     public Vector3 offset;
 
+    public RegEx displayText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,9 +19,11 @@ public class ChipSpawner : MonoBehaviour
         //for (int i = 0; i < chipSpriteType.Length; i++)
         //{
         //    ItemWorld.SpawnChip(new Item { itemType = chipSpriteType[i], text = chipText[i] });
-            
+
         //    //LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)csf.transform);
         //}
+
+        displayText = GameObject.Find("DisplayText").GetComponent<RegEx>();
     }
 
     // Update is called once per frame
@@ -32,10 +36,13 @@ public class ChipSpawner : MonoBehaviour
     {
         //GameObject lastChild = chipWaiting.transform.GetChild(chipWaiting.transform.childCount - 1).gameObject;
 
+        Instantiate(chips[chipNum], chipWaiting.transform);
+        //displayText.UpdateChips();
+
         //Debug.Log(lastChild.name);
-        if (chipWaiting.transform.childCount < 7)
-            Instantiate(chips[chipNum], chipWaiting.transform);
-        else
-            Debug.Log("Too many Chips");
+        //if (chipWaiting.transform.childCount < 7)
+        //    Instantiate(chips[chipNum], chipWaiting.transform);
+        //else
+        //    Debug.Log("Too many Chips");
     }
 }

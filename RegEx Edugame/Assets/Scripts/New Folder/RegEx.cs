@@ -54,6 +54,8 @@ public class RegEx : MonoBehaviour
 
     Regex rg;
 
+    //public int waitingChipCount;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -69,6 +71,7 @@ public class RegEx : MonoBehaviour
         acceptedNum.text = "0";
         matchStrings = new List<string>();
         sceneSwitcher = GameObject.FindGameObjectWithTag("EventSystem").GetComponent<SwitchScenes>();
+        //waitingChipCount = waitingChips.transform.childCount;
     }
 
     // Update is called once per frame
@@ -84,7 +87,7 @@ public class RegEx : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
     }
 
-    void UpdateChips()
+    public void UpdateChips()
     {
         if (insertedChips.transform.childCount > 0)
         {
