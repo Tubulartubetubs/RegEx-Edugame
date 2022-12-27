@@ -36,13 +36,13 @@ public class ChipSpawner : MonoBehaviour
     {
         //GameObject lastChild = chipWaiting.transform.GetChild(chipWaiting.transform.childCount - 1).gameObject;
 
-        Instantiate(chips[chipNum], chipWaiting.transform);
+        //Instantiate(chips[chipNum], chipWaiting.transform);
         //displayText.UpdateChips();
 
         //Debug.Log(lastChild.name);
-        //if (chipWaiting.transform.childCount < 7)
-        //    Instantiate(chips[chipNum], chipWaiting.transform);
-        //else
-        //    Debug.Log("Too many Chips");
+        if (chipWaiting.transform.childCount < 6)
+            Instantiate(chips[chipNum], chipWaiting.transform);
+        else
+            Debug.Log("Too many Chips");
     }
 }
