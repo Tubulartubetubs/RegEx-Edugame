@@ -11,8 +11,8 @@ public class RegEx : MonoBehaviour
     private TextMeshProUGUI displayText;
     public TextMeshProUGUI summaryText;
     public TextMeshProUGUI chipsUsed;
-    private GameObject insertedChips;
-    private GameObject waitingChips;
+    public GameObject insertedChips;
+    public GameObject waitingChips;
     public GameObject ClearScreen;
     private List<GameObject> chips;
     private List<TextMeshProUGUI> chipTexts;
@@ -54,7 +54,8 @@ public class RegEx : MonoBehaviour
 
     Regex rg;
 
-    //public int waitingChipCount;
+    public int waitingChipCount;
+    public int insertedChipCount;
 
     // Start is called before the first frame update
     void Start()
@@ -71,7 +72,8 @@ public class RegEx : MonoBehaviour
         acceptedNum.text = "0";
         matchStrings = new List<string>();
         sceneSwitcher = GameObject.FindGameObjectWithTag("EventSystem").GetComponent<SwitchScenes>();
-        //waitingChipCount = waitingChips.transform.childCount;
+        waitingChipCount = waitingChips.transform.childCount;
+        insertedChipCount = insertedChips.transform.childCount;
     }
 
     // Update is called once per frame
@@ -83,8 +85,8 @@ public class RegEx : MonoBehaviour
 
     IEnumerator Updateupdate()
     {
-        UpdateChips();
         yield return new WaitForSeconds(2.0f);
+        UpdateChips();
     }
 
     public void UpdateChips()
@@ -105,8 +107,15 @@ public class RegEx : MonoBehaviour
                     StringBuilder(chipTexts[chipTexts.Count - 1]);
                 }
             }
+            insertedChipCount = insertedChips.transform.childCount;
         }
-        else if (waitingChips.transform.childCount > 0)
+        else
+        {
+            ResetString();
+            DisplayText();
+        }
+
+        if (waitingChips.transform.childCount > 0)
         {
             foreach (Transform child in waitingChips.transform)
             {
@@ -119,11 +128,6 @@ public class RegEx : MonoBehaviour
                     rectTranText.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 200);
                 }
             }
-        }
-        else
-        {
-            ResetString();
-            DisplayText();
         }
 
         BuildRegex();
