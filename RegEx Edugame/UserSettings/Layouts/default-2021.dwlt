@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 46
+  controlID: 18
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 117
+  controlID: 113
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 89
+  controlID: 61
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 90
+  controlID: 62
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: SceneView
+  m_Name: GameView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -268,12 +268,12 @@ MonoBehaviour:
     height: 645
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 16}
+  m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 16}
   - {fileID: 14}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -452,9 +452,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ba860300
-      m_LastClickedID: 231098
-      m_ExpandedIDs: 1cc3ffffc2c3ffff70c4ffff1ac5ffffc4c5ffff66c6ffff10c7ffffb8c7ffff5ec8ffff06c9ffffacc9ffff54cafffffecaffffb4cbffff5eccffff16cdffffc2cdffff68ceffff10cfffffbccfffff62d0ffff0ad1ffffb4d1ffff68d2ffffbed2ffff14d3ffff6ad3ffffc0d3ffff16d4ffff6cd4ffffc2d4ffff18d5ffff6ed5ffffc4d5ffff1ad6ffff70d6ffffc8d6ffff1ed7ffff74d7ffff56d8ffff5ed9ffff5adaffff14dbffff7edbffff38dcfffff0dcffffa6ddffff5edeffff20dfffffd8dfffff94e0ffff4ce1ffff08e2ffffc2e2ffff7ee3ffff3ce4fffffae4ffffb2e5ffff6ee6ffff26e7fffffce7ffffb8e8ffffb8e9fffff4eaffff2ef7ffff92f7ffff34faffff2cfbffffb26e00003473000086750000127a0000ec7b0000f67c0000568400004294000080960000c4980000fe9f000088a100001ca60000daae000024af000088b3000062bc0000debc0000eec00000a8c9000034ce000040ce000010d700006cd70000a6db00004ae400000ce5000004e90000cef1000066f500006cf6000060ff0000ceff0000d40301008a0c0100f410010032110100ea190100e61a0100941e01007c270100d82b0100fc2b010096340100b6340100603901001e4201006e450100c8460100604f01002250010032540100e25c0100e45f01008c610100906801008c6a0100006f0100e47501009a770100707c01001c85010074860100da890100a6920100209501003c97010008a0010082a201009ea401003ca5010094a601006aab010052b4010052b80100e8b8010044c801009acc0100facc0100a6d501005cda010082e60200e2ed020008f002008af402009ef6020032fb020032fd0200e0010300fc03030088080300980a0300300f030042110300d8150300be170300781c0300841e0300222303005c250300d0290300d02b03007830030076320300203703004e390300ce3d0300c63f030070440300744603001e4b0300f44c0300c6510300b45303005e5803009c5a0300105f0300e8600300be650300a8670300666c0300706e030006730300f4740300ca790300dc7b030072800300648203001a870300
+      m_SelectedIDs: 84660100
+      m_LastClickedID: 91780
+      m_ExpandedIDs: 04b7ffffe4b7ffffc4b8ffffa4b9ffff92baffff72bbffff52bcffff32bdffff12befffff2beffffd2bfffffb2c0ffff94c1ffff7cc2ffff5cc3ffff3cc4ffff1cc5fffffcc5ffffdcc6ffffbcc7ffff9cc8ffff7cc9ffff5ecaffff8acbffff18cdffffa6ceffff30d0ffffbcd1ffff48d3ffffdcd4ffff64d6fffff0d7ffff7cd9ffff08dbffff9cdcffff20deffff00dfffffe2dfffff76e1ffff08e3ffff96e4ffff20e6ffffb2e7ffff48e9ffffc8eaffff30edffffbceeffff44f0ffff7cf1ffffb8f2fffffaf3ffff2cfbffffd861000046630000a6960000aa9700009a9b0000ee9b000094a0000014a2000096a5000004a7000092aa0000daaa00008caf000094b9000002bb00001ec50000b8c6000020ca000074ca0000eece00009ecf000040d3000058d4000082d700009ed80000d6db0000c2dc000068e40000e4e50000a8e80000b4e8000014ed000050ed00001ef20000eaf3000030f7000092f70000e4fb000042fc00009a0001004401010050060100a6070100500b01001c0c01005a100100da1101006c150100001701006e1a01007c1a0100362001009a2501000e2801008a2a01000e2d01008c2f0100083201008c340100dc36010008390100243b0100523d01006c3f0100b241010036440100c24601004e490100ca4b0100504e0100ca50010050530100dc55010058580100685e0100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -846,23 +846,23 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes/Level 7.5
+    - Assets/Scenes/Level 8
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes/Level 7.5
+  - Assets/Scenes/Level 8
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Francis Apolinar\Documents\GitHub\RegEx-Edugame\RegEx
     Edugame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 360}
-    m_SelectedIDs: 766c0000
-    m_LastClickedID: 27766
-    m_ExpandedIDs: 00000000366c0000386c0000806c0000ac87000000ca9a3b
+    scrollPos: {x: 0, y: 347}
+    m_SelectedIDs: f4670000
+    m_LastClickedID: 26612
+    m_ExpandedIDs: 00000000b0670000b2670000b4670000b667000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -890,7 +890,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000366c0000386c0000
+    m_ExpandedIDs: 00000000b0670000b2670000b4670000b6670000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1003,7 +1003,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 47}
     m_SelectedIDs: a0780000
     m_LastClickedID: 30880
-    m_ExpandedIDs: 00000000366c0000386c0000
+    m_ExpandedIDs: 00000000b0670000b2670000b4670000b6670000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1031,7 +1031,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 0a2b1500
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000366c0000386c0000
+    m_ExpandedIDs: 00000000b0670000b2670000b4670000b6670000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

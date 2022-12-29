@@ -5435,6 +5435,7 @@ MonoBehaviour:
   chipText: []
   chipSpriteType: 
   offset: {x: 0, y: 0, z: 0}
+  displayText: {fileID: 0}
 --- !u!1 &209687061
 GameObject:
   m_ObjectHideFlags: 0
@@ -36533,6 +36534,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   summaryText: {fileID: 1828718906}
   chipsUsed: {fileID: 703092516}
+  insertedChips: {fileID: 0}
+  waitingChips: {fileID: 0}
   ClearScreen: {fileID: 1962865994}
   highlightWords:
   - {fileID: 219770321}
@@ -36559,6 +36562,8 @@ MonoBehaviour:
   - '#2      ABC   Burke-Yang    Residences'
   - '#1             342     Addams-Grey    Residences'
   - '#4       WA5         Henderson-Tim           Residences'
+  waitingChipCount: 0
+  insertedChipCount: 0
 --- !u!114 &1360493351
 MonoBehaviour:
   m_ObjectHideFlags: 0
