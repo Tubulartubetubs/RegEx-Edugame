@@ -101,11 +101,11 @@ public class DialogueHandler : MonoBehaviour
                     ports[4].color = Color.white;
                     indicator.SetActive(true);
                 break;
-            case 8: 
-                    drone.SetActive(false);
-                    noise.SetActive(true);
+            case 8:
+                scenes[1].SetActive(false);
+                scenes[2].SetActive(true);
                 break;
-            case 13:
+            case 14:
                     noise.SetActive(false);
                     office.SetActive(true);
                 break;
