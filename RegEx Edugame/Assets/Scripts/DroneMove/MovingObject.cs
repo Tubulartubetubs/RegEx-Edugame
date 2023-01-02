@@ -112,15 +112,19 @@ public class MovingObject : MonoBehaviour
             collectedSound.Play();
         }
 
+        
+    }
+    private void OnTriggerStay2D(Collider2D collider)
+    {
         CrateWorld crateWorld = collider.GetComponent<CrateWorld>();
         if (crateWorld != null)
         {
-            Debug.Log("crate "+ crateWorld.GetItem().number);
+            Debug.Log("crate " + crateWorld.GetItem().number);
             if (Input.GetKey(KeyCode.E))
             {
                 //Debug.Log("KEY");
                 crate.AddItem(crateWorld.GetItem());
-                if(uiCrate.bound[0].bounds.Contains(uiCrate.player.transform.position) && crateWorld.GetItem().number == 0)
+                if (uiCrate.bound[0].bounds.Contains(uiCrate.player.transform.position) && crateWorld.GetItem().number == 0)
                 {
                     uiCrate.dropped--;
                     uiCrate.done1.SetActive(false);
