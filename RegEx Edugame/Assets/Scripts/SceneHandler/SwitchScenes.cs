@@ -7,6 +7,8 @@ public class SwitchScenes : MonoBehaviour
 {
     public List<string> scenePaths;
 
+    public GameObject pauseMenu;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -119,8 +121,28 @@ public class SwitchScenes : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.Quit();
+            if (pauseMenu.activeSelf)
+                ResumeGame();
+            else
+                PauseGame();
         }
+    }
+
+    public void PauseGame()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0.0f;
+    }
+
+    public void ResumeGame()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1.0f;
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
     public void SwitchScene(int sceneNum)
