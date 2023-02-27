@@ -7,7 +7,7 @@ using CodeMonkey.Utils;
 
 public class UICrate : MonoBehaviour
 {
-    private Crate crate;
+    public Crate crate;
     public BoxCollider2D[] bound;
     public BoxCollider2D[] extrabound;
     public GameObject building1detail;

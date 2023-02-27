@@ -117,34 +117,40 @@ public class MovingObject : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collider)
     {
         CrateWorld crateWorld = collider.GetComponent<CrateWorld>();
+        //player = collider.GetComponent <this.transform.position>();
         if (crateWorld != null)
         {
-            Debug.Log("crate " + crateWorld.GetItem().number);
+            //Debug.Log("crate " + crateWorld.GetItem().number);
             if (Input.GetKey(KeyCode.E))
             {
                 //Debug.Log("KEY");
                 crate.AddItem(crateWorld.GetItem());
+                
                 if (uiCrate.bound[0].bounds.Contains(uiCrate.player.transform.position) && crateWorld.GetItem().number == 0)
                 {
                     uiCrate.dropped--;
                     uiCrate.done1.SetActive(false);
+                    Debug.Log("picked1: " + uiCrate.dropped);
                 }
                 else if (uiCrate.bound[1].bounds.Contains(uiCrate.player.transform.position) && crateWorld.GetItem().number == 1)
                 {
                     uiCrate.dropped--;
                     uiCrate.done2.SetActive(false);
+                    Debug.Log("picked2: " + uiCrate.dropped);
                 }
                 else if (uiCrate.bound[2].bounds.Contains(uiCrate.player.transform.position) && crateWorld.GetItem().number == 2)
                 {
                     uiCrate.dropped--;
                     uiCrate.done3.SetActive(false);
+                    Debug.Log("picked3: " + uiCrate.dropped);
                 }
                 else if (uiCrate.bound[3].bounds.Contains(uiCrate.player.transform.position) && crateWorld.GetItem().number == 3)
                 {
                     uiCrate.dropped--;
                     uiCrate.done4.SetActive(false);
+                    Debug.Log("picked4: " + uiCrate.dropped);
                 }
-                //chipsCollected++;
+                Debug.Log("picked000: " + uiCrate.dropped);
                 crateWorld.DestroySelf();
                 collectedSound.Play();
             }
